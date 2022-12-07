@@ -1,6 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
 .left {
   background-color: rgb(125, 125, 237);
   height: 100vh;
   flex-grow: 2;
   text-align: center;
+}
+
+.logo {
+  height: 70px;
+  width: 100%;
+  margin: none;
+  background-color: aqua;
+  border: black solid;
+}
+
+.tasks {
+  height: 80%;
+  background-color: aquamarine;
+}
+
+.user--info {
+  height: auto x;
+  background-color: beige;
+  margin: 5px;
 }

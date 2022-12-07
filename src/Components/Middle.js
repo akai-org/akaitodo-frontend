@@ -1,7 +1,7 @@
 import "../Styles/Middle.css";
 
 function Middle() {
-  return <div className="middle">MIDDLE</div>;
+  return <div className="middle"></div>;
 }
 
 export default Middle;
