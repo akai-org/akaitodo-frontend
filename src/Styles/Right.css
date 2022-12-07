@@ -1,0 +1,6 @@
+.right {
+  background-color: rgb(233, 233, 112);
+  height: 100vh;
+  flex-grow: 3;
+  text-align: center;
+}

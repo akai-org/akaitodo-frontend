@@ -1,0 +1,6 @@
+.left {
+  background-color: rgb(125, 125, 237);
+  height: 100vh;
+  flex-grow: 2;
+  text-align: center;
+}
