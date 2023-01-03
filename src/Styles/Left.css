@@ -13,13 +13,13 @@
   height: 70px;
   width: 100%;
   margin: none;
-  background-color: aqua;
-  border: black solid;
+  background-color: #2d3142;
 }
 
 .tasks {
   height: 80%;
-  background-color: aquamarine;
+  border-right: #bfc0c0 solid 2px;
+  background-color: #ffff;
 }
 
 .user--info {
