@@ -1,29 +1,73 @@
+@import "vars.module.css";
+
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 .left {
-  background-color: rgb(125, 125, 237);
   height: 100vh;
   flex-grow: 2;
   text-align: center;
 }
 
 .logo {
-  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 8%;
   width: 100%;
   margin: none;
-  background-color: #2d3142;
+  /* background-color: #2d3142; */
+  background-color: var(--primary-color);
+  border-bottom-right-radius: 10px;
+}
+
+.logo-image {
+  margin-left: 20px;
+  aspect-ratio: 1/1;
+  height: 40%;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.app-name {
+  font-size: 25px;
+  font-family: sans-serif;
+  color: white;
 }
 
 .tasks {
   height: 80%;
-  border-right: #bfc0c0 solid 2px;
   background-color: #ffff;
 }
 
+.user-container {
+  display: flex;
+  position: relative;
+  background-color: rgb(207, 207, 207);
+  margin-left: 20px;
+  height: 55%;
+  width: 80%;
+}
+
 .user--info {
-  height: auto x;
+  display: flex;
+  align-items: center;
+  height: 12%;
   background-color: beige;
-  margin: 5px;
+}
+
+.user-avatar {
+  background-color: gray;
+  aspect-ratio: 1/1;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user-name {
+  align-self: flex-end;
+  background-color: gray;
+  height: 35%;
+  width: 90%;
 }
