@@ -1,3 +1,5 @@
+@import "vars.module.css";
+
 * {
   box-sizing: border-box;
 }
