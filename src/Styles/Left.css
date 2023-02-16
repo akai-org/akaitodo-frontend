@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-.logo {
+.logo-container {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -31,18 +31,18 @@
   border-radius: 50%;
 }
 
-.app-name {
+.logo-app-name {
   font-size: 25px;
   font-family: sans-serif;
   color: white;
 }
 
-.tasks {
+.menu-container {
   height: 80%;
   background-color: #ffff;
 }
 
-.user-container {
+.user-tile {
   display: flex;
   position: relative;
   background-color: rgb(207, 207, 207);
@@ -51,7 +51,7 @@
   width: 80%;
 }
 
-.user--info {
+.user-container {
   display: flex;
   align-items: center;
   height: 12%;
