@@ -1,14 +1,23 @@
-import Left from "./Components/Left";
-import Middle from "./Components/Middle";
-import Right from "./Components/Right";
-import "./Styles/App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./styles/App.css";
+import NavBar from "./components/NavBar";
+import HomeMiddle from "./components/HomeMiddle";
+import HomeRight from "./components/HomeRight";
+
 
 function App() {
   return (
-    <div className="main">
-      <Left className="left"></Left>
-      <Middle className="middle"></Middle>
-      <Right className="right"></Right>
+    <div className="home">
+      <Router>
+        <NavBar className="left"></NavBar>
+        <HomeMiddle className="middle"></HomeMiddle>
+        <HomeRight className="right"></HomeRight>
+
+        <Routes>
+          <Route path="/" />
+        </Routes>
+      </Router>
     </div>
   );
 }
