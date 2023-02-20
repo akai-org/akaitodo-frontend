@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/App.css";
-import "../styles/NavBar.css";
+import "../styles/App.scss";
+import "../styles/NavBar.scss";
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -37,25 +37,25 @@ function NavBar() {
               </Link>
             </li>
             <li className="menu-item">
-              <Link to="/" className="menu-link" onClick={closeMobileMenu}>
+              <Link to="/calendar" className="menu-link" onClick={closeMobileMenu}>
               <div className="menu-link-icon"><i className="ri-calendar-line"></i></div>
               <div className="menu-link-tag">Calendar</div>
               </Link>
             </li>
             <li className="menu-item">
-              <Link to="/" className="menu-link" onClick={closeMobileMenu}>
+              <Link to="/todolist" className="menu-link" onClick={closeMobileMenu}>
               <div className="menu-link-icon"><i className="ri-file-list-2-line"></i></div>
               <div className="menu-link-tag">Todo list</div>
               </Link>
             </li>
             <li className="menu-item">
-              <Link to="/" className="menu-link" onClick={closeMobileMenu}>
+              <Link to="/categories" className="menu-link" onClick={closeMobileMenu}>
               <div className="menu-link-icon"><i className="ri-bar-chart-horizontal-line"></i></div>
               <div className="menu-link-tag">Categories</div>
               </Link>
             </li>
             <li className="menu-item">
-              <Link to="/" className="menu-link" onClick={closeMobileMenu}>
+              <Link to="/notes" className="menu-link" onClick={closeMobileMenu}>
               <div className="menu-link-icon"><i className="ri-booklet-line"></i></div>
               <div className="menu-link-tag">Notes</div>
               </Link>

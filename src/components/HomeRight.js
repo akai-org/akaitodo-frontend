@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/App.css";
-import "../styles/HomeRight.css";
+import "../styles/App.scss";
+import "../styles/HomeRight.scss";
 
 function HomeRight() {
   return (

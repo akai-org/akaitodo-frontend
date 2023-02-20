@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/App.css";
-import "../styles/HomeMiddle.css";
+import "../styles/App.scss";
+import "../styles/HomeMiddle.scss";
 
 function HomeMiddle() {
   return (

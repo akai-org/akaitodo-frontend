@@ -1,8 +1,8 @@
 import React from "react";
 import HomeMiddle from "./HomeMiddle.js";
 import HomeRight from "./HomeRight.js";
-import "../styles/App.css";
-import "../styles/Home.css";
+import "../styles/App.scss";
+import "../styles/Home.scss";
 
 function Home() {
     return (
