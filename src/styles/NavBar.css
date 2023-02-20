@@ -1,4 +1,8 @@
 /* MAIN AND UP STYLE */
+.navbar {
+  display: flex;
+}
+
 .navbar-container {
   height: 100vh;
   width: 280px;

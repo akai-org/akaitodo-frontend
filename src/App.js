@@ -1,21 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./styles/App.css";
 import NavBar from "./components/NavBar";
-import HomeMiddle from "./components/HomeMiddle";
-import HomeRight from "./components/HomeRight";
-
+import Home from "./components/Home";
+import "./styles/App.css";
 
 function App() {
   return (
-    <div className="home">
+    <div className="main">
       <Router>
-        <NavBar className="left"></NavBar>
-        <HomeMiddle className="middle"></HomeMiddle>
-        <HomeRight className="right"></HomeRight>
-
+        <NavBar/>
         <Routes>
-          <Route path="/" />
+          <Route path="/" element={<Home></Home>}/>
         </Routes>
       </Router>
     </div>
