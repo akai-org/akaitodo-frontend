@@ -5,6 +5,10 @@
   display: flex;
 }
 
+.navbar > * {
+  transition: 0.5s;
+}
+
 .navbar-container {
   height: 100vh;
   width: 280px;
@@ -50,10 +54,37 @@
   color: $white;
 }
 
-/* SHORT MENU */
-.active {
+/* HIDE MENU */
+.hide {
+  transition: 0.5s;
+
+  &.navbar-container {
+    width: 80px;
+  }
+
+  &.upper-container {
+    gap: 0;
+    justify-content: space-around;
+  }
+
+  &.menu-icon {
+    margin: 0;
+  }
+
+  &.logo-app-name {
+    display: none;
+  }
+
+  &.logo-image {
+    margin: 0;
+  }
+
   &.menu-item {
-    background-color: red;
+    width: 64px;
+  }
+
+  &.menu-link-tag {
+    display: none;
   }
 }
 
@@ -145,6 +176,7 @@
 
 /* MAIN ICON \/ */
 .menu-icon {
+  display: flex;
   color: $white;
   font-size: 35px;
   margin-right: 10px;
@@ -154,7 +186,6 @@
 /* DOWN INFO STYLE */
 .user-tile {
   display: flex;
-  position: relative;
   background-color: rgb(207, 207, 207);
   margin-left: 20px;
   height: 55%;
