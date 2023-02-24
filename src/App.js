@@ -6,7 +6,7 @@ import "./styles/App.scss";
 
 function App() {
   return (
-    <div className="main">
+    <div className="main" themestyle="default" thememode="light">
       <Router>
         <NavBar/>
         <Routes>
