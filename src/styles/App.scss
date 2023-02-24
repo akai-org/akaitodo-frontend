@@ -1,0 +1,22 @@
+@use 'varsmodule' as *;
+
+* {
+    margin: 0;
+    font-family: 'Asap', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: $white;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}

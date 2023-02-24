@@ -1,14 +1,23 @@
-import Left from "./Components/Left";
-import Middle from "./Components/Middle";
-import Right from "./Components/Right";
-import "./Styles/App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import "./styles/App.scss";
 
 function App() {
   return (
     <div className="main">
-      <Left className="left"></Left>
-      <Middle className="middle"></Middle>
-      <Right className="right"></Right>
+      <Router>
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/home" element={<Home/>}/>
+          <Route path="/calendar" element={<Home/>}/>
+          <Route path="/todolist" element={<Home/>}/>
+          <Route path="/categories" element={<Home/>}/>
+          <Route path="/notes" element={<Home/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

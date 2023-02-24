@@ -1,13 +1,8 @@
-@import "vars.module.css";
-
-* {
-  box-sizing: border-box;
-}
+@use 'varsmodule' as *;
 
 .middle {
   background-color: #ffff;
   height: 100vh;
   flex-grow: 5;
   text-align: center;
-  border-left: #bfc0c0 solid 2px;
 }

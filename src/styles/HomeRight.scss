@@ -1,4 +1,4 @@
-@import "vars.module.css";
+@use 'varsmodule' as *;
 
 .right {
   background-color: #bfc0c0;
