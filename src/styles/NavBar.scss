@@ -1,34 +1,26 @@
-@use "varsmodule" as *;
+//@use "varsmodule" as *;
 
 // MAIN AND UP STYLE
-.navbar {
+
+.navbar-top {
   display: flex;
-}
-
-.navbar > * {
-  transition: 0.5s;
-}
-
-.navbar-container {
-  height: 100vh;
-  width: 280px;
-  border-right: 2px;
-  border-left: 0;
-  border-bottom: 0;
-  border-top: 0;
-  border-style: solid;
-  border-color: black;
+  flex-direction: row;
+  width: 100%;
+  height: 5vh;
+  background-color: var(--primary-color);
 }
 
 .upper-container {
+  width: 290px;
+  height: 6vh;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  height: 8%;
-  width: 100%;
-  background-color: hsl(0, 0%, 26%);
+  background-color: var(--third-color);
   border-bottom-right-radius: 10px;
+  transition: 0.5s;
+  font-weight: 600;
 }
 
 .logo-container {
@@ -54,15 +46,27 @@
   color: #fff;
 }
 
+.navbar-side {
+  width: 280px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 300px;
+  background-color: var(--primary-color);
+  transition: 0.5s;
+}
+
 // HIDE MENU 
 .hide {
   transition: 0.5s;
-
-  &.navbar-container {
+  &.navbar-side {
     width: 80px;
+    //background-color: var(--basebg-color);
+    //border-right: 3px solid var(--primary-color);
   }
 
   &.upper-container {
+    width: 90px;
     gap: 0;
     justify-content: space-around;
   }
@@ -90,8 +94,8 @@
 
 // MENU STYLE
 .menu-container {
-  height: 80%;
-  background-color: #fff;
+  height: 90%;
+  display: flex;
 }
 
 .menu-list {
@@ -113,7 +117,7 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: transparent;
 }
 
@@ -139,7 +143,7 @@
   margin-top: 25px;
   width: 230px;
   height: 60px;
-  background-color: hsl(0, 0%, 26%);
+  background-color: var(--third-color);
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -167,7 +171,7 @@
 .menu-link-tag {
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-left: 15px;
   font-size: 20px;
   font-weight: 500;
   text-transform: uppercase;

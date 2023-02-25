@@ -33,7 +33,7 @@
     
 }
 
-// SCSS variables mapping
+// SCSS variables mapping -> works only with 'use'
 $primary-color: var(--primary-color);
 $secondary-color: var(--secondary-color);
 $third-color: var(--third-color);
@@ -43,5 +43,3 @@ $basebg-color: var(--basebg-color);
 $contrastbg-color: var(--contrastbg-color);
 $darkgray-color: var(--darkgray-color);
 $lightgray-color: var(--lightgray-color);
-
-

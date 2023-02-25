@@ -8,7 +8,7 @@ function Home() {
     return (
         <div className="home">
             <HomeMiddle className="middle"></HomeMiddle>
-            <HomeRight className="right"></HomeRight>
+            <HomeRight className="right">r</HomeRight>
         </div>
     )
 }

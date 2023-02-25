@@ -4,7 +4,7 @@ import "../styles/HomeMiddle.scss";
 
 function HomeMiddle() {
   return (
-    <div className="middle"></div>
+    <div className="middle">middle div</div>
   );
 }
 
