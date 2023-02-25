@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import "./styles/App.scss";
 
 function App() {
   return (
-    <div className="main" themestyle="default" thememode="light">
+    <main className="main" themestyle="default" thememode="light">
       <Router>
         <NavBar/>
         <Routes>
@@ -18,7 +18,7 @@ function App() {
           <Route path="/notes" element={<Home/>}/>
         </Routes>
       </Router>
-    </div>
+    </main>
   );
 }
 
