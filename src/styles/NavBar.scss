@@ -13,7 +13,7 @@
 .upper-container {
   width: 290px;
   height: 6vh;
-  z-index: 10;
+  z-index: 6;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,6 +50,7 @@
   width: 280px;
   height: 95vh;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   flex-grow: 300px;
   background-color: var(--primary-color);
@@ -90,6 +91,22 @@
   &.menu-link-tag {
     display: none;
   }
+
+  &.user-container {
+    padding-left: 0.5rem;
+  }
+
+  &.user-info-container {
+    display: none;
+  }
+
+  &.logout-background {
+    display: none;
+  }
+
+  &.logout-background-snippet {
+    display: none;
+  }
 }
 
 // MENU STYLE
@@ -100,7 +117,7 @@
 
 .menu-list {
   list-style-type: none;
-  padding: 0;
+  padding: 10px 0 0 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -188,32 +205,67 @@
 }
 
 // DOWN INFO STYLE
-.user-tile {
-  display: flex;
-  background-color: rgb(207, 207, 207);
-  margin-left: 20px;
-  height: 55%;
-  width: 80%;
-}
-
 .user-container {
+  //background-color: beige;
   display: flex;
-  align-items: center;
-  height: 12%;
-  /*background-color: beige;*/
+  height: 60px;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.user-avatar {
-  background-color: gray;
-  aspect-ratio: 1/1;
+.user-logo {
+  display: flex;
+  z-index: 3;
   height: 100%;
+  background-color: var(--darkgray-color);
   border-radius: 50%;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .user-name {
-  align-self: flex-end;
-  background-color: gray;
-  height: 35%;
-  width: 90%;
+  font-size: 1.5rem;
+  padding-left: 0.35rem;
+  color: var(--basebg-color);
+}
+
+.user-logout {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  color: black;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.logout-background {
+  background-color: var(--lightgray-color);
+  display: block;
+  width: 180px;
+  height: 1.4rem;
+  position: absolute;
+  bottom: 0px;
+  right: 50px;
+  border-radius: 7px;
+}
+
+.logout-background-snippet {
+  background-color: var(--darkgray-color);
+  display: block;
+  height: 1.4rem;
+  width: 20px;
+  position: absolute;
+  bottom: 0px;
+  right: 42px;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
 }
 

@@ -64,10 +64,13 @@ function NavBar() {
           </ul>
         </div>
 
-        <div className={click ? 'user-container hide' : 'user-container'}>
-          <div className="user-tile">
-            <div className="user-avatar"></div>
-            <div className="user-name"></div>
+        <div className={click ? "user-container hide" : "user-container"}>
+          <div className="user-logo">AV</div>
+          <div className={click ? "logout-background hide" : "logout-background"}></div>
+          <div className={click ? "logout-background-snippet hide" : "logout-background-snippet"}></div>
+          <div className={click ? "user-info-container hide" : "user-info-container"}>
+            <div className="user-name">Username</div>
+            <div className="user-logout">Logout</div>
           </div>
         </div>
     </nav>
