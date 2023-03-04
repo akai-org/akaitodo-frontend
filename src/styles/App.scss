@@ -1,29 +1,29 @@
-@use 'varsmodule' as *;
+@use "varsmodule" as *;
 
 * {
-    margin: 0;
-    font-family: 'Asap', sans-serif;
+  margin: 0;
+  font-family: "Asap", sans-serif;
 }
 
 a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 a:visited {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 .main {
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .main-container {
-    * {
-        height: 95vh;
-    }
-    flex: 1;
+  * {
+    height: 95vh;
+  }
+  flex: 1;
 }

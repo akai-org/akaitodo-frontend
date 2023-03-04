@@ -28,7 +28,7 @@
 }
 
 .logo-image {
-  margin: 0 20px 0 20px; 
+  margin: 0 20px 0 20px;
   color: #fff;
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@
   transition: 0.5s;
 }
 
-// HIDE MENU 
+// HIDE MENU
 .hide {
   transition: 0.5s;
   &.navbar-side {
@@ -107,6 +107,10 @@
   &.logout-background-snippet {
     display: none;
   }
+
+  &.user-container::before {
+    width: 0%;
+  }
 }
 
 // MENU STYLE
@@ -144,8 +148,8 @@
   }
 
   .menu-link-icon {
-      font-size: 32px;
-      transition: 0.5s;
+    font-size: 32px;
+    transition: 0.5s;
   }
 
   .menu-link-tag {
@@ -195,7 +199,7 @@
   transition: 0.5s;
 }
 
-// MAIN ICON \/ 
+// MAIN ICON \/
 .menu-icon {
   display: flex;
   color: #fff;
@@ -206,12 +210,20 @@
 
 // DOWN INFO STYLE
 .user-container {
-  //background-color: beige;
   display: flex;
   height: 60px;
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 2rem;
+}
+
+.user-container::before {
+  position: absolute;
+  bottom: 80px;
+  left: 15px;
+  content: "";
+  width: 85%;
+  border-top: solid 1px #fff;
 }
 
 .user-logo {
@@ -269,3 +281,15 @@
   border-top-right-radius: 7px;
 }
 
+.logout-background-snippet {
+  background-color: darkgray;
+  display: block;
+  z-index: -2;
+  height: 1.4rem;
+  width: 20px;
+  position: absolute;
+  bottom: 0px;
+  right: 42px;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
