@@ -107,6 +107,10 @@
   &.logout-background-snippet {
     display: none;
   }
+
+  &.user-container::before {
+    width: 0%;
+  }
 }
 
 // MENU STYLE
@@ -206,12 +210,20 @@
 
 // DOWN INFO STYLE
 .user-container {
-  //background-color: beige;
   display: flex;
   height: 60px;
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 2rem;
+}
+
+.user-container::before {
+  position: absolute;
+  bottom: 80px;
+  left: 15px;
+  content: "";
+  width: 85%;
+  border-top: solid 1px #fff;
 }
 
 .user-logo {

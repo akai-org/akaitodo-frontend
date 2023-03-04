@@ -19,6 +19,11 @@ function NavBar() {
     } else {
       setClick(false);
     }
+    if (window.innerHeight <= 690) {
+      setClick(true);
+    } else {
+      setClick(false);
+    }
   };
 
   window.addEventListener("resize", mobileMenu);
@@ -89,28 +94,33 @@ function NavBar() {
             })}
           </ul>
         </div>
-
-        <div className={click ? "user-container hide" : "user-container"}>
-          <div className="user-logo">AV</div>
-          <div
-            className={click ? "logout-background hide" : "logout-background"}
-          ></div>
-          <div
-            className={
-              click
-                ? "logout-background-snippet hide"
-                : "logout-background-snippet"
-            }
-          ></div>
-          <div
-            className={
-              click ? "user-info-container hide" : "user-info-container"
-            }
-          >
-            <div className="user-name">Username</div>
-            <div className="user-logout">Logout</div>
+        {click ? (
+          <div className={click ? "user-container hide" : "user-container"}>
+            <div className="user-logo">AV</div>
           </div>
-        </div>
+        ) : (
+          <div className={click ? "user-container hide" : "user-container"}>
+            <div className="user-logo">AV</div>
+            <div
+              className={click ? "logout-background hide" : "logout-background"}
+            ></div>
+            <div
+              className={
+                click
+                  ? "logout-background-snippet hide"
+                  : "logout-background-snippet"
+              }
+            ></div>
+            <div
+              className={
+                click ? "user-info-container hide" : "user-info-container"
+              }
+            >
+              <div className="user-name">Username</div>
+              <div className="user-logout">Logout</div>
+            </div>
+          </div>
+        )}
       </nav>
     </>
   );
