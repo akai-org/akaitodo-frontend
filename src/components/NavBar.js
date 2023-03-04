@@ -29,11 +29,17 @@ function NavBar() {
 
   return (
     <>
-    <div className="navbar-top">
-      <div className={click ? 'upper-container hide' : 'upper-container'}>
-          <div className={click ? 'logo-container hide' : 'logo-container'}>
-            <Link to="/" className={click ? 'logo-image-link hide' : 'logo-image-link'}>
-            <div className={click ? 'logo-image hide' : 'logo-image'}> <i className="ri-checkbox-blank-circle-line"></i> </div>
+      <div className="navbar-top">
+        <div className={click ? "upper-container hide" : "upper-container"}>
+          <div className={click ? "logo-container hide" : "logo-container"}>
+            <Link
+              to="/"
+              className={click ? "logo-image-link hide" : "logo-image-link"}
+            >
+              <div className={click ? "logo-image hide" : "logo-image"}>
+                {" "}
+                <i className="ri-checkbox-blank-circle-line"></i>{" "}
+              </div>
             </Link>
             <Link to="/">
               <div className={click ? "logo-app-name hide" : "logo-app-name"}>
@@ -42,24 +48,44 @@ function NavBar() {
             </Link>
           </div>
 
-          <div className={click ? 'menu-icon hide' : 'menu-icon'} onClick={handleclick}>
-            <i className={click ? 'ri-menu-fill' : 'ri-close-fill'}></i>
+          <div
+            className={click ? "menu-icon hide" : "menu-icon"}
+            onClick={handleclick}
+          >
+            <i className={click ? "ri-menu-fill" : "ri-close-fill"}></i>
           </div>
         </div>
-    </div>
+      </div>
 
-    <nav className={click ? 'navbar-side hide' : 'navbar-side'}>
-        <div className={click ? 'menu-container hide' : 'menu-container'}>
-          <ul className={click ? 'menu-list hide' : 'menu-list'}>
+      <nav className={click ? "navbar-side hide" : "navbar-side"}>
+        <div className={click ? "menu-container hide" : "menu-container"}>
+          <ul className={click ? "menu-list hide" : "menu-list"}>
             {NavBarData.map((item, index) => {
               return (
-                <li key={index} className={click ? 'menu-item hide' : 'menu-item'}>
-                  <Link to={item.link} className={click ? 'menu-link hide' : 'menu-link'} onClick={closeMobileMenu}>
-                    <div className={click ? 'menu-link-icon hide' : 'menu-link-icon'}><i className={item.icon}></i></div>
-                    <div className={click ? 'menu-link-tag hide' : 'menu-link-tag'}>{item.name}</div>
+                <li
+                  key={index}
+                  className={click ? "menu-item hide" : "menu-item"}
+                >
+                  <Link
+                    to={item.link}
+                    className={click ? "menu-link hide" : "menu-link"}
+                    onClick={closeMobileMenu}
+                  >
+                    <div
+                      className={
+                        click ? "menu-link-icon hide" : "menu-link-icon"
+                      }
+                    >
+                      <i className={item.icon}></i>
+                    </div>
+                    <div
+                      className={click ? "menu-link-tag hide" : "menu-link-tag"}
+                    >
+                      {item.name}
+                    </div>
                   </Link>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
@@ -83,16 +109,9 @@ function NavBar() {
           >
             <div className="user-name">Username</div>
             <div className="user-logout">Logout</div>
-        <div className={click ? "user-container hide" : "user-container"}>
-          <div className="user-logo">AV</div>
-          <div className={click ? "logout-background hide" : "logout-background"}></div>
-          <div className={click ? "logout-background-snippet hide" : "logout-background-snippet"}></div>
-          <div className={click ? "user-info-container hide" : "user-info-container"}>
-            <div className="user-name">Username</div>
-            <div className="user-logout">Logout</div>
           </div>
         </div>
-    </nav>
+      </nav>
     </>
   );
 }
