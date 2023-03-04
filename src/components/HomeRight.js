@@ -4,7 +4,7 @@ import "../styles/HomeRight.scss";
 
 function HomeRight() {
   return (
-    <div className="right"></div>
+    <div className="right">right div</div>
   );
 }
 

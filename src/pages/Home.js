@@ -1,6 +1,6 @@
 import React from "react";
-import HomeMiddle from "./HomeMiddle.js";
-import HomeRight from "./HomeRight.js";
+import HomeMiddle from "../components/HomeMiddle";
+import HomeRight from "../components/HomeRight";
 import "../styles/App.scss";
 import "../styles/Home.scss";
 
@@ -8,7 +8,7 @@ function Home() {
     return (
         <div className="home">
             <HomeMiddle className="middle"></HomeMiddle>
-            <HomeRight className="right"></HomeRight>
+            <HomeRight className="right">r</HomeRight>
         </div>
     )
 }
