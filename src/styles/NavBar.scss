@@ -1,7 +1,6 @@
 //@use "varsmodule" as *;
 
 // MAIN AND UP STYLE
-
 .navbar-top {
   display: flex;
   flex-direction: row;
@@ -19,7 +18,7 @@
   justify-content: space-between;
   background-color: var(--third-color);
   border-bottom-right-radius: 10px;
-  transition: 0.5s;
+  //transition: 0.5s;
   font-weight: 600;
 }
 
@@ -52,14 +51,14 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  flex-grow: 300px;
   background-color: var(--primary-color);
-  transition: 0.5s;
+  //transition: 0.5s;
 }
 
-// HIDE MENU
-.hide {
-  transition: 0.5s;
+// SHORT MENU
+.short {
+  //transition: 0.5s;
+
   &.navbar-side {
     width: 80px;
     //background-color: var(--basebg-color);
@@ -69,7 +68,7 @@
   &.upper-container {
     width: 90px;
     gap: 0;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   &.menu-icon {
@@ -81,7 +80,7 @@
   }
 
   &.logo-image {
-    margin: 0;
+    display: none;
   }
 
   &.menu-item {
@@ -110,6 +109,35 @@
 
   &.user-container::before {
     width: 0%;
+  }
+}
+
+// HIDE MENU
+.hide {
+  //transition: 0.5s;
+
+  &.navbar-side {
+    position: fixed;
+    left: -280px;
+  }
+
+  &.upper-container {
+    width: 60px;
+    height: 5vh;
+    gap: 0;
+    justify-content: center;
+  }
+
+  &.menu-icon {
+    font-size: 30px;
+  }
+
+  &.logo-app-name {
+    display: none;
+  }
+
+  &.logo-image {
+    display: none;
   }
 }
 
@@ -215,6 +243,7 @@
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 2rem;
+  justify-content: flex-start;
 }
 
 .user-container::before {
@@ -260,12 +289,11 @@
 
 .logout-background {
   background-color: var(--lightgray-color);
-  display: block;
-  width: 180px;
+  width: 160px;
   height: 1.4rem;
   position: absolute;
-  bottom: 0px;
-  right: 50px;
+  bottom: 0;
+  left: 55px;
   border-radius: 7px;
   z-index: 1;
 }
@@ -274,10 +302,31 @@
   background-color: var(--darkgray-color);
   display: block;
   height: 1.4rem;
-  width: 20px;
+  width: 30px;
   position: absolute;
   bottom: 0px;
   right: 42px;
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
+}
+
+//OVERLAY -> IF MOBILE
+@media screen and (max-width: 768px) {
+  .navbar-side {
+    position: fixed;
+    top: 5vh;
+  }
+
+  .upper-container {
+    height: 6vh;
+    width: 240px;
+  }
+
+  .navbar-side {
+    width: 240px;
+  }
+
+  .menu-item {
+    width: 200px;
+  }
 }
