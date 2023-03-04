@@ -1,0 +1,35 @@
+.calendar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-widgets {
+  display: flex;
+  margin-top: 50px;
+  height: 50px;
+  width: 700px;
+}
+
+.calendar-date {
+  height: inherit;
+  display: inline-block;
+  font-size: 1rem;
+  text-align: center;
+  vertical-align: bottom;
+  background-color: var(--lightgray-color);
+  margin-right: 200px;
+}
+
+.calendar-specifiers {
+  height: inherit;
+  display: flex;
+  gap: 50px;
+}
+
+.calendar-block {
+  width: 700px;
+  height: 340px;
+  border: 2px solid var(--lightgray-color);
+  border-radius: 10px;
+}

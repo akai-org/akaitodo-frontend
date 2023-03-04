@@ -267,24 +267,12 @@
   bottom: 0px;
   right: 50px;
   border-radius: 7px;
+  z-index: 1;
 }
 
 .logout-background-snippet {
   background-color: var(--darkgray-color);
   display: block;
-  height: 1.4rem;
-  width: 20px;
-  position: absolute;
-  bottom: 0px;
-  right: 42px;
-  border-bottom-right-radius: 7px;
-  border-top-right-radius: 7px;
-}
-
-.logout-background-snippet {
-  background-color: darkgray;
-  display: block;
-  z-index: -2;
   height: 1.4rem;
   width: 20px;
   position: absolute;
