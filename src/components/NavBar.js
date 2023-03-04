@@ -5,24 +5,46 @@ import "../styles/App.scss";
 import "../styles/NavBar.scss";
 
 function NavBar() {
-  const [click, setClick] = useState(false);
+  // 1 - without menu (class 'hide'), 2 - short menu (class 'short'), 3 - full menu (without additional class)
+  const [click, setClick] = useState(3);
+  let switchIcon = "ri-close-fill";
 
-  const handleclick = () => setClick(!click);
+  const handleClick = () => {
+    if (click === 3 && window.innerWidth <= 768) setClick(1);
+    else if (click === 3 && window.innerWidth > 768) setClick(2);
+    else setClick(3);
+  };
 
-  const closeMobileMenu = () => {
-    if (window.innerWidth <= 900) setClick(true);
+  const closeMobile = () => {
+    if (window.innerWidth < 768) setClick(1);
+    else if (window.innerWidth < 1024) setClick(2);
   };
 
   const mobileMenu = () => {
-    if (window.innerWidth <= 1024) {
-      setClick(true);
+    if (window.innerWidth >= 1024) {
+      setClick(3);
+    } else if (window.innerWidth >= 768) {
+      setClick(2);
     } else {
-      setClick(false);
+      setClick(1);
     }
-    if (window.innerHeight <= 690) {
-      setClick(true);
-    } else {
-      setClick(false);
+  };
+
+  //Navbar modes
+  const switchClassNames = (clsname) => {
+    switch (click) {
+      case 1:
+        switchIcon = "ri-menu-fill";
+        return `${clsname} hide`;
+      case 2:
+        switchIcon = "ri-menu-fill";
+        return `${clsname} short`;
+      case 3:
+        switchIcon = "ri-close-fill";
+        return `${clsname}`;
+      default:
+        console.log("Fail switching class");
+        return `${clsname}`;
     }
   };
 
@@ -35,57 +57,39 @@ function NavBar() {
   return (
     <>
       <div className="navbar-top">
-        <div className={click ? "upper-container hide" : "upper-container"}>
-          <div className={click ? "logo-container hide" : "logo-container"}>
-            <Link
-              to="/"
-              className={click ? "logo-image-link hide" : "logo-image-link"}
-            >
-              <div className={click ? "logo-image hide" : "logo-image"}>
-                {" "}
-                <i className="ri-checkbox-blank-circle-line"></i>{" "}
+        <div className={switchClassNames("upper-container")}>
+          <div className={switchClassNames("logo-container")}>
+            <Link to="/" className={switchClassNames("logo-image-link")}>
+              <div className={switchClassNames("logo-image")}>
+                <i className="ri-checkbox-blank-circle-line"></i>
               </div>
             </Link>
             <Link to="/">
-              <div className={click ? "logo-app-name hide" : "logo-app-name"}>
-                DoDo
-              </div>
+              <div className={switchClassNames("logo-app-name")}>DoDo</div>
             </Link>
           </div>
 
-          <div
-            className={click ? "menu-icon hide" : "menu-icon"}
-            onClick={handleclick}
-          >
-            <i className={click ? "ri-menu-fill" : "ri-close-fill"}></i>
+          <div className={switchClassNames("menu-icon")} onClick={handleClick}>
+            <i className={switchIcon}></i>
           </div>
         </div>
       </div>
 
-      <nav className={click ? "navbar-side hide" : "navbar-side"}>
-        <div className={click ? "menu-container hide" : "menu-container"}>
-          <ul className={click ? "menu-list hide" : "menu-list"}>
+      <nav className={switchClassNames("navbar-side")}>
+        <div className={switchClassNames("menu-container")}>
+          <ul className={switchClassNames("menu-list")}>
             {NavBarData.map((item, index) => {
               return (
-                <li
-                  key={index}
-                  className={click ? "menu-item hide" : "menu-item"}
-                >
+                <li key={index} className={switchClassNames("menu-item")}>
                   <Link
                     to={item.link}
-                    className={click ? "menu-link hide" : "menu-link"}
-                    onClick={closeMobileMenu}
+                    className={switchClassNames("menu-link")}
+                    onClick={closeMobile}
                   >
-                    <div
-                      className={
-                        click ? "menu-link-icon hide" : "menu-link-icon"
-                      }
-                    >
+                    <div className={switchClassNames("menu-link-icon")}>
                       <i className={item.icon}></i>
                     </div>
-                    <div
-                      className={click ? "menu-link-tag hide" : "menu-link-tag"}
-                    >
+                    <div className={switchClassNames("menu-link-tag")}>
                       {item.name}
                     </div>
                   </Link>
@@ -94,33 +98,16 @@ function NavBar() {
             })}
           </ul>
         </div>
-        {click ? (
-          <div className={click ? "user-container hide" : "user-container"}>
-            <div className="user-logo">AV</div>
+
+        <div className={switchClassNames("user-container")}>
+          <div className="user-logo">AV</div>
+          <div className={switchClassNames("logout-background")}></div>
+          <div className={switchClassNames("logout-background-snippet")}></div>
+          <div className={switchClassNames("user-info-container")}>
+            <div className="user-name">Username</div>
+            <div className="user-logout">Logout</div>
           </div>
-        ) : (
-          <div className={click ? "user-container hide" : "user-container"}>
-            <div className="user-logo">AV</div>
-            <div
-              className={click ? "logout-background hide" : "logout-background"}
-            ></div>
-            <div
-              className={
-                click
-                  ? "logout-background-snippet hide"
-                  : "logout-background-snippet"
-              }
-            ></div>
-            <div
-              className={
-                click ? "user-info-container hide" : "user-info-container"
-              }
-            >
-              <div className="user-name">Username</div>
-              <div className="user-logout">Logout</div>
-            </div>
-          </div>
-        )}
+        </div>
       </nav>
     </>
   );
