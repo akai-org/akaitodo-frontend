@@ -330,3 +330,11 @@
     width: 200px;
   }
 }
+
+// Hiding user info if height too little
+
+@media screen and (max-height: 666px) {
+  .user-container {
+    display: none;
+  }
+}
