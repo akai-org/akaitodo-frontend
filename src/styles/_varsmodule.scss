@@ -1,5 +1,45 @@
 
-$primary-color: #2d3142;
-$secondary-color: #4f5d75;
-$additional-color: #bfc0c0;
-$white: #ffffff;
+:root {
+    // -= DEFAULT COLOR =-
+    [themestyle="default"] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        // -= LIGHT VERSION =-
+        &[thememode="light"] {
+            --primary-color: hsl(0, 0%, 26%);
+            --secondary-color: hsl(0, 0%, 26%);
+            --third-color: hsl(0, 0%, 15%);
+            --additional-color: hsl(230, 13%, 36%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(0, 0%, 100%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        // -= DARK VERSION =-
+        &[thememode="dark"] {
+            --primary-color: hsl(0, 0%, 15%);
+            --secondary-color: hsl(0, 0%, 26%);
+            --third-color: hsl(0, 0%, 26%);
+            --additional-color: hsl(229, 19%, 22%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(0, 0%, 13%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
+
+    // -= FONT SIZES =-
+    // todo
+    
+}
+
+// SCSS variables mapping -> works only with 'use'
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$third-color: var(--third-color);
+$additional-color: var(--additional-color);
+$additional-color-o: var(--additional-color-o);
+$basebg-color: var(--basebg-color);
+$contrastbg-color: var(--contrastbg-color);
+$darkgray-color: var(--darkgray-color);
+$lightgray-color: var(--lightgray-color);
