@@ -239,16 +239,16 @@
 // DOWN INFO STYLE
 .user-container {
   display: flex;
-  height: 60px;
+  height: 43px;
   position: relative;
   padding-left: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.3rem;
   justify-content: flex-start;
 }
 
 .user-container::before {
   position: absolute;
-  bottom: 80px;
+  bottom: 60px;
   left: 15px;
   content: "";
   width: 85%;
@@ -264,7 +264,7 @@
   aspect-ratio: 1/1;
   justify-content: center;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .user-info-container {
@@ -274,7 +274,7 @@
 }
 
 .user-name {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding-left: 0.35rem;
   color: var(--basebg-color);
 }
@@ -284,16 +284,17 @@
   font-size: 1rem;
   color: black;
   z-index: 1;
+  font-size: 0.9rem;
   text-transform: uppercase;
 }
 
 .logout-background {
   background-color: var(--lightgray-color);
-  width: 160px;
-  height: 1.4rem;
+  width: 173px;
+  height: 1.2rem;
   position: absolute;
   bottom: 0;
-  left: 55px;
+  left: 40px;
   border-radius: 7px;
   z-index: 1;
 }
@@ -301,13 +302,14 @@
 .logout-background-snippet {
   background-color: var(--darkgray-color);
   display: block;
-  height: 1.4rem;
+  height: 1.2rem;
   width: 30px;
   position: absolute;
   bottom: 0px;
-  right: 42px;
+  right: 58px;
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
+  z-index: 0;
 }
 
 //OVERLAY -> IF MOBILE
@@ -328,5 +330,13 @@
 
   .menu-item {
     width: 200px;
+  }
+}
+
+// Hiding user info if height too little
+
+@media screen and (max-height: 666px) {
+  .user-container {
+    display: none;
   }
 }
