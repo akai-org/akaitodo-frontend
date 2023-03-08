@@ -1,7 +1,9 @@
 //@use 'varsmodule' as *;
 
 .middle {
+  display: flex;
   background-color: var(--basebg-color);
   flex-grow: 5;
   text-align: center;
+  justify-content: center;
 }
