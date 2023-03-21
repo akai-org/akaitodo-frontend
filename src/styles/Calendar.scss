@@ -24,6 +24,18 @@
   display: flex;
   justify-content: flex-start;
   align-self: flex-end;
+  height: 45px;
+  position: relative;
+  top: 10px;
+  background-color: var(--lightgray-color);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.date {
+  align-self: center;
+  font-size: 1.3rem;
+  margin-left: 5px;
 }
 
 .calendar-block {
