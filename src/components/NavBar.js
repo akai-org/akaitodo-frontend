@@ -5,37 +5,41 @@ import "../styles/App.scss";
 import "../styles/NavBar.scss";
 
 function NavBar() {
-  // 1 - without menu (class 'hide'), 2 - short menu (class 'short'), 3 - full menu (without additional class)
+  // 0 - without menu (class 'hide'), 1 - mobile menu (class 'mobile'), 2 - short menu (class 'short'), 3 - full menu (without additional class)
   const [click, setClick] = useState(3);
   let switchIcon = "ri-close-fill";
 
   const handleClick = () => {
-    if (click === 3 && window.innerWidth <= 768) setClick(1);
-    else if (click === 3 && window.innerWidth > 768) setClick(2);
-    else setClick(3);
+    if (click === 0) setClick(1);
+    else if (click === 1) setClick(0);
+    else if (click === 3) setClick(2);
+    else if (click === 2) setClick(3);
   };
 
-  const closeMobile = () => {
-    if (window.innerWidth < 768) setClick(1);
+  const closeMenu = () => {
+    if (window.innerWidth < 768) setClick(0);
     else if (window.innerWidth < 1024) setClick(2);
   };
 
-  const mobileMenu = () => {
+  const menuState = () => {
     if (window.innerWidth >= 1024) {
       setClick(3);
     } else if (window.innerWidth >= 768) {
       setClick(2);
     } else {
-      setClick(1);
+      setClick(0);
     }
   };
 
   //Navbar modes
   const switchClassNames = (clsname) => {
     switch (click) {
-      case 1:
+      case 0:
         switchIcon = "ri-menu-fill";
         return `${clsname} hide`;
+      case 1:
+        switchIcon = "ri-close-fill";
+        return `${clsname} mobile`;
       case 2:
         switchIcon = "ri-menu-fill";
         return `${clsname} short`;
@@ -43,15 +47,15 @@ function NavBar() {
         switchIcon = "ri-close-fill";
         return `${clsname}`;
       default:
-        console.log("Fail switching class");
+        console.log("Fail switching nav class");
         return `${clsname}`;
     }
   };
 
-  window.addEventListener("resize", mobileMenu);
+  window.addEventListener("resize", menuState);
 
   useEffect(() => {
-    mobileMenu();
+    menuState();
   }, []);
 
   return (
@@ -84,7 +88,7 @@ function NavBar() {
                   <Link
                     to={item.link}
                     className={switchClassNames("menu-link")}
-                    onClick={closeMobile}
+                    onClick={closeMenu}
                   >
                     <div className={switchClassNames("menu-link-icon")}>
                       <i className={item.icon}></i>

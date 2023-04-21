@@ -20,6 +20,7 @@
   border-bottom-right-radius: 10px;
   //transition: 0.5s;
   font-weight: 600;
+  z-index: 51;
 }
 
 .logo-container {
@@ -53,7 +54,7 @@
   flex-direction: column;
   background-color: var(--primary-color);
   //transition: 0.5s;
-  z-index: 2;
+  z-index: 50;
 }
 
 // SHORT MENU
@@ -110,6 +111,42 @@
 
   &.user-container::before {
     width: 0%;
+  }
+}
+
+// MOBILE MENU
+.mobile {
+  transition: top 500ms ease-out;
+  &.navbar-side {
+    width: 100%;
+    opacity: 0.9;
+    //backdrop-filter: blur(1.5px);
+  }
+
+  &.upper-container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  &.menu-list {
+    margin: 20px;
+    align-items: center;
+  }
+
+  &.menu-item {
+    width: 90%;
+    border-radius: 7px;
+  }
+
+  &.user-container {
+    justify-content: center;
+  }
+
+  &.user-logo {
+  }
+
+  &.logout-background {
+    position: absolute;
   }
 }
 
@@ -315,18 +352,16 @@
 
 //OVERLAY -> IF MOBILE
 @media screen and (max-width: 768px) {
-  .navbar-side {
-    position: fixed;
-    top: 5vh;
-  }
-
   .upper-container {
     height: 6vh;
     width: 240px;
   }
 
   .navbar-side {
+    position: fixed;
+    top: 5vh;
     width: 240px;
+    //width: 100%;
   }
 
   .menu-item {
@@ -335,7 +370,6 @@
 }
 
 // Hiding user info if height too little
-
 @media screen and (max-height: 666px) {
   .user-container {
     display: none;
