@@ -6,7 +6,8 @@ import "../styles/NavBar.scss";
 
 function NavBar() {
   // 0 - without menu (class 'hide'), 1 - mobile menu (class 'mobile'), 2 - short menu (class 'short'), 3 - full menu (without additional class)
-  const [click, setClick] = useState(3);
+  const [click, setClick] = useState();
+  const [resizeWidth, setResizeWidth] = useState(window.innerWidth);
   let switchIcon = "ri-close-fill";
 
   const handleClick = () => {
@@ -47,12 +48,17 @@ function NavBar() {
         switchIcon = "ri-close-fill";
         return `${clsname}`;
       default:
-        console.log("Fail switching nav class");
-        return `${clsname}`;
+        menuState();
     }
   };
 
-  window.addEventListener("resize", menuState);
+  window.addEventListener("resize", () => {
+    // Prevent height changes effect closing menu
+    if (window.innerWidth !== resizeWidth) {
+      setResizeWidth(window.innerWidth);
+      menuState();
+    }
+  });
 
   useEffect(() => {
     menuState();
@@ -60,7 +66,7 @@ function NavBar() {
 
   return (
     <>
-      <div className="navbar-top">
+      <div className={switchClassNames("navbar-top")}>
         <div className={switchClassNames("upper-container")}>
           <div className={switchClassNames("logo-container")}>
             <Link to="/" className={switchClassNames("logo-image-link")}>
@@ -104,13 +110,15 @@ function NavBar() {
         </div>
 
         <div className={switchClassNames("user-container")}>
-          <div className="user-logo">AV</div>
+          <div className={switchClassNames("user-info-container")}>
+            <div className="user-logo">AV</div>
+            <div className={switchClassNames("user-text-container")}>
+              <div className={switchClassNames("user-name")}>Username</div>
+              <div className={switchClassNames("user-logout")}>Logout</div>
+            </div>
+          </div>
           <div className={switchClassNames("logout-background")}></div>
           <div className={switchClassNames("logout-background-snippet")}></div>
-          <div className={switchClassNames("user-info-container")}>
-            <div className="user-name">Username</div>
-            <div className="user-logout">Logout</div>
-          </div>
         </div>
       </nav>
     </>
