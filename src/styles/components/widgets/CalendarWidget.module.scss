@@ -1,4 +1,4 @@
-.calendar-wrapper {
+.wrapper {
   margin: 40px 0 40px 0;
   display: flex;
   flex-direction: row;
@@ -9,7 +9,7 @@
 
 //TODO - SET SIZE OF UPPER COMPONENTS TO BEHAVE MORE NATURAL TOGETHER
 
-.calendar-specifiers {
+.specifiers {
   flex-grow: 1;
   display: flex;
   flex-direction: row;
@@ -19,7 +19,7 @@
   height: 40px;
 }
 
-.calendar-date {
+.date {
   flex-grow: 1;
   display: flex;
   justify-content: flex-start;
@@ -32,13 +32,13 @@
   border-top-left-radius: 10px;
 }
 
-.date {
+.dateSpan {
   align-self: center;
   font-size: 1.3rem;
   margin-left: 5px;
 }
 
-.calendar-block {
+.block {
   flex-grow: 2;
   width: 100%;
   height: 350px;
@@ -48,12 +48,31 @@
   z-index: 3;
 }
 
+.widgetBox {
+  width: 100px;
+  background-color: var(--lightgray-color);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 30px;
+  font-size: 1rem;
+  margin-left: 15px;
+  cursor: pointer;
+  position: relative;
+  top: 10px;
+  z-index: 1;
+}
+
+.clicked {
+  font-size: 1.3rem;
+  height: 35px;
+}
+
 @media screen and (max-width: 768px) {
-  .calendar-wrapper {
+  .wrapper {
     width: 400px;
   }
 
-  .widget-box {
+  .widgetBox {
     width: 60px;
   }
 }
