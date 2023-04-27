@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import Settings from "./pages/Settings";
+import Notes from "./pages/Notes";
 import "./styles/App.scss";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
             <Route path="/calendar" element={<Home />} />
             <Route path="/todolist" element={<Home />} />
             <Route path="/categories" element={<Home />} />
-            <Route path="/notes" element={<Home />} />
+            <Route path="/notes" element={<Notes />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
