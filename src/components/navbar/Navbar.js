@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { NavBarData } from "./NavBarItems";
-import "../styles/App.scss";
-import "../styles/NavBar.scss";
+import { NavbarItems } from "./NavbarItems";
+import "../../styles/App.scss";
+import styles from "../../styles/components/navbar/Navbar.module.scss";
 
-function NavBar() {
+function Navbar() {
   // 0 - without menu (class 'hide'), 1 - mobile menu (class 'mobile'), 2 - short menu (class 'short'), 3 - full menu (without additional class)
   const [click, setClick] = useState();
   const [resizeWidth, setResizeWidth] = useState(window.innerWidth);
@@ -37,13 +37,13 @@ function NavBar() {
     switch (click) {
       case 0:
         switchIcon = "ri-menu-fill";
-        return `${clsname} hide`;
+        return `${clsname} ${styles.hide}`;
       case 1:
         switchIcon = "ri-close-fill";
-        return `${clsname} mobile`;
+        return `${clsname} ${styles.mobile}`;
       case 2:
         switchIcon = "ri-menu-fill";
-        return `${clsname} short`;
+        return `${clsname} ${styles.short}`;
       case 3:
         switchIcon = "ri-close-fill";
         return `${clsname}`;
@@ -66,40 +66,43 @@ function NavBar() {
 
   return (
     <>
-      <div className={switchClassNames("navbar-top")}>
-        <div className={switchClassNames("upper-container")}>
-          <div className={switchClassNames("logo-container")}>
-            <Link to="/" className={switchClassNames("logo-image-link")}>
-              <div className={switchClassNames("logo-image")}>
+      <div className={switchClassNames(styles.top)}>
+        <div className={switchClassNames(styles.upperContainer)}>
+          <div className={switchClassNames(styles.logoContainer)}>
+            <Link to="/" className={switchClassNames(styles.logoImageLink)}>
+              <div className={switchClassNames(styles.logoImage)}>
                 <i className="ri-checkbox-blank-circle-line"></i>
               </div>
             </Link>
             <Link to="/">
-              <div className={switchClassNames("logo-app-name")}>DoDo</div>
+              <div className={switchClassNames(styles.logoAppName)}>DoDo</div>
             </Link>
           </div>
 
-          <div className={switchClassNames("menu-icon")} onClick={handleClick}>
+          <div
+            className={switchClassNames(styles.menuIcon)}
+            onClick={handleClick}
+          >
             <i className={switchIcon}></i>
           </div>
         </div>
       </div>
 
-      <nav className={switchClassNames("navbar-side")}>
-        <div className={switchClassNames("menu-container")}>
-          <ul className={switchClassNames("menu-list")}>
-            {NavBarData.map((item, index) => {
+      <nav className={switchClassNames(styles.side)}>
+        <div className={switchClassNames(styles.menuContainer)}>
+          <ul className={switchClassNames(styles.menuList)}>
+            {NavbarItems.map((item, index) => {
               return (
-                <li key={index} className={switchClassNames("menu-item")}>
+                <li key={index} className={switchClassNames(styles.menuItem)}>
                   <Link
                     to={item.link}
-                    className={switchClassNames("menu-link")}
+                    className={switchClassNames(styles.menuLink)}
                     onClick={closeMenu}
                   >
-                    <div className={switchClassNames("menu-link-icon")}>
+                    <div className={switchClassNames(styles.menuLinkIcon)}>
                       <i className={item.icon}></i>
                     </div>
-                    <div className={switchClassNames("menu-link-tag")}>
+                    <div className={switchClassNames(styles.menuLinkTag)}>
                       {item.name}
                     </div>
                   </Link>
@@ -109,20 +112,22 @@ function NavBar() {
           </ul>
         </div>
 
-        <div className={switchClassNames("user-container")}>
-          <div className={switchClassNames("user-info-container")}>
-            <div className="user-logo">AV</div>
-            <div className={switchClassNames("user-text-container")}>
-              <div className={switchClassNames("user-name")}>Username</div>
-              <div className={switchClassNames("user-logout")}>Logout</div>
+        <div className={switchClassNames(styles.userContainer)}>
+          <div className={switchClassNames(styles.userInfoContainer)}>
+            <div className={styles.userLogo}>AV</div>
+            <div className={switchClassNames(styles.userTextContainer)}>
+              <div className={switchClassNames(styles.userName)}>Username</div>
+              <div className={switchClassNames(styles.userLogout)}>Logout</div>
             </div>
           </div>
-          <div className={switchClassNames("logout-background")}></div>
-          <div className={switchClassNames("logout-background-snippet")}></div>
+          <div className={switchClassNames(styles.logoutBackground)}></div>
+          <div
+            className={switchClassNames(styles.logoutBackgroundSnippet)}
+          ></div>
         </div>
       </nav>
     </>
   );
 }
 
-export default NavBar;
+export default Navbar;

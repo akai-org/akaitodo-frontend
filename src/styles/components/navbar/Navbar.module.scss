@@ -1,7 +1,7 @@
 //@use "varsmodule" as *;
 
 // MAIN AND UP STYLE
-.navbar-top {
+.top {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -9,7 +9,7 @@
   background-color: var(--primary-color);
 }
 
-.upper-container {
+.upperContainer {
   width: 290px;
   height: 6vh;
   z-index: 6;
@@ -23,11 +23,11 @@
   z-index: 51;
 }
 
-.logo-container {
+.logoContainer {
   display: flex;
 }
 
-.logo-image {
+.logoImage {
   margin: 0 20px 0 20px;
   color: #fff;
   display: flex;
@@ -35,18 +35,18 @@
   font-size: 30px;
 }
 
-.logo-image-link {
+.logoImageLink {
   display: flex;
   align-items: center;
 }
 
-.logo-app-name {
+.logoAppName {
   font-size: 25px;
   font-family: sans-serif;
   color: #fff;
 }
 
-.navbar-side {
+.side {
   width: 280px;
   height: 95vh;
   display: flex;
@@ -61,106 +61,106 @@
 .short {
   //transition: 0.5s;
 
-  &.navbar-side {
+  &.side {
     width: 80px;
     //background-color: var(--basebg-color);
     //border-right: 3px solid var(--primary-color);
   }
 
-  &.upper-container {
+  &.upperContainer {
     width: 90px;
     gap: 0;
     justify-content: center;
   }
 
-  &.menu-icon {
+  &.menuIcon {
     margin: 0;
   }
 
-  &.logo-app-name {
+  &.logoAppName {
     display: none;
   }
 
-  &.logo-image {
+  &.logoImage {
     display: none;
   }
 
-  &.menu-item {
+  &.menuItem {
     width: 64px;
   }
 
-  &.menu-link-tag,
-  &.user-container::before,
-  &.user-text-container,
-  &.logout-background,
-  &.logout-background-snippet {
+  &.menuLinkTag,
+  &.userContainer::before,
+  &.userTextContainer,
+  &.logoutBackground,
+  &.logoutBackgroundSnippet {
     display: none;
   }
 
-  &.user-container {
+  &.userContainer {
     margin: 10px;
   }
 }
 
 // MOBILE MENU
 .mobile {
-  &.navbar-side {
+  &.side {
     width: 100%;
     opacity: 0.95;
     //backdrop-filter: blur(1.5px);
   }
 
-  &.upper-container {
+  &.upperContainer {
     width: 100%;
     border-radius: 0;
   }
 
-  &.menu-list {
+  &.menuList {
     margin: 20px;
     align-items: center;
   }
 
-  &.menu-item {
+  &.menuItem {
     width: 90%;
     border-radius: 7px;
   }
 
-  &.user-container::before {
+  &.userContainer::before {
     width: 100%;
     left: 0;
     bottom: 120px;
   }
 
-  &.user-container {
+  &.userContainer {
     align-items: center;
   }
 
-  &.user-info-container {
+  &.userInfoContainer {
     margin-bottom: 20px;
   }
 
-  &.user-logout {
+  &.userLogout {
     padding-top: 0.2rem;
   }
 
-  &.logout-background,
-  &.logout-background-snippet {
+  &.logoutBackground,
+  &.logoutBackgroundSnippet {
     display: none;
   }
 }
 
 // HIDE MENU
 .hide {
-  &.navbar-top {
+  &.top {
     justify-content: flex-end;
   }
 
-  &.navbar-side {
+  &.side {
     position: fixed;
     left: -280px;
   }
 
-  &.upper-container {
+  &.upperContainer {
     width: 80px;
     height: 5vh;
     gap: 0;
@@ -168,26 +168,26 @@
     border-radius: 7px 0 0 7px;
   }
 
-  &.menu-icon {
+  &.menuIcon {
     font-size: 30px;
   }
 
-  &.logo-app-name {
+  &.logoAppName {
     display: none;
   }
 
-  &.logo-image {
+  &.logoImage {
     display: none;
   }
 }
 
 // MENU STYLE
-.menu-container {
+.menuContainer {
   height: 90%;
   display: flex;
 }
 
-.menu-list {
+.menuList {
   list-style-type: none;
   padding: 10px 0 0 0;
   width: 100%;
@@ -197,11 +197,11 @@
   align-items: baseline;
 }
 
-.menu-link:visited {
+.menuLink:visited {
   color: #fff;
 }
 
-.menu-link {
+.menuLink {
   width: 100%;
   height: 100%;
   display: flex;
@@ -210,23 +210,23 @@
   background-color: transparent;
 }
 
-.menu-link:hover {
-  .menu-item {
+.menuLink:hover {
+  .menuItem {
     background-color: hsl(0, 0%, 26%);
   }
 
-  .menu-link-icon {
+  .menuLinkIcon {
     font-size: 32px;
     transition: 0.5s;
   }
 
-  .menu-link-tag {
+  .menuLinkTag {
     font-size: 21px;
     transition: 0.5s;
   }
 }
 
-.menu-item {
+.menuItem {
   display: flex;
   align-items: center;
   margin-top: 25px;
@@ -237,7 +237,7 @@
   border-top-right-radius: 10px;
 }
 
-.menu-link-icon {
+.menuLinkIcon {
   display: flex;
   align-items: center;
   margin-left: 10px;
@@ -245,7 +245,7 @@
   transition: 0.5s;
 }
 
-.menu-link-icon::after {
+.menuLinkIcon::after {
   content: "";
   display: inline-block;
   height: 32px;
@@ -257,7 +257,7 @@
   border-right: 2px solid #fff;
 }
 
-.menu-link-tag {
+.menuLinkTag {
   display: flex;
   align-items: center;
   margin-left: 15px;
@@ -268,7 +268,7 @@
 }
 
 // MAIN ICON \/
-.menu-icon {
+.menuIcon {
   display: flex;
   color: #fff;
   font-size: 35px;
@@ -277,7 +277,7 @@
 }
 
 // DOWN INFO STYLE
-.user-container {
+.userContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -285,7 +285,7 @@
   margin: 15px;
 }
 
-.user-container::before {
+.userContainer::before {
   position: absolute;
   bottom: 90px;
   left: 20px;
@@ -294,20 +294,20 @@
   border-top: solid 1px #fff;
 }
 
-.user-info-container {
+.userInfoContainer {
   display: flex;
   flex-direction: row;
   z-index: 3;
 }
 
-.user-text-container {
+.userTextContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 3;
 }
 
-.user-logo {
+.userLogo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,19 +318,19 @@
   font-size: 30px;
 }
 
-.user-name {
+.userName {
   font-size: 1.3rem;
   padding-left: 0.35rem;
   color: var(--basebg-color);
 }
 
-.user-logout {
+.userLogout {
   padding-left: 0.35rem;
   padding-top: 0.5rem;
   color: black;
 }
 
-.logout-background {
+.logoutBackground {
   position: absolute;
   bottom: 16px;
   left: 32px;
@@ -341,7 +341,7 @@
   background-color: var(--lightgray-color);
 }
 
-.logout-background-snippet {
+.logoutBackgroundSnippet {
   position: absolute;
   bottom: 16px;
   left: 32px;
@@ -354,26 +354,26 @@
 
 //OVERLAY -> IF MOBILE
 @media screen and (max-width: 768px) {
-  .upper-container {
+  .upperContainer {
     height: 6vh;
     width: 240px;
   }
 
-  .navbar-side {
+  .side {
     position: fixed;
     top: 5vh;
     width: 240px;
     //width: 100%;
   }
 
-  .menu-item {
+  .menuItem {
     width: 200px;
   }
 }
 
 // Hiding user info if height too little
 @media screen and (max-height: 666px) {
-  .user-container {
+  .userContainer {
     display: none;
   }
 }

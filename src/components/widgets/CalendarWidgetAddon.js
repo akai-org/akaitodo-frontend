@@ -1,8 +1,9 @@
 import { useState } from "react";
-import "../styles/Widget.scss";
+import styles from "../../styles/components/widgets/CalendarWidget.module.scss";
 
-function Widget(props) {
+function CalendarWidgetAddon(props) {
   //TODO - MOVE THAT FUNCTIONALITY TO CALLENDAR TO MAKE JUST ONE ACTIVE ONE TIME
+  //NOT WORKING AFTER MODULES, TO FIX IN THE FUTURE
   const [widgetClass, setWidgetClass] = useState("widget-box");
 
   function onWidgetClick() {
@@ -11,10 +12,10 @@ function Widget(props) {
   }
 
   return (
-    <div className={widgetClass} onClick={onWidgetClick}>
+    <div className={styles.widgetBox} onClick={onWidgetClick}>
       <span>{props.children}</span>
     </div>
   );
 }
 
-export default Widget;
+export default CalendarWidgetAddon;

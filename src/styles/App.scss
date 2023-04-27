@@ -1,4 +1,4 @@
-@use "varsmodule" as *;
+@use "vars" as *;
 
 * {
   margin: 0;
@@ -15,12 +15,12 @@ a:visited {
   color: #fff;
 }
 
-.main {
+.Main {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
 }
 
-.main-container {
+.App_container {
   flex: 1;
 }
