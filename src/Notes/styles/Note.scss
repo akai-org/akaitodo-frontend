@@ -1,0 +1,50 @@
+.wrapper {
+  height: 220px;
+  width: 250px;
+}
+
+.header {
+  height: 45px;
+  background-color: rgba($color: #ef4746, $alpha: 1);
+}
+
+.body {
+  height: 175px;
+  background-color: rgba($color: #ef4746, $alpha: 0.9);
+  text-align: left;
+}
+
+.note-text {
+  color: white;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 8px;
+}
+
+.flex-parent {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icon {
+  flex-shrink: 0;
+  flex-grow: 2.5;
+  background-color: black;
+}
+
+.name {
+  color: white;
+  font-size: 1.4rem;
+  text-align: left;
+  align-self: end;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  flex-grow: 4;
+}
+
+.setting {
+  flex-grow: 1;
+  background-color: black;
+}
