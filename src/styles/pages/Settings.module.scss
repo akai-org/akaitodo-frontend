@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    font-family: "Asap", sans-serif;
+}
+
+.container {
+    margin: 5%;
+}
+
+h3 {
+    font-size: 2.25rem;
+    line-height: 1.5;
+}
+
+hr {
+    width: 70%;
+    margin: auto;
+}
+
+.line, .themeDiv, .modeDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.line {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1em;
+}
+
+.themeDiv, .themeButton {
+    margin: 0 2em;
+}
+
+.themeButton {
+    background-color: #c84e4e;
+    border: #000 2px solid;
+    padding: 0 5em;
+    border-radius: 0.8em;
+    cursor: pointer;
+}
+
+// Notatka do siebie później:
+// zrobić żeby przy mniejszym ekranie buttony nie były tuż pod sobą
