@@ -40,5 +40,64 @@ hr {
     cursor: pointer;
 }
 
-// Notatka do siebie później:
-// zrobić żeby przy mniejszym ekranie buttony nie były tuż pod sobą
+
+// Piece of stolen code, I will work with this thing later
+// or I will delete this and try writing something else
+
+// .modeSwitch {
+//     display: inline-block;
+//     height: 2rem;
+//     position: relative;
+//     width: 4rem;
+// }
+
+.modeSwitch input {
+    display: none;
+}
+
+// .modeSlider {
+//     background-color: #ccc;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     position: absolute;
+//     transition: 0.4s;
+// }
+
+// .modeSlider:before {
+//     background-color: #fff;
+//     bottom: 4px;
+//     content: "";
+//     height: 1.5rem;
+//     left: 4px;
+//     position: absolute;
+//     transition: .4s;
+//     width: 1.5rem;
+// }
+
+// input:checked + .modeSlider {
+//     background-color: #c84e4e;
+// }
+
+// input:checked + .modeSlider:before {
+//     transform: translateX(1.5rem);
+// }
+
+
+.cContainer {
+    position: fixed;
+    right: 0;
+    top: 20%;
+    padding: 0.5em 0;
+    background-color: #d9d9d9;
+    width: 5.5rem; // Thinking of percentage vs rems here, I know I shoud use %, but rem is so handy for me
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.cContainer button {
+    margin: 0.5em 1em;
+    padding: 1.25em 2em;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
