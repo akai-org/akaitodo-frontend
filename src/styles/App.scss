@@ -1,26 +1,26 @@
-@use "vars" as *;
+@use 'vars' as *;
 
 * {
-  margin: 0;
-  font-family: "Asap", sans-serif;
+    margin: 0;
+    font-family: 'Asap', sans-serif;
 }
 
 a {
-  text-decoration: none;
-  color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 
 a:visited {
-  text-decoration: none;
-  color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 
 .Main {
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .App_container {
-  flex: 1;
+    flex: 1;
 }
