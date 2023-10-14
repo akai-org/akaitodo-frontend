@@ -1,16 +1,14 @@
-import React, { useContext } from 'react';
-import AuthContext from '../contexts/auth-context';
+import React from 'react';
+// import Login component
 
-const Guard = (component) => {
-    const protoAPI = useContext(AuthContext);
-
-    return protoAPI.isAuthenticated ? component : AuthError;
+export const Guard = (component) => {
+    return false ? component : AuthError;
 };
 
 const AuthError = () => {
     return (
+        // render login component
         <>
-            // render login component
             <h1>You failed...</h1>
         </>
     );
