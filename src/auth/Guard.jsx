@@ -7,6 +7,7 @@ export const Guard = (component) => {
 
 const AuthError = () => {
     return (
+        // render login component
         <>
             <h1>You failed...</h1>
         </>
