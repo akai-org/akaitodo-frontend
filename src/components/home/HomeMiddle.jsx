@@ -4,6 +4,7 @@ import '../../styles/App.scss';
 import CalendarWidget from '../widgets/CalendarWidget';
 import styles from '../../styles/components/home/HomeMiddle.module.scss';
 
+// to remove
 const HomeMiddle = () => {
     /*
   return (

@@ -2,16 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/App.scss';
 
-import Navbar from './components/navbar/Navbar';
+import Navbar from './layout/Navbar/Navbar';
+import ScrollableContainer from './layout/ScrollableContainer/ScrollableContainer';
 import Home from './pages/Home';
 import Settings from './pages/Settings';
 
 const App = () => {
     return (
         <main className="Main" themeStyle="default" themeMode="light">
+            {/* login logic here */}
             <Router>
                 <Navbar />
-                <div className="App_container">
+                <ScrollableContainer>
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/home" element={<Home />} />
@@ -21,7 +23,7 @@ const App = () => {
                         <Route path="/notes" element={<Home />} />
                         <Route path="/settings" element={<Settings />} />
                     </Routes>
-                </div>
+                </ScrollableContainer>
             </Router>
         </main>
     );

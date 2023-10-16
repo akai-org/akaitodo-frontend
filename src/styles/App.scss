@@ -18,9 +18,13 @@ a:visited {
 .Main {
     height: 100vh;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
-.App_container {
-    flex: 1;
+@media screen and (max-width: 768px) {
+    .Main {
+        flex-direction: column;
+    }
 }
