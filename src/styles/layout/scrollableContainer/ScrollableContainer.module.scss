@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex: 1;
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+.wrapper {
+    padding: 10px;
+    height: max-content;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from '../../styles/components/widgets/CalendarWidget.module.scss';
+import styles from '#src/styles/components/widgets/CalendarWidget.module.scss';
 
 const CalendarWidgetAddon = ({ children }) => {
     //TODO - MOVE THAT FUNCTIONALITY TO CALLENDAR TO MAKE JUST ONE ACTIVE ONE TIME

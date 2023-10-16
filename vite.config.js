@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'node:url';
 
 export default defineConfig(() => {
     return {
@@ -7,6 +8,7 @@ export default defineConfig(() => {
             outDir: 'build',
         },
         plugins: [
+            react(),
             // {
             //     name: 'treat-js-files-as-jsx',
             //     async transform(code, id) {
@@ -22,7 +24,9 @@ export default defineConfig(() => {
             //         });
             //     },
             // },
-            react(),
         ],
+        resolve: {
+            alias: { '#src': fileURLToPath(new URL('./src', import.meta.url)) },
+        },
     };
 });

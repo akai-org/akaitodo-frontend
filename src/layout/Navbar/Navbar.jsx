@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { NavbarItems } from './NavbarItems';
 
-import '../../styles/App.scss';
-import styles from '../../styles/components/navbar/Navbar.module.scss';
+import '#src/styles/App.scss';
+import styles from '#src/styles/layout/navbar/Navbar.module.scss';
 
 const Navbar = () => {
     // 0 - without menu (class 'hide'), 1 - mobile menu (class 'mobile'), 2 - short menu (class 'short'), 3 - full menu (without additional class)

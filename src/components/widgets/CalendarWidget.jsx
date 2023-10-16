@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CalendarWidgetAddon from './CalendarWidgetAddon';
-import styles from '../../styles/components/widgets/CalendarWidget.module.scss';
+import styles from '#src/styles/components/widgets/CalendarWidget.module.scss';
 
 const CalendarWidget = () => {
     return (
