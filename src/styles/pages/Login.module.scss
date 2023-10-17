@@ -5,15 +5,18 @@
     background-color: #fff;
     width: 100%;
     height: 100%;
+    z-index: -3;
 }
 
 .loginContainer {
+    position: relative;
     display: flex;
     background-color: #424242;
     color: #fff;
     width: 50%;
     height: 55%;
     border-radius: 1em;
+    z-index: -2;
 
     .leftSide {
         width: 56%;
@@ -120,5 +123,16 @@
             background-color: #3D8B9C;
             transition: 0.25s;
         }
+    }
+
+    .bottomBlock {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 25%;
+        background-color: #272727;
+        border: none;
+        border-radius: 1em;
+        z-index: -1;
     }
 }

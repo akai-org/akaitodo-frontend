@@ -32,7 +32,7 @@ const Login = () => {
                     <p className={styles.leftSideLastSentence}>We hope you will enjoy the app.</p>
                 </div>
 
-                <button className={styles.middleBar} disabled></button>
+                <button className={styles.middleBar}></button>
 
                 <div className={styles.rightSide}>
                     <button className={styles.googleButton}>
@@ -55,7 +55,7 @@ const Login = () => {
                     <button className={styles.loginButton}>Login</button>
                 </div>
 
-                {/* <button className={styles.bottomBlock} disabled></button> */}
+                <div className={styles.bottomBlock}></div>
             </div>
         </div>
     );
