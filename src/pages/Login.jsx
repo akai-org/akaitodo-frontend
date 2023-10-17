@@ -36,7 +36,7 @@ const Login = () => {
 
                 <div className={styles.rightSide}>
                     <button className={styles.googleButton}>
-                        <img src="../../public/favicon.ico" alt="" /> 
+                        <img src="../../public/images/Google__G__Logo.png" alt="" /> 
                         Continue with&nbsp;<span className={styles.googleAccountBold}>Google Account</span>
                     </button>
                     <p>or</p>
