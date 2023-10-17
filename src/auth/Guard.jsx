@@ -2,7 +2,7 @@ import React from 'react';
 // import Login component
 
 export const Guard = (component) => {
-    return false ? component : AuthError;
+    return true ? component : AuthError;
 };
 
 const AuthError = () => {
