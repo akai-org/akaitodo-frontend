@@ -14,13 +14,49 @@ const Login = () => {
         setForm((prevState) => ({ ...prevState, login }));
     };
 
+    const handlePasswordChange = (event) => {
+        const password = event.target.value;
+        setForm((prevState) => ({ ...prevState, password }));
+    };
+
     return (
-        <div>
-            <input
-                type="text"
-                value={form.login}
-                onChange={handleLoginChange}
-            />
+        <div className={styles.container}>
+            <div className={styles.loginContainer}>
+                <div className={styles.leftSide}>
+                    <div className={styles.topWelcome}>
+                        <h1>Welcome!</h1>
+                        <img src="../../public/favicon.ico" alt="DoDo Logo" />
+                    </div>
+                    <p className={styles.leftSideFirstSentence}>This is <span style={{ color: "#4DAEC3" }}>DoDo</span></p>
+                    <p>Your new bird friend in organizing things and time.</p>
+                    <p className={styles.leftSideLastSentence}>We hope you will enjoy the app.</p>
+                </div>
+
+                <button className={styles.middleBar} disabled></button>
+
+                <div className={styles.rightSide}>
+                    <button className={styles.googleButton}>
+                        <img src="../../public/favicon.ico" alt="" /> 
+                        Continue with&nbsp;<span className={styles.googleAccountBold}>Google Account</span>
+                    </button>
+                    <p>or</p>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        value={form.login}
+                        onChange={handleLoginChange}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={form.password}
+                        onChange={handlePasswordChange}
+                    />
+                    <button className={styles.loginButton}>Login</button>
+                </div>
+
+                {/* <button className={styles.bottomBlock} disabled></button> */}
+            </div>
         </div>
     );
 };
