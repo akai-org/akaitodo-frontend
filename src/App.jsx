@@ -11,6 +11,7 @@ import './styles/App.scss';
 import Layout from './layout/Layout';
 import Home from './pages/Home';
 import Settings from './pages/Settings';
+import Login from './pages/Login'
 
 import store from './store';
 
