@@ -1,87 +1,109 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import { NavbarItems } from './NavbarItems';
 
 import '#src/styles/App.scss';
 import styles from '#src/styles/layout/navbar/Navbar.module.scss';
 
+const FULL_MENU_BREAKPOINT = 1024;
+const SHORT_MENU_BREAKPOINT = 768;
+
+const COLLAPSE_ICON = 'ri-close-fill';
+const EXPAND_ICON = 'ri-menu-fill';
+
+// Description of mode:
+// 0 - without menu (class 'hide'), 1 - mobile menu (class 'mobile'), 2 - short menu (class 'short'), 3 - full menu (without additional class)
+const translateMenuObject = (modeNumber) => {
+    switch (modeNumber) {
+        case 0:
+            return { class: styles.hide, number: 0, icon: EXPAND_ICON };
+        case 1:
+            return { class: styles.mobile, number: 1, icon: COLLAPSE_ICON };
+        case 2:
+            return { class: styles.short, number: 2, icon: EXPAND_ICON };
+        case 3:
+            return { class: '', number: 3, icon: COLLAPSE_ICON };
+    }
+};
+
+const initializeMenu = () => {
+    if (window.innerWidth >= FULL_MENU_BREAKPOINT)
+        return translateMenuObject(3);
+    else if (window.innerWidth >= SHORT_MENU_BREAKPOINT)
+        return translateMenuObject(2);
+    else return translateMenuObject(0);
+};
+
 const Navbar = () => {
-    // 0 - without menu (class 'hide'), 1 - mobile menu (class 'mobile'), 2 - short menu (class 'short'), 3 - full menu (without additional class)
-    const [click, setClick] = useState();
-    const [resizeWidth, setResizeWidth] = useState(window.innerWidth);
-    let switchIcon = 'ri-close-fill';
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [mode, setMode] = useState(initializeMenu());
+    const location = useLocation();
 
-    const handleClick = () => {
-        if (click === 0) setClick(1);
-        else if (click === 1) setClick(0);
-        else if (click === 3) setClick(2);
-        else if (click === 2) setClick(3);
+    const fitModeClass = () => {
+        if (windowWidth >= FULL_MENU_BREAKPOINT)
+            setMode(translateMenuObject(3));
+        else if (windowWidth >= SHORT_MENU_BREAKPOINT)
+            setMode(translateMenuObject(2));
+        else setMode(translateMenuObject(0));
     };
 
-    const closeMenu = () => {
-        if (window.innerWidth < 768) setClick(0);
-        else if (window.innerWidth < 1024) setClick(2);
-    };
-
-    const menuState = () => {
-        if (window.innerWidth >= 1024) {
-            setClick(3);
-        } else if (window.innerWidth >= 768) {
-            setClick(2);
-        } else {
-            setClick(0);
-        }
-    };
-
-    //Navbar modes
-    const switchClassNames = (clsname) => {
-        switch (click) {
+    const handleMenuModeClick = () => {
+        switch (mode.number) {
             case 0:
-                switchIcon = 'ri-menu-fill';
-                return `${clsname} ${styles.hide}`;
+                setMode(translateMenuObject(1));
+                break;
             case 1:
-                switchIcon = 'ri-close-fill';
-                return `${clsname} ${styles.mobile}`;
+                setMode(translateMenuObject(0));
+                break;
             case 2:
-                switchIcon = 'ri-menu-fill';
-                return `${clsname} ${styles.short}`;
+                setMode(translateMenuObject(3));
+                break;
             case 3:
-                switchIcon = 'ri-close-fill';
-                return `${clsname}`;
-            default:
-                menuState();
+                setMode(translateMenuObject(2));
+                break;
         }
     };
 
-    window.addEventListener('resize', () => {
-        // Prevent height changes effect closing menu
-        if (window.innerWidth !== resizeWidth) {
-            setResizeWidth(window.innerWidth);
-            menuState();
-        }
-    });
+    const handleMenuClose = () => {
+        if (mode.number === 1) setMode(translateMenuObject(0));
+    };
+
+    useLayoutEffect(() => {
+        fitModeClass();
+    }, [windowWidth]);
 
     useEffect(() => {
-        menuState();
+        const handleResize = () => {
+            if (window.innerWidth !== windowWidth)
+                setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     return (
         <>
-            <div className={switchClassNames(styles.top)}>
-                <div className={switchClassNames(styles.upperContainer)}>
-                    <div className={switchClassNames(styles.logoContainer)}>
+            <div className={`${styles.top} ${mode.class}`}>
+                <div className={`${styles.upperContainer} ${mode.class}`}>
+                    <div className={`${styles.logoContainer} ${mode.class}`}>
                         <Link
-                            to="/"
-                            className={switchClassNames(styles.logoImageLink)}
+                            to="/home"
+                            className={`${styles.logoImageLink} ${mode.class}`}
                         >
-                            <div className={switchClassNames(styles.logoImage)}>
+                            <div
+                                className={`${styles.logoImage} ${mode.class}`}
+                            >
                                 <i className="ri-checkbox-blank-circle-line"></i>
                             </div>
                         </Link>
-                        <Link to="/">
+                        <Link to="/home">
                             <div
-                                className={switchClassNames(styles.logoAppName)}
+                                className={`${styles.logoAppName} ${mode.class}`}
                             >
                                 DoDo
                             </div>
@@ -89,80 +111,91 @@ const Navbar = () => {
                     </div>
 
                     <div
-                        className={switchClassNames(styles.menuIcon)}
-                        onClick={handleClick}
+                        className={`${styles.menuIcon} ${mode.class}`}
+                        onClick={handleMenuModeClick}
                     >
-                        <i className={switchIcon}></i>
+                        <i className={mode.icon}></i>
                     </div>
                 </div>
             </div>
 
-            <nav className={switchClassNames(styles.side)}>
-                <div className={switchClassNames(styles.menuContainer)}>
-                    <ul className={switchClassNames(styles.menuList)}>
+            <nav className={`${styles.side} ${mode.class}`}>
+                <div className={`${styles.menuContainer} ${mode.class}`}>
+                    <ul className={`${styles.menuList} ${mode.class}`}>
                         {NavbarItems.map((item, index) => {
+                            const isActive =
+                                location.pathname.split('/')[1] ===
+                                item.link.split('/')[1];
+
+                            const activeStyle = {
+                                style: {
+                                    backgroundColor: 'var(--darkgray-color)',
+                                    color: 'var(--contrastbg-color)',
+                                },
+                            };
+
                             return (
-                                <li
+                                <div
                                     key={index}
-                                    className={switchClassNames(
-                                        styles.menuItem,
-                                    )}
+                                    className={`${styles.menuListWrapper} ${mode.class}`}
                                 >
-                                    <Link
-                                        to={item.link}
-                                        className={switchClassNames(
-                                            styles.menuLink,
-                                        )}
-                                        onClick={closeMenu}
+                                    <li
+                                        key={index}
+                                        className={`${styles.menuItem} ${mode.class}`}
                                     >
-                                        <div
-                                            className={switchClassNames(
-                                                styles.menuLinkIcon,
-                                            )}
+                                        <Link
+                                            to={item.link}
+                                            className={`${styles.menuLink} ${mode.class}`}
+                                            onClick={handleMenuClose}
                                         >
-                                            <i className={item.icon}></i>
-                                        </div>
+                                            <div
+                                                className={`${styles.menuLinkIcon} ${mode.class}`}
+                                                {...(isActive && activeStyle)}
+                                            >
+                                                <i className={item.icon}></i>
+                                            </div>
+                                            <div
+                                                className={`${styles.menuLinkTag} ${mode.class}`}
+                                            >
+                                                {item.name}
+                                            </div>
+                                        </Link>
+                                    </li>
+                                    {isActive && (
                                         <div
-                                            className={switchClassNames(
-                                                styles.menuLinkTag,
-                                            )}
-                                        >
-                                            {item.name}
-                                        </div>
-                                    </Link>
-                                </li>
+                                            className={`${styles.menuItemActive} ${mode.class}`}
+                                        ></div>
+                                    )}
+                                </div>
                             );
                         })}
                     </ul>
                 </div>
 
-                <div className={switchClassNames(styles.userContainer)}>
-                    <div className={switchClassNames(styles.userInfoContainer)}>
+                {/* TODO NAV NEXT PART */}
+                {/* <div className={`${styles.userContainer} ${mode.class}`}>
+                    <div className={`${styles.userInfoContainer} ${mode.class}`}>
                         <div className={styles.userLogo}>AV</div>
                         <div
-                            className={switchClassNames(
-                                styles.userTextContainer,
-                            )}
+                            className={`${styles.userTextContainer} ${mode.class}`}
                         >
-                            <div className={switchClassNames(styles.userName)}>
+                            <div className={`${styles.userName} ${mode.class}`}>
                                 Username
                             </div>
                             <div
-                                className={switchClassNames(styles.userLogout)}
+                                className={`${styles.userLogout} ${mode.class}`}
                             >
                                 Logout
                             </div>
                         </div>
                     </div>
                     <div
-                        className={switchClassNames(styles.logoutBackground)}
+                        className={`${styles.logoutBackground} ${mode.class}`}
                     ></div>
                     <div
-                        className={switchClassNames(
-                            styles.logoutBackgroundSnippet,
-                        )}
+                        className={`${styles.logoutBackgroundSnippet} ${mode.class}`}
                     ></div>
-                </div>
+                </div> */}
             </nav>
         </>
     );

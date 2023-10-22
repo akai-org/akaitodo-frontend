@@ -16,14 +16,14 @@ a:visited {
 }
 
 .Main {
-    height: 100vh;
     display: flex;
+    height: 100vh;
     flex-direction: row;
     flex-wrap: wrap;
     overflow: hidden;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .Main {
         flex-direction: column;
     }

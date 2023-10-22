@@ -1,26 +1,26 @@
-//@use "varsmodule" as *;
-
 // MAIN AND UP STYLE
 .top {
     display: flex;
-    flex-direction: row;
     width: 100%;
     height: 5vh;
+    min-height: 50px;
+    flex-direction: row;
     background-color: var(--primary-color);
 }
 
 .upperContainer {
-    width: 290px;
-    height: 6vh;
-    z-index: 6;
     display: flex;
+    width: 250px;
+    height: 6vh;
+    min-height: 60px;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--third-color);
+    font-weight: 500;
     border-bottom-right-radius: 10px;
-    font-weight: 600;
-    z-index: 51;
-    // transition: 0.5s;
+    background-color: var(--third-color);
+    z-index: 5;
+
+    transition: 0.2s;
 }
 
 .logoContainer {
@@ -28,10 +28,10 @@
 }
 
 .logoImage {
-    margin: 0 20px 0 20px;
-    color: #fff;
     display: flex;
     align-items: center;
+    margin: 0 20px 0 20px;
+    color: #fff;
     font-size: 30px;
 }
 
@@ -41,36 +41,33 @@
 }
 
 .logoAppName {
-    font-size: 25px;
-    font-family: sans-serif;
     color: #fff;
+    font-size: 25px;
 }
 
 .side {
-    width: 280px;
-    height: 95vh;
     display: flex;
+    width: 240px;
+    height: 95vh;
     justify-content: space-between;
     flex-direction: column;
     background-color: var(--primary-color);
-    z-index: 50;
-    // transition: 0.5s;
+
+    transition: 0.2s;
 }
 
 // SHORT MENU
 .short {
-    // transition: 0.5s;
+    transition: 0.2s;
 
     &.side {
         width: 80px;
-        //background-color: var(--basebg-color);
-        //border-right: 3px solid var(--primary-color);
     }
 
     &.upperContainer {
         width: 90px;
-        gap: 0;
         justify-content: center;
+        gap: 0;
     }
 
     &.menuIcon {
@@ -89,6 +86,7 @@
         width: 64px;
     }
 
+    &.menuItemActive,
     &.menuLinkTag,
     &.userContainer::before,
     &.userTextContainer,
@@ -104,10 +102,12 @@
 
 // MOBILE MENU
 .mobile {
+    transition: none;
+
     &.side {
         width: 100%;
-        opacity: 0.95;
-        // backdrop-filter: blur(1.5px);
+        position: fixed;
+        top: 50px;
     }
 
     &.upperContainer {
@@ -116,13 +116,21 @@
     }
 
     &.menuList {
-        margin: 20px;
         align-items: center;
+        margin: 20px;
+    }
+
+    &.menuListWrapper {
+        justify-content: center;
     }
 
     &.menuItem {
         width: 90%;
         border-radius: 7px;
+    }
+
+    &.menuItemActive {
+        display: none;
     }
 
     &.userContainer::before {
@@ -151,6 +159,8 @@
 
 // HIDE MENU
 .hide {
+    transition: none;
+
     &.top {
         justify-content: flex-end;
     }
@@ -163,9 +173,14 @@
     &.upperContainer {
         width: 80px;
         height: 5vh;
-        gap: 0;
+        min-height: 50px;
         justify-content: center;
+        gap: 0;
         border-radius: 7px 0 0 7px;
+    }
+
+    &.menuItemActive {
+        display: none;
     }
 
     &.menuIcon {
@@ -183,18 +198,56 @@
 
 // MENU STYLE
 .menuContainer {
-    height: 90%;
     display: flex;
+    height: 90%;
 }
 
 .menuList {
-    list-style-type: none;
-    padding: 10px 0 0 0;
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
     flex-direction: column;
     align-items: baseline;
+    padding: 10px 0 0 0;
+    list-style-type: none;
+}
+
+.menuListWrapper {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menuItem {
+    display: flex;
+    width: 210px;
+    height: 60px;
+    align-items: center;
+    margin-top: 25px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: var(--third-color);
+
+    transition: 0.2s;
+}
+
+.menuItemActive {
+    height: 35px;
+    margin-top: 25px;
+    margin-left: 10px;
+    border-right: 4px solid var(--lightgray-color);
+    border-radius: 10px;
+}
+
+// MAIN SWITCH MODE ICON
+.menuIcon {
+    display: flex;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
 }
 
 .menuLink:visited {
@@ -202,12 +255,15 @@
 }
 
 .menuLink {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
     background-color: transparent;
+
+    transition: 0.2s;
 }
 
 .menuLink:hover {
@@ -216,68 +272,48 @@
     }
 
     .menuLinkIcon {
-        font-size: 32px;
-        transition: 0.5s;
+        font-size: 31px;
+        transition: 0.2s;
     }
 
     .menuLinkTag {
         font-size: 21px;
-        transition: 0.5s;
+        transition: 0.2s;
     }
-}
-
-.menuItem {
-    // transition: 0.5s;
-    display: flex;
-    align-items: center;
-    margin-top: 25px;
-    width: 230px;
-    height: 60px;
-    background-color: var(--third-color);
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .menuLinkIcon {
     display: flex;
+    width: 38px;
+    height: 45px;
     align-items: center;
-    margin-left: 10px;
+    padding-left: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     font-size: 30px;
-    transition: 0.5s;
 }
 
 .menuLinkIcon::after {
-    content: '';
     display: inline-block;
     height: 32px;
-    vertical-align: bottom;
     width: 100%;
-    margin-left: 6px;
+    margin-left: 12px;
+    vertical-align: bottom;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-right: 2px solid #fff;
+    content: '';
 }
 
 .menuLinkTag {
     display: flex;
     align-items: center;
     margin-left: 15px;
+    text-wrap: nowrap;
     font-size: 20px;
-    font-weight: 500;
-    text-transform: uppercase;
-    transition: 0.5s;
 }
 
-// MAIN ICON \/
-.menuIcon {
-    display: flex;
-    color: #fff;
-    font-size: 35px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-// DOWN INFO STYLE
+// DOWN USER INFO
 .userContainer {
     display: flex;
     flex-direction: column;
@@ -287,12 +323,12 @@
 }
 
 .userContainer::before {
-    position: absolute;
-    bottom: 90px;
-    left: 20px;
+    width: 190px;
+    position: relative;
+    bottom: 15px;
+    align-self: center;
+    border-top: solid 1px var(--basebg-color);
     content: '';
-    width: 240px;
-    border-top: solid 1px #fff;
 }
 
 .userInfoContainer {
@@ -305,23 +341,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 3;
 }
 
 .userLogo {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--darkgray-color);
-    border-radius: 50%;
     width: 60px;
     height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--darkgray-color);
     font-size: 30px;
 }
 
 .userName {
-    font-size: 1.3rem;
     padding-left: 0.35rem;
+    font-size: 1.3rem;
     color: var(--basebg-color);
 }
 
@@ -332,23 +367,22 @@
 }
 
 .logoutBackground {
+    width: 170px;
+    height: 25px;
     position: absolute;
     bottom: 16px;
     left: 32px;
-    z-index: 2;
-    width: 200px;
-    height: 25px;
     border-radius: 7px;
     background-color: var(--lightgray-color);
+    z-index: 2;
 }
 
 .logoutBackgroundSnippet {
+    width: 180px;
+    height: 25px;
     position: absolute;
     bottom: 16px;
     left: 32px;
-    z-index: 1;
-    width: 210px;
-    height: 25px;
     border-radius: 7px;
     background-color: var(--darkgray-color);
 }

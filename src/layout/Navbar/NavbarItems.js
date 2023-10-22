@@ -1,7 +1,7 @@
 export const NavbarItems = [
     {
         name: 'Home',
-        link: '/',
+        link: '/home',
         icon: 'ri-home-line',
     },
     {
@@ -10,7 +10,7 @@ export const NavbarItems = [
         icon: 'ri-calendar-line',
     },
     {
-        name: 'Todo list',
+        name: 'ToDo List',
         link: '/todolist',
         icon: 'ri-file-list-2-line',
     },
