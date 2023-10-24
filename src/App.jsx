@@ -8,10 +8,10 @@ import {
 } from 'react-router-dom';
 import './styles/App.scss';
 
-import Navbar from './layout/Navbar/Navbar';
-import ScrollableContainer from './layout/ScrollableContainer/ScrollableContainer';
+import Layout from './layout/Layout';
 import Home from './pages/Home';
 import Settings from './pages/Settings';
+
 import store from './store';
 
 const App = () => {
@@ -19,22 +19,19 @@ const App = () => {
         <main className="Main" themeStyle="default" themeMode="light">
             <Provider store={store}>
                 <Router>
-                    <Navbar />
-                    <ScrollableContainer>
-                        <Routes>
-                            <Route
-                                path="/"
-                                element={<Navigate to="/home" replace={true} />}
-                            />
-                            <Route path="/home" element={<Home />} />
-                            <Route path="/calendar" element={<Home />} />
-                            <Route path="/todolist" element={<Home />} />
-                            <Route path="/categories" element={<Home />} />
-                            <Route path="/notes" element={<Home />} />
-                            <Route path="/settings" element={<Settings />} />
-                            <Route path="*" element={<div>Not found</div>} />
-                        </Routes>
-                    </ScrollableContainer>
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={<Navigate to="/home" replace={true} />}
+                        />
+                        <Route path="/home" element={Layout(Home)} />
+                        <Route path="/calendar" element={Layout(Home)} />
+                        <Route path="/todolist" element={Layout(Home)} />
+                        <Route path="/categories" element={Layout(Home)} />
+                        <Route path="/notes" element={Layout(Home)} />
+                        <Route path="/settings" element={Layout(Settings)} />
+                        <Route path="*" element={<div>Not found</div>} />
+                    </Routes>
                 </Router>
             </Provider>
         </main>
