@@ -1,4 +1,7 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { authSelector } from '../store/slices/Auth';
+import LocalStorage from '../classes/LocalStorage';
 // import Login component
 
 export const Guard = (component) => {

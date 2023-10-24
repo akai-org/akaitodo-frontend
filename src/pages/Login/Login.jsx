@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import styles from '../../styles/pages/Login.module.scss';
+import LocalStorage from '../../classes/LocalStorage';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { authSelector } from '../../store/slices/Auth';
+import { authActions } from '../../store/slices/Auth';
+import { useNavigate } from 'react-router-dom';
 
 const initialFormState = {
     login: '',
@@ -7,6 +13,9 @@ const initialFormState = {
 };
 
 const Login = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const [form, setForm] = useState(initialFormState);
 
     const handleLoginChange = (event) => {
@@ -17,6 +26,11 @@ const Login = () => {
     const handlePasswordChange = (event) => {
         const password = event.target.value;
         setForm((prevState) => ({ ...prevState, password }));
+    };
+
+    const loginHandler = () => {
+        dispatch(authActions.login());
+        navigate('/');
     };
 
     return (
@@ -62,7 +76,12 @@ const Login = () => {
                         value={form.password}
                         onChange={handlePasswordChange}
                     />
-                    <button className={styles.loginButton}>Login</button>
+                    <button
+                        className={styles.loginButton}
+                        onClick={loginHandler}
+                    >
+                        Login
+                    </button>
                 </div>
 
                 <div className={styles.bottomBlock}></div>
