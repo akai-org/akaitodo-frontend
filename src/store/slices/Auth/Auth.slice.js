@@ -4,12 +4,7 @@ import buildExtraReducers from './Auth.extraReducers';
 
 const initialState = {
     isAuthenticated: false,
-    user: {
-        id: 0,
-        username: null,
-        password: null,
-        email: null,
-    },
+    user: null,
 };
 
 // reducers for methods
