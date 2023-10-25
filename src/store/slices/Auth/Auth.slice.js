@@ -1,6 +1,6 @@
-import { createReducer, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import * as authThunks from './Auth.thunks';
-// import buildExtraReducers from './Auth.extraReducers';
+import buildExtraReducers from './Auth.extraReducers';
 
 const initialState = {
     isAuthenticated: false,
@@ -13,7 +13,7 @@ const slice = createSlice({
     name: 'auth',
     initialState,
     reducers: {},
-    // extraReducers: buildExtraReducers,
+    extraReducers: buildExtraReducers,
 });
 
 export const authReducer = slice.reducer;

@@ -5,8 +5,9 @@ import ScrollableContainer from './Scrollablecontainer';
 const Layout = (Component) => (
     <>
         <Navbar />
-        <ScrollableContainer />
-        {Component}
+        <ScrollableContainer>
+            <Component />
+        </ScrollableContainer>
     </>
 );
 
