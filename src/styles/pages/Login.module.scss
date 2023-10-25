@@ -91,38 +91,42 @@
             font-weight: 600;
             margin: 1rem 0.5rem;
         }
-
-        input {
-            background-color: #fff;
-            border: none;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            font-size: 1.125em;
-            font-family: inherit;
-            border-radius: 1em;
-            height: 1em;
+        
+        form {
+            input {
+                background-color: #fff;
+                border: none;
+                padding: 1rem;
+                margin: 0.5rem 0;
+                font-size: 1.125em;
+                font-family: inherit;
+                border-radius: 1em;
+                width: 90%; //temporary
+                height: 1em;
+            }
+    
+            ::placeholder {
+                color: #424242;
+            }
+    
+            .loginButton {
+                width: 50%;
+                margin-top: 1rem;
+                background-color: #4DAEC3;
+                color: #fff;
+                font-size: 1.25em;
+                border: none;
+                padding: 0.5rem;
+                border-radius: 0.7em;
+                cursor: pointer;
+            }
+    
+            .loginButton:hover {
+                background-color: #3D8B9C;
+                transition: 0.25s;
+            }
         }
 
-        ::placeholder {
-            color: #424242;
-        }
-
-        .loginButton {
-            width: 50%;
-            margin-top: 1rem;
-            background-color: #4DAEC3;
-            color: #fff;
-            font-size: 1.25em;
-            border: none;
-            padding: 0.5rem;
-            border-radius: 0.7em;
-            cursor: pointer;
-        }
-
-        .loginButton:hover {
-            background-color: #3D8B9C;
-            transition: 0.25s;
-        }
     }
 
     .bottomBlock {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/pages/Login.module.scss';
 
 const initialFormState = {
@@ -8,6 +8,8 @@ const initialFormState = {
 
 const Login = () => {
     const [form, setForm] = useState(initialFormState);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
 
     const handleLoginChange = (event) => {
         const login = event.target.value;
@@ -19,13 +21,41 @@ const Login = () => {
         setForm((prevState) => ({ ...prevState, password }));
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setFormErrors(validation(form));
+        setIsSubmit(true);
+    }
+
+    useEffect(() => {
+        console.log(formErrors);
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+            console.log(form); // when everything is fine
+        }
+    },[formErrors]);
+
+    const validation = (form) => {
+        const errors = {};
+        const emailRegex = /^[\w-\.]{1,30}@([\w-]+\.)+[\w-]{2,4}$/g;
+        if (!form.login) {
+            errors.login = "Login is required";
+        } else if (!emailRegex.test(form.login)) {
+            errors.login = "This login is not a valid e-mail format";
+        }
+        if (!form.password) {
+            errors.password = "Password is required";
+        }
+
+        return errors;
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.loginContainer}>
                 <div className={styles.leftSide}>
                     <div className={styles.topWelcome}>
                         <h1>Welcome!</h1>
-                        <img src="../../public/favicon.ico" alt="DoDo Logo" />
+                        <img src="/favicon.ico" alt="DoDo Logo" />
                     </div>
                     <p className={styles.leftSideFirstSentence}>This is <span style={{ color: "#4DAEC3" }}>DoDo</span></p>
                     <p>Your new bird friend in organizing things and time.</p>
@@ -36,23 +66,25 @@ const Login = () => {
 
                 <div className={styles.rightSide}>
                     <button className={styles.googleButton}>
-                        <img src="../../public/images/Google__G__Logo.png" alt="" /> 
+                        <img src="/images/Google__G__Logo.png" alt="" /> 
                         Continue with&nbsp;<span className={styles.googleAccountBold}>Google Account</span>
                     </button>
                     <p>or</p>
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        value={form.login}
-                        onChange={handleLoginChange}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={form.password}
-                        onChange={handlePasswordChange}
-                    />
-                    <button className={styles.loginButton}>Login</button>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            value={form.login}
+                            onChange={handleLoginChange}
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            value={form.password}
+                            onChange={handlePasswordChange}
+                        />
+                        <button type="submit" className={styles.loginButton}>Login</button>
+                    </form>
                 </div>
 
                 <div className={styles.bottomBlock}></div>
