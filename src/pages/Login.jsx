@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/pages/Login.module.scss';
+import styles from '#src/styles/pages/Login.module.scss';
 
 const initialFormState = {
     login: '',
@@ -25,29 +25,29 @@ const Login = () => {
         event.preventDefault();
         setFormErrors(validation(form));
         setIsSubmit(true);
-    }
+    };
 
     useEffect(() => {
         console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(form); // when everything is fine
+            console.log(form);
         }
-    },[formErrors]);
+    }, [formErrors]);
 
     const validation = (form) => {
         const errors = {};
         const emailRegex = /^[\w-\.]{1,30}@([\w-]+\.)+[\w-]{2,4}$/g;
         if (!form.login) {
-            errors.login = "Login is required";
+            errors.login = 'Login is required';
         } else if (!emailRegex.test(form.login)) {
-            errors.login = "This login is not a valid e-mail format";
+            errors.login = 'This login is not a valid e-mail format';
         }
         if (!form.password) {
-            errors.password = "Password is required";
+            errors.password = 'Password is required';
         }
 
         return errors;
-    }
+    };
 
     return (
         <div className={styles.container}>
@@ -57,17 +57,24 @@ const Login = () => {
                         <h1>Welcome!</h1>
                         <img src="/favicon.ico" alt="DoDo Logo" />
                     </div>
-                    <p className={styles.leftSideFirstSentence}>This is <span style={{ color: "#4DAEC3" }}>DoDo</span></p>
+                    <p className={styles.leftSideFirstSentence}>
+                        This is <span style={{ color: '#4DAEC3' }}>DoDo</span>
+                    </p>
                     <p>Your new bird friend in organizing things and time.</p>
-                    <p className={styles.leftSideLastSentence}>We hope you will enjoy the app.</p>
+                    <p className={styles.leftSideLastSentence}>
+                        We hope you will enjoy the app.
+                    </p>
                 </div>
 
                 <button className={styles.middleBar}></button>
 
                 <div className={styles.rightSide}>
                     <button className={styles.googleButton}>
-                        <img src="/images/Google__G__Logo.png" alt="" /> 
-                        Continue with&nbsp;<span className={styles.googleAccountBold}>Google Account</span>
+                        <img src="/images/Google__G__Logo.png" alt="" />
+                        Continue with&nbsp;
+                        <span className={styles.googleAccountBold}>
+                            Google Account
+                        </span>
                     </button>
                     <p>or</p>
                     <form onSubmit={handleSubmit}>
@@ -83,7 +90,9 @@ const Login = () => {
                             value={form.password}
                             onChange={handlePasswordChange}
                         />
-                        <button type="submit" className={styles.loginButton}>Login</button>
+                        <button type="submit" className={styles.loginButton}>
+                            Login
+                        </button>
                     </form>
                 </div>
 
