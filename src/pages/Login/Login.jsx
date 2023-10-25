@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../../styles/pages/Login.module.scss';
 import LocalStorage from '../../classes/LocalStorage';
 
@@ -15,6 +15,7 @@ const initialFormState = {
 const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { user } = useSelector(authSelector);
 
     const [form, setForm] = useState(initialFormState);
 
@@ -28,10 +29,30 @@ const Login = () => {
         setForm((prevState) => ({ ...prevState, password }));
     };
 
+    // not so sure about this but it works?
+    // I think the if statement should wait for dispatch to mutate the state
+    // useEffect has a weird bug though
     const loginHandler = () => {
+        console.log('button');
         dispatch(authActions.login());
-        navigate('/');
+        if (user.username == form.login && user.password == form.password) {
+            navigate('/');
+        }
     };
+
+    useEffect(() => {
+        dispatch(authActions.logout());
+
+        console.log('logged out');
+    }, []);
+
+    // useEffect(() => {
+    //     console.log(user.username, user.password);
+    //     console.log(form.login, form.password);
+    //     if (user.username == form.login && user.password == form.password) {
+    //         navigate('/');
+    //     }
+    // }, [navigate, user, form, setForm, loginHandler]);
 
     return (
         <div className={styles.container}>

@@ -1,10 +1,15 @@
-import { createReducer, createSlice } from '@reduxjs/toolkit';
+import { createSlice, createReducer } from '@reduxjs/toolkit';
 import * as authThunks from './Auth.thunks';
 import buildExtraReducers from './Auth.extraReducers';
 
 const initialState = {
     isAuthenticated: false,
-    user: null,
+    user: {
+        id: 0,
+        username: null,
+        password: null,
+        email: null,
+    },
 };
 
 // reducers for methods
@@ -12,7 +17,14 @@ const initialState = {
 const slice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        logout(state) {
+            state.id = 0;
+            state.username = '';
+            state.password = '';
+            state.email = '';
+        },
+    },
     extraReducers: buildExtraReducers,
 });
 
