@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.loginContainer {
+    position: relative;
+    display: flex;
+    background-color: #424242;
+    color: #fff;
+    width: 50%;
+    height: 55%;
+    border-radius: 1em;
+    z-index: 2;
+
+    .leftSide {
+        width: 56%;
+        padding: 4rem 3rem;
+
+        .topWelcome {
+            display: flex;
+            justify-content: space-between;
+        
+            h1 {
+                font-size: 3em;
+            }
+        }
+
+        p {
+            font-size: 2em;
+            font-weight: 300;
+        }
+
+        .leftSideFirstSentence {
+            margin-top: 3rem;
+        }
+
+        .leftSideLastSentence {
+            margin-top: 2rem;
+        }
+    }
+
+    .middleBar {
+        background-color: #D9D9D9;
+        border: none;
+        margin: 5% 0;
+        border-radius: 1em;
+    }
+
+    .rightSide {
+        width: 38%;
+        padding: 5rem 3rem;
+        display: flex;
+        flex-direction: column;
+
+        .googleButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #424242;
+            color: white;
+            font-size: 1em;
+            border: 0.1875em solid white;
+            border-radius: 1em;
+            height: 3em;
+            width: 100%;
+            padding: 0.25rem;
+            cursor: pointer;
+
+            img {
+                height: 75%;
+                margin: 0 0.5rem 0 0;
+            }
+
+            .googleAccountBold {
+                font-weight: 600;
+            }
+        }
+
+        .googleButton:hover {
+            background-color: #272727;
+            transition: 0.25s;
+        }
+
+        p {
+            font-weight: 600;
+            margin: 1rem 0.5rem;
+        }
+        
+        form {
+            input {
+                background-color: #fff;
+                border: none;
+                padding: 1rem;
+                margin: 0.5rem 0;
+                font-size: 1.125em;
+                font-family: inherit;
+                border-radius: 1em;
+                width: 90%; //temporary
+                height: 1em;
+            }
+    
+            ::placeholder {
+                color: #424242;
+            }
+    
+            .loginButton {
+                width: 50%;
+                margin-top: 1rem;
+                background-color: #4DAEC3;
+                color: #fff;
+                font-size: 1.25em;
+                border: none;
+                padding: 0.5rem;
+                border-radius: 0.7em;
+                cursor: pointer;
+            }
+    
+            .loginButton:hover {
+                background-color: #3D8B9C;
+                transition: 0.25s;
+            }
+        }
+
+    }
+
+    .bottomBlock {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 25%;
+        background-color: #272727;
+        border: none;
+        border-radius: 1em;
+        z-index: -1;
+    }
+}
