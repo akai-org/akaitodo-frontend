@@ -13,15 +13,28 @@
     display: flex;
     background-color: #424242;
     color: #fff;
-    width: 50%;
-    height: 55%;
+    width: 50vw;
+    height: 25.5vw;
     border-radius: 0.83vw;
     z-index: 2;
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px) {
+        width: 55vw;
+        height: 28vw;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        width: 70vw;
+        height: 34vw;
+    }
 }
 
 .leftSide {
     width: 56%;
     padding: 3.33vw 2.5vw;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        padding: 4.5vw 3.25vw;
+    }
 }
 
 .topWelcome {
@@ -31,23 +44,38 @@
 
 h1 {
     font-size: 2.5vw;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        font-size: 3.75vw;
+    }
 }
 
 .dodoLogo {
     width: 3.5vw;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        width: 5.5vw;
+    }
 }
 
 p {
     font-size: 1.66vw;
     font-weight: 300;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        font-size: 2.49vw;
+    }
 }
 
 .leftSideFirstSentence {
     margin-top: 2vw; // 2.5 -> 2
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        margin-top: 2.5vw; // 3 -> 2.5
+    }
 }
 
 .leftSideLastSentence {
     margin-top: 1.66vw;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        margin-top: 2.49vw;
+    }
 }
 
 .middleBar {
@@ -63,6 +91,9 @@ p {
     padding: 4.16vw 2.5vw;
     display: flex;
     flex-direction: column;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        padding: 5vw 3.5vw;
+    }
 }
 
 .googleButton {
@@ -78,11 +109,19 @@ p {
     width: 100%;
     padding: 0.21vw;
     cursor: pointer;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        font-size: 1.245vw;
+        height: 3.5vw; // 3.75 by the calculations
+        padding: 0.315vw;
+    }
 }
 
 .googleLogo {
     height: 75%;
     margin: 0 0.42vw 0 0;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        margin: 0 0.63vw 0 0;
+    }
 }
 
 .googleAccountBold {
@@ -98,6 +137,10 @@ p {
     font-weight: 600;
     font-size: 1.25vw;
     margin: 0.83vw 0.42vw;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        font-size: 1.875vw;
+        margin: 1.245vw 0.63vw;
+    }
 }
 
 input {
@@ -110,6 +153,13 @@ input {
     border-radius: 0.83vw;
     width: 90%; //temporary
     height: 0.83vw;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        padding: 1.245vw;
+        margin: 0.63vw 0;
+        font-size: 1.39vw;
+        border-radius: 1.245vw;
+        height: 1.245vw;
+    }
 }
 
 ::placeholder {
@@ -119,13 +169,19 @@ input {
 .loginButton {
     width: 50%;
     margin-top: 0.83vw;
+    padding: 0.42vw;
     background-color: #4daec3;
     color: #fff;
     font-size: 1.04vw;
     border: none;
-    padding: 0.42vw;
     border-radius: 0.58vw;
     cursor: pointer;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        margin-top: 1.245vw;
+        padding: 0.63vw;
+        font-size: 1.56vw;
+        border-radius: 0.87vw;
+    }
 }
 
 .loginButton:hover {
@@ -143,3 +199,5 @@ input {
     border-radius: 0.83vw;
     z-index: -1;
 }
+
+// z-indexes are supposed to dissapear
