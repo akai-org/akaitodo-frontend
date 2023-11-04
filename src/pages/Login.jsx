@@ -55,7 +55,7 @@ const Login = () => {
                 <div className={styles.leftSide}>
                     <div className={styles.topWelcome}>
                         <h1>Welcome!</h1>
-                        <img src="/favicon.ico" alt="DoDo Logo" />
+                        <img src="/favicon.ico" alt="DoDo Logo" className={styles.dodoLogo}/>
                     </div>
                     <p className={styles.leftSideFirstSentence}>
                         This is <span style={{ color: '#4DAEC3' }}>DoDo</span>
@@ -70,13 +70,13 @@ const Login = () => {
 
                 <div className={styles.rightSide}>
                     <button className={styles.googleButton}>
-                        <img src="/images/Google__G__Logo.png" alt="" />
+                        <img src="/images/Google__G__Logo.png" alt="" className={styles.googleLogo}/>
                         Continue with&nbsp;
                         <span className={styles.googleAccountBold}>
                             Google Account
                         </span>
                     </button>
-                    <p>or</p>
+                    <p className={styles.orText}>or</p>
                     <form onSubmit={handleSubmit}>
                         <input
                             type="text"
