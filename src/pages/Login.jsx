@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from '#src/styles/pages/Login.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { authActions, authSelector } from '../store/slices/Auth/Auth.slice';
+import { useNavigate } from 'react-router-dom';
 
 const initialFormState = {
     login: '',
@@ -7,6 +10,10 @@ const initialFormState = {
 };
 
 const Login = () => {
+    const auth = useSelector(authSelector);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const [form, setForm] = useState(initialFormState);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -47,6 +54,12 @@ const Login = () => {
         }
 
         return errors;
+    };
+
+    const handleLogin = () => {
+        dispatch({ type: 'auth/login' });
+        console.log(auth.isAuthenticated);
+        navigate('/');
     };
 
     return (
@@ -90,7 +103,11 @@ const Login = () => {
                             value={form.password}
                             onChange={handlePasswordChange}
                         />
-                        <button type="submit" className={styles.loginButton}>
+                        <button
+                            type="submit"
+                            className={styles.loginButton}
+                            onClick={handleLogin}
+                        >
                             Login
                         </button>
                     </form>
