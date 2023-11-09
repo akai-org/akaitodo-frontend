@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 
 .container {
     display: flex;
+=======
+//@use "varsmodule" as *;
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+>>>>>>> 71d403fdfe15fe7eb57b52bcfe2ccb117d1b400a
 }
