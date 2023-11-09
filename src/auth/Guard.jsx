@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { useSelector } from 'react-redux';
-import { authSelector } from '../store/slices/Auth';
-import LocalStorage from '../classes/LocalStorage';
+import { Redirect } from 'react-router-dom';
 
 const Guard = (component) => {
-    return false ? component : AuthError;
+    return false ? component : <Redirect to="/login" />;
 };
 
 const AuthError = () => {

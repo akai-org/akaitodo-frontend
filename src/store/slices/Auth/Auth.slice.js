@@ -12,7 +12,14 @@ const initialState = {
 const slice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        login: (state) => {
+            state.isAuthenticated = true;
+        },
+        logout: (state) => {
+            state.isAuthenticated = false;
+        },
+    },
     extraReducers: buildExtraReducers,
 });
 
