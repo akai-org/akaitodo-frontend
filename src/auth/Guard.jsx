@@ -1,12 +1,18 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Redirect } from 'react-router-dom';
+import { authSelector } from '../store/slices/Auth';
 
-const Guard = (component) => {
-    return false ? component : <Redirect to="/login" />;
+const Guard = ({ component }) => {
+    const auth = useSelector(authSelector);
+    const Component = component;
+
+    return auth.isAuthenticated ? <Component /> : <AuthError />;
 };
 
 const AuthError = () => {
+    //temporary fix
+
     const navigate = useNavigate();
 
     const doIt = () => {
