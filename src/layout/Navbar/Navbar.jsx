@@ -1,5 +1,7 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+
+import { CustomModuleContext } from '../../contexts/CustomModuleContext';
 
 import { NavbarItems } from './NavbarItems';
 
@@ -36,9 +38,10 @@ const initializeMenu = () => {
 };
 
 const Navbar = () => {
+    const location = useLocation();
+    const { customModule, setCustomModule } = useContext(CustomModuleContext);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [mode, setMode] = useState(initializeMenu());
-    const location = useLocation();
 
     const fitModeClass = () => {
         if (windowWidth >= FULL_MENU_BREAKPOINT)
@@ -86,6 +89,8 @@ const Navbar = () => {
         };
     }, []);
 
+    console.log(customModule.component);
+
     return (
         <>
             <div className={`${styles.top} ${mode.class}`}>
@@ -116,6 +121,9 @@ const Navbar = () => {
                     >
                         <i className={mode.icon}></i>
                     </div>
+                </div>
+                <div className={styles.customModuleContainer}>
+                    <customModule.component/>
                 </div>
             </div>
 

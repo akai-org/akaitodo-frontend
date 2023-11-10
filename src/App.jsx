@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import {
     BrowserRouter as Router,
@@ -15,11 +15,15 @@ import Login from './pages/login';
 import Modal from './components/widgets/ModalWidget'
 
 import store from './store';
+import { CustomModuleContext, customModuleInitialContext } from './contexts/CustomModuleContext';
 
 const App = () => {
+    const [customModule, setCustomModule] = useState(customModuleInitialContext);
+
     return (
         <main className="Main" themeStyle="default" themeMode="light">
             <Provider store={store}>
+                <CustomModuleContext.Provider value={{ customModule, setCustomModule }}>
                 <Router>
                     <Routes>
                         <Route
@@ -72,6 +76,7 @@ const App = () => {
                         <Route path="/login" element={<Login />} />
                     </Routes>
                 </Router>
+                </CustomModuleContext.Provider>
             </Provider>
         </main>
     );
