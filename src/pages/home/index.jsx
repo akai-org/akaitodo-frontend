@@ -1,8 +1,4 @@
 import Home from './Home';
-import Guard from '../../auth/Guard';
+import Guard from '#src/auth/Guard';
 
-const HomeGuard = () => {
-    return <Guard component={Home} />;
-};
-
-export default HomeGuard;
+export default Guard({ Component: Home });
