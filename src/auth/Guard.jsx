@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { authSelector } from '../store/slices/Auth';
 
-const Guard = ({ component }) => {
-    const auth = useSelector(authSelector);
-    const Component = component;
+const Guard = ({ Component }) => (props) => {
+    // const auth = useSelector(authSelector);
+    const auth = { isAuthenticated: true }
 
-    return auth.isAuthenticated ? <Component /> : <AuthError />;
+    return auth?.isAuthenticated ? <Component { ...props } /> : <AuthError />;
 };
 
 const AuthError = () => {

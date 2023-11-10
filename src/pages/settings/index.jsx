@@ -1,8 +1,4 @@
 import Settings from './Settings';
-import Guard from '../../auth/Guard';
+import Guard from '#src/auth/Guard';
 
-const SettingsGuard = () => {
-    return <Guard component={Settings} />;
-};
-
-export default SettingsGuard;
+export default Guard({ Component: Settings });

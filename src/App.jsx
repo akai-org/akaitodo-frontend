@@ -9,8 +9,8 @@ import {
 import './styles/App.scss';
 
 import Layout from './layout/Layout';
-import HomeGuard from './pages/home';
-import SettingsGuard from './pages/settings';
+import Home from './pages/home';
+import Settings from './pages/settings';
 import Login from './pages/Login';
 
 import store from './store';
@@ -25,14 +25,14 @@ const App = () => {
                             path="/"
                             element={<Navigate to="/home" replace={true} />}
                         />
-                        <Route path="/home" element={Layout(HomeGuard)} />
-                        <Route path="/calendar" element={Layout(HomeGuard)} />
-                        <Route path="/todolist" element={Layout(HomeGuard)} />
-                        <Route path="/categories" element={Layout(HomeGuard)} />
-                        <Route path="/notes" element={Layout(HomeGuard)} />
+                        <Route path="/home" element={Layout(Home)} />
+                        <Route path="/calendar" element={Layout(Home)} />
+                        <Route path="/todolist" element={Layout(Home)} />
+                        <Route path="/categories" element={Layout(Home)} />
+                        <Route path="/notes" element={Layout(Home)} />
                         <Route
                             path="/settings"
-                            element={Layout(SettingsGuard)}
+                            element={Layout(Settings)}
                         />
                         <Route path="*" element={<div>Not found</div>} />
                         <Route path="/login" element={<Login />} />
