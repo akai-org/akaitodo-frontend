@@ -1,20 +1,25 @@
-import React, { useState, useLayoutEffect, useEffect, useContext } from 'react';
+import React, {
+    useState, useLayoutEffect, useEffect,
+    useContext, useRef
+} from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
-import { CustomModuleContext } from '../../contexts/CustomModuleContext';
-
-import { NavbarItems } from './NavbarItems';
 
 import '#src/styles/App.scss';
 import styles from '#src/styles/layout/navbar/Navbar.module.scss';
 
+import { NavbarModuleContext } from '../../contexts/NavbarModuleContext';
+import { NavbarModuleComponent } from './NavbarModule';
+import { NavbarItems } from './NavbarItems';
+
+
+// CONSTANTS
 const FULL_MENU_BREAKPOINT = 1024;
 const SHORT_MENU_BREAKPOINT = 768;
 
 const COLLAPSE_ICON = 'ri-close-fill';
 const EXPAND_ICON = 'ri-menu-fill';
 
-// Description of mode:
+// Description of modes:
 // 0 - without menu (class 'hide'), 1 - mobile menu (class 'mobile'), 2 - short menu (class 'short'), 3 - full menu (without additional class)
 const translateMenuObject = (modeNumber) => {
     switch (modeNumber) {
@@ -39,7 +44,10 @@ const initializeMenu = () => {
 
 const Navbar = () => {
     const location = useLocation();
-    const { customModule, setCustomModule } = useContext(CustomModuleContext);
+
+    const refTopContainer = useRef();
+    const { setNavbarModule } = useContext(NavbarModuleContext);
+
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [mode, setMode] = useState(initializeMenu());
 
@@ -74,6 +82,7 @@ const Navbar = () => {
 
     useLayoutEffect(() => {
         fitModeClass();
+        setNavbarModule((prevState) => ({ ...prevState, reference: refTopContainer.current }))
     }, [windowWidth]);
 
     useEffect(() => {
@@ -88,8 +97,6 @@ const Navbar = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-
-    console.log(customModule.component);
 
     return (
         <>
@@ -122,9 +129,7 @@ const Navbar = () => {
                         <i className={mode.icon}></i>
                     </div>
                 </div>
-                <div className={styles.customModuleContainer}>
-                    <customModule.component/>
-                </div>
+                <NavbarModuleComponent ref={refTopContainer} modeClass={mode.class}/>
             </div>
 
             <nav className={`${styles.side} ${mode.class}`}>

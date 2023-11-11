@@ -15,15 +15,15 @@ import Login from './pages/login';
 import Modal from './components/widgets/ModalWidget'
 
 import store from './store';
-import { CustomModuleContext, customModuleInitialContext } from './contexts/CustomModuleContext';
+import { NavbarModuleContext, initialNavbarModuleContext } from './contexts/NavbarModuleContext';
 
 const App = () => {
-    const [customModule, setCustomModule] = useState(customModuleInitialContext);
+    const [navbarModule, setNavbarModule] = useState(initialNavbarModuleContext);
 
     return (
         <main className="Main" themeStyle="default" themeMode="light">
             <Provider store={store}>
-                <CustomModuleContext.Provider value={{ customModule, setCustomModule }}>
+                <NavbarModuleContext.Provider value={{ navbarModule, setNavbarModule }}>
                 <Router>
                     <Routes>
                         <Route
@@ -76,7 +76,7 @@ const App = () => {
                         <Route path="/login" element={<Login />} />
                     </Routes>
                 </Router>
-                </CustomModuleContext.Provider>
+                </NavbarModuleContext.Provider>
             </Provider>
         </main>
     );
