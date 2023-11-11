@@ -14,11 +14,13 @@ import Settings from './pages/settings';
 import Login from './pages/Login';
 
 import store from './store';
+import LoadingScreen from './components/widgets/LoadingScreen';
 
 const App = () => {
     return (
         <main className="Main" themeStyle="default" themeMode="light">
-            <Provider store={store}>
+            <LoadingScreen />
+            {/* <Provider store={store}>
                 <Router>
                     <Routes>
                         <Route
@@ -30,15 +32,12 @@ const App = () => {
                         <Route path="/todolist" element={Layout(Home)} />
                         <Route path="/categories" element={Layout(Home)} />
                         <Route path="/notes" element={Layout(Home)} />
-                        <Route
-                            path="/settings"
-                            element={Layout(Settings)}
-                        />
+                        <Route path="/settings" element={Layout(Settings)} />
                         <Route path="*" element={<div>Not found</div>} />
                         <Route path="/login" element={<Login />} />
                     </Routes>
                 </Router>
-            </Provider>
+            </Provider> */}
         </main>
     );
 };

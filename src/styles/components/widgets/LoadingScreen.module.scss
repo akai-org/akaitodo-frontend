@@ -1,0 +1,80 @@
+$loader-size: 250px;
+
+.container {
+    aspect-ratio: 3/2;
+    height: $loader-size;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    background-color: aquamarine;
+    width: 100%;
+    height: 75%;
+}
+
+.text {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 25%;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.text:after {
+    content: 'Loading . . . . . . .';
+    animation-name: loading-text;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes loading-text {
+    0% {
+        content: 'Loading . . . . . . .';
+    }
+    12% {
+        content: '. Loading . . . . . .';
+    }
+    25% {
+        content: '. . Loading . . . . .';
+    }
+    38% {
+        content: '. . . Loading . . . .';
+    }
+    50% {
+        content: '. . . . Loading . . .';
+    }
+    63% {
+        content: '. . . . . Loading . .';
+    }
+    75% {
+        content: '. . . . . . Loading .';
+    }
+    88% {
+        content: '. . . . . . . Loading';
+    }
+    90% {
+        content: 'g. . . . . . . Loadin';
+    }
+    92% {
+        content: 'ng. . . . . . . Loadi';
+    }
+    94% {
+        content: 'ing. . . . . . . Load';
+    }
+    96% {
+        content: 'ding. . . . . . . Loa';
+    }
+    98% {
+        content: 'ading. . . . . . . Lo';
+    }
+    99% {
+        content: 'oading. . . . . . . L';
+    }
+    100% {
+        content: 'Loading . . . . . . .';
+    }
+}
