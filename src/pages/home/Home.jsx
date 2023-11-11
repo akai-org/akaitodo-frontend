@@ -5,14 +5,12 @@ import styles from '#src/styles/pages/Home.module.scss';
 import { useDispatch } from 'react-redux';
 import useAuth from '#src/hooks/useAuth';
 
-
 const Home = () => {
     const dispatch = useDispatch();
     const auth = useAuth();
 
     const handleLogout = () => {
         dispatch({ type: 'auth/logout' });
-        console.log(auth.isAuthenticated);
     };
 
     return (
