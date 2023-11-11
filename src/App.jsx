@@ -19,25 +19,61 @@ import LoadingScreen from './components/widgets/LoadingScreen';
 const App = () => {
     return (
         <main className="Main" themeStyle="default" themeMode="light">
-            <LoadingScreen />
-            {/* <Provider store={store}>
+            {/* <LoadingScreen /> */}
+            <Provider store={store}>
                 <Router>
                     <Routes>
                         <Route
                             path="/"
                             element={<Navigate to="/home" replace={true} />}
                         />
-                        <Route path="/home" element={Layout(Home)} />
-                        <Route path="/calendar" element={Layout(Home)} />
-                        <Route path="/todolist" element={Layout(Home)} />
-                        <Route path="/categories" element={Layout(Home)} />
-                        <Route path="/notes" element={Layout(Home)} />
-                        <Route path="/settings" element={Layout(Settings)} />
+                        <Route
+                            path="/home"
+                            element={Layout({
+                                Component: Home,
+                                props: {},
+                            })}
+                        />
+                        <Route
+                            path="/calendar"
+                            element={Layout({
+                                Component: Home,
+                                props: {},
+                            })}
+                        />
+                        <Route
+                            path="/todolist"
+                            element={Layout({
+                                Component: Home,
+                                props: {},
+                            })}
+                        />
+                        <Route
+                            path="/categories"
+                            element={Layout({
+                                Component: Home,
+                                props: {},
+                            })}
+                        />
+                        <Route
+                            path="/notes"
+                            element={Layout({
+                                Component: Home,
+                                props: {},
+                            })}
+                        />
+                        <Route
+                            path="/settings"
+                            element={Layout({
+                                Component: Settings,
+                                props: { message: 'testing' },
+                            })}
+                        />
                         <Route path="*" element={<div>Not found</div>} />
                         <Route path="/login" element={<Login />} />
                     </Routes>
                 </Router>
-            </Provider> */}
+            </Provider>
         </main>
     );
 };
