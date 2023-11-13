@@ -17,24 +17,11 @@
     height: 25.5vw;
     border-radius: 0.83vw;
     z-index: 2;
-
-    @media screen and (min-width: 1024px) and (max-width: 1439px) {
-        width: 55vw;
-        height: 28vw;
-    }
-
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        width: 70vw;
-        height: 39.5vw;
-    }
 }
 
 .leftSide {
     width: 56%;
     padding: 3.33vw 2.5vw;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        padding: 4.5vw 3.25vw;
-    }
 }
 
 .topWelcome {
@@ -44,16 +31,10 @@
 
 .h1Welcome {
     font-size: 2.5vw;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        font-size: 3.75vw;
-    }
 }
 
 .dodoLogo {
     width: 3.5vw;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        width: 5.5vw;
-    }
 }
 
 .dodoName {
@@ -63,23 +44,14 @@
 .leftSideFirstSentence, .leftSideLastSentence, .leftSideDescription {
     font-size: 1.66vw;
     font-weight: 300;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        font-size: 2.49vw;
-    }
 }
 
 .leftSideFirstSentence {
     margin-top: 2vw; // 2.5 -> 2
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        margin-top: 2.5vw; // 3 -> 2.5
-    }
 }
 
 .leftSideLastSentence {
     margin-top: 1.66vw;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        margin-top: 2.49vw;
-    }
 }
 
 .middleBar {
@@ -95,9 +67,6 @@
     padding: 4.16vw 2.5vw;
     display: flex;
     flex-direction: column;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        padding: 5vw 3.5vw;
-    }
 }
 
 .googleButton {
@@ -113,19 +82,11 @@
     width: 100%;
     padding: 0.21vw;
     cursor: pointer;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        font-size: 1.245vw;
-        height: 3.5vw; // 3.75 by the calculations
-        padding: 0.315vw;
-    }
 }
 
 .googleLogo {
     height: 75%;
     margin: 0 0.42vw 0 0;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        margin: 0 0.63vw 0 0;
-    }
 }
 
 .googleAccountBold {
@@ -141,10 +102,6 @@
     font-weight: 600;
     font-size: 1.25vw;
     margin: 0.83vw 0.42vw;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        font-size: 1.875vw;
-        margin: 1.245vw 0.63vw;
-    }
 }
 
 .loginForm input {
@@ -155,15 +112,8 @@
     font-size: 0.93vw;
     font-family: inherit;
     border-radius: 0.83vw;
-    width: 90%; //temporary
+    width: 90%;
     height: 0.83vw;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        padding: 1.245vw;
-        margin: 0.63vw 0;
-        font-size: 1.39vw;
-        border-radius: 1.245vw;
-        height: 1.245vw;
-    }
 }
 
 ::placeholder {
@@ -180,12 +130,6 @@
     border: none;
     border-radius: 0.58vw;
     cursor: pointer;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        margin-top: 1.245vw;
-        padding: 0.63vw;
-        font-size: 1.56vw;
-        border-radius: 0.87vw;
-    }
 }
 
 .loginButton:hover {
@@ -205,3 +149,92 @@
 }
 
 // z-indexes are supposed to dissapear
+
+@media screen and (max-width: 1439px) {
+    .loginContainer {
+        width: 55vw;
+        height: 28vw;
+    }
+
+}
+
+@media screen and (max-width: 1023px) {
+    .loginContainer {
+        width: 70vw;
+        height: 39.5vw;
+    }
+
+    .leftSide {
+        padding: 4.5vw 3.25vw;
+    }
+
+    .h1Welcome {
+        font-size: 3.75vw;
+    }
+
+    .dodoLogo {
+        width: 5.5vw;
+    }
+
+    .leftSideFirstSentence, .leftSideLastSentence, .leftSideDescription {
+        font-size: 2.49vw;
+    }
+
+    .leftSideFirstSentence {
+        margin-top: 2.5vw; // 3 -> 2.5
+    }
+    
+    .leftSideLastSentence {
+        margin-top: 2.49vw;
+    }
+
+    .rightSide {
+        padding: 5vw 3.5vw;
+    }
+    
+    .googleButton {
+        font-size: 1.245vw;
+        height: 3.5vw; // 3.75 by the calculations
+        padding: 0.315vw;
+    }
+
+    .googleLogo {
+        margin: 0 0.63vw 0 0;      
+    }
+
+    .orText {
+        font-size: 1.875vw;
+        margin: 1.245vw 0.63vw;
+    }
+
+    .loginForm input {
+        padding: 1.245vw;
+        margin: 0.63vw 0;
+        font-size: 1.39vw;
+        border-radius: 1.245vw;
+        height: 1.245vw;
+    }
+
+    .loginButton {
+        margin-top: 1.245vw;
+        padding: 0.63vw;
+        font-size: 1.56vw;
+        border-radius: 0.87vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .loginContainer {
+        width: 100%;
+        height: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .dodoLogo {
+        display: none;
+    }
+
+    .middleBar{
+        display: none;
+    }
+}
