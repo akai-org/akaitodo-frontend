@@ -95,6 +95,10 @@ const Login = () => {
                         </button>
                     </form>
                 </div>
+                <div className={styles.topMobile}>
+                        <p className={styles.dodoNameMobile}>DoDo</p>
+                        <hr className={styles.hrLineMobile}></hr>
+                </div>
                 <div className={styles.bottomBlock}></div>
             </div>
         </div>
