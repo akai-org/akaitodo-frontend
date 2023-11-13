@@ -12,7 +12,7 @@ const ModalWidget = () => {
                     <h2 className={styles.headerText}>HEADER</h2>
                 </div>
                 <div className={styles.paragraph}>
-                    <p>----------Paragraph----------</p>
+                    <p>--------------------Paragraph--------------------</p>
                 </div>
                 <div className={styles.footer}>
                     <button className={`${styles.modalButton} ${styles.cancel}`}>Cancel</button>

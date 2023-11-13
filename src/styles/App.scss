@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @use 'vars' as *;
-=======
-@use "vars" as *;
->>>>>>> 71d403fdfe15fe7eb57b52bcfe2ccb117d1b400a
 
 * {
     margin: 0;
@@ -20,7 +16,6 @@ a:visited {
 }
 
 .Main {
-<<<<<<< HEAD
     display: flex;
     height: 100vh;
     flex-direction: row;
@@ -32,13 +27,4 @@ a:visited {
     .Main {
         flex-direction: column;
     }
-=======
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.App_container {
-  flex: 1;
->>>>>>> 71d403fdfe15fe7eb57b52bcfe2ccb117d1b400a
 }
