@@ -25,7 +25,7 @@
 
     @media screen and (min-width: 768px) and (max-width: 1023px) {
         width: 70vw;
-        height: 34vw;
+        height: 39.5vw;
     }
 }
 
@@ -42,7 +42,7 @@
     justify-content: space-between;
 }
 
-h1 {
+.h1Welcome {
     font-size: 2.5vw;
     @media screen and (min-width: 768px) and (max-width: 1023px) {
         font-size: 3.75vw;
@@ -56,7 +56,11 @@ h1 {
     }
 }
 
-p {
+.dodoName {
+    color: #4DAEC3;
+}
+
+.leftSideFirstSentence, .leftSideLastSentence, .leftSideDescription {
     font-size: 1.66vw;
     font-weight: 300;
     @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -143,7 +147,7 @@ p {
     }
 }
 
-input {
+.loginForm input {
     background-color: #fff;
     border: none;
     padding: 0.83vw;
