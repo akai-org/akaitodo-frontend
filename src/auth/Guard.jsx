@@ -24,32 +24,4 @@ const Guard =
         );
     };
 
-// const AuthError1 = () => {
-//     const navigate = useNavigate();
-
-//     const doIt = () => {
-//         navigate('/login');
-//     };
-
-//     useEffect(() => {
-//         doIt();
-//     }, []);
-
-//     return <></>;
-// };
-
-// const AuthError2 = () => {
-//     const navigate = useNavigate();
-
-//     const doIt = () => {
-//         navigate('/');
-//     };
-
-//     useEffect(() => {
-//         doIt();
-//     }, []);
-
-//     return <></>;
-// };
-
 export default Guard;
