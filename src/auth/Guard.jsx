@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Login from '../pages/login/Login';
-import { useNavigate } from 'react-router';
+import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { authSelector } from '../store/slices/Auth';
 
@@ -11,47 +11,45 @@ const Guard =
         const componentObj = { Component };
 
         if (componentObj.Component.name == 'Login') {
-            return !auth?.isAuthenticated ? <Login /> : <AuthError2 />;
+            return !auth?.isAuthenticated ? (
+                <Login />
+            ) : (
+                <Navigate to="/" replace />
+            );
         }
         return auth?.isAuthenticated ? (
             <Component {...props} />
         ) : (
-            <AuthError1 />
+            <Navigate to="/login" replace />
         );
     };
 
-// this is ugly asf
+// const AuthError1 = () => {
+//     const navigate = useNavigate();
 
-const AuthError1 = () => {
-    //temporary fix
+//     const doIt = () => {
+//         navigate('/login');
+//     };
 
-    const navigate = useNavigate();
+//     useEffect(() => {
+//         doIt();
+//     }, []);
 
-    const doIt = () => {
-        navigate('/login');
-    };
+//     return <></>;
+// };
 
-    useEffect(() => {
-        doIt();
-    }, []);
+// const AuthError2 = () => {
+//     const navigate = useNavigate();
 
-    return <></>;
-};
+//     const doIt = () => {
+//         navigate('/');
+//     };
 
-const AuthError2 = () => {
-    //temporary fix #2
+//     useEffect(() => {
+//         doIt();
+//     }, []);
 
-    const navigate = useNavigate();
-
-    const doIt = () => {
-        navigate('/');
-    };
-
-    useEffect(() => {
-        doIt();
-    }, []);
-
-    return <></>;
-};
+//     return <></>;
+// };
 
 export default Guard;
