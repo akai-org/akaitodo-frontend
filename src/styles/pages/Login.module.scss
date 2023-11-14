@@ -232,7 +232,7 @@
         width: 100%;
         height: 100%;
         flex-direction: column-reverse;
-        justify-content: flex-end;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -247,7 +247,7 @@
         color: #4DAEC3;
         font-size: 12vw; //5vh
         font-weight: 600;
-        margin: 5vh 0 1vh 0;
+        // margin: 5vh 0 1vh 0;
     }
 
     .hrLineMobile {
@@ -257,9 +257,47 @@
         border-radius: 2px;
     }
 
-    // .rightSide {
-        
-    // }
+    .rightSide {
+        width: 63.7%;
+        text-align: center;
+    }
+
+    .googleButton {
+        font-size: 2.5vw;
+        height: 7.875vw;
+        padding: 0.7vw;
+        border-radius: 2vw;
+        border: 2px solid #fff;
+    }
+
+    .googleLogo {
+        margin-right: 2vw;      
+    }
+
+    .orText {
+        font-size: 2.75vw;
+        // margin: 2.8vw 1.42vw;
+        margin: 2vh 0.8vh;
+    }
+
+    .loginForm input {
+        padding: 2.8vw;
+        // margin: 1.42vw 0;
+        margin: 0.8vh 0;
+        font-size: 3vw;
+        border-radius: 2vw;
+        height: 2.8vw;
+        text-align: center;
+    }
+
+    .loginButton {
+        // margin-top: 4vw;
+        margin-top: 2.2vh;
+        padding: 1.25vw 5vw;
+        font-size: 3.5vw;
+        border-radius: 1.8vw;
+    }
+
     .topWelcome {
         display: none;
     }
@@ -272,5 +310,30 @@
         display: none;
     }
 
+    .leftSideFirstSentence, .leftSideLastSentence, .leftSideDescription {
+        font-size: 3.8vw;
+        // font-size: 2.75vh;
+        font-weight: 300;
+        text-align: center;
+        margin: auto -5vw;
+    }
+    
+    .leftSideFirstSentence {
+        margin-top: 2vw; // 2.5 -> 2
+    }
+    
+    .leftSideLastSentence {
+        margin-top: 2.5vh;
+    }
 
+    .bottomBlock {
+        // position: absolute;
+        // bottom: 0;
+        // width: 100%;
+        height: 28vh;
+        // background-color: #272727;
+        // border: none;
+        border-radius: 2vw;
+        // z-index: -1;
+    }
 }

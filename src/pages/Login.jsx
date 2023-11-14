@@ -60,7 +60,7 @@ const Login = () => {
                     <p className={styles.leftSideFirstSentence}>
                         This is <span className={styles.dodoName}>DoDo</span>
                     </p>
-                    <p className={styles.leftSideDescription}>Your new bird friend in organizing things and time.</p>
+                    <p className={styles.leftSideDescription}>Your new bird friend in&nbsp;organizing things and time.</p>
                     <p className={styles.leftSideLastSentence}>
                         We hope you will enjoy the app.
                     </p>
