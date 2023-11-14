@@ -3,7 +3,7 @@ import * as authThunks from './Auth.thunks';
 import buildExtraReducers from './Auth.extraReducers';
 
 const initialState = {
-    isAuthenticated: false,
+    isAuthenticated: true,
     user: null,
 };
 

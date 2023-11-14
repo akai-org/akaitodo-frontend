@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from '#src/styles/pages/Login.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { authActions, authSelector } from '../store/slices/Auth/Auth.slice';
+import { authActions, authSelector } from '../../store/slices/Auth/Auth.slice';
 import { useNavigate } from 'react-router-dom';
 
 const initialFormState = {
