@@ -66,7 +66,7 @@ const Login = () => {
                     </p>
                 </div>
 
-                <button className={styles.middleBar}></button>
+                <div className={styles.middleBar}></div>
 
                 <div className={styles.rightSide}>
                     <button className={styles.googleButton}>
