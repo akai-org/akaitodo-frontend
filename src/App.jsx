@@ -14,12 +14,10 @@ import Settings from './pages/settings';
 import Login from './pages/login';
 
 import store from './store';
-import LoadingScreen from './components/widgets/LoadingScreen';
 
 const App = () => {
     return (
         <main className="Main" themeStyle="default" themeMode="light">
-            {/* <LoadingScreen /> */}
             <Provider store={store}>
                 <Router>
                     <Routes>
@@ -66,7 +64,7 @@ const App = () => {
                             path="/settings"
                             element={Layout({
                                 Component: Settings,
-                                props: { message: 'testing' },
+                                props: {},
                             })}
                         />
                         <Route path="*" element={<div>Not found</div>} />
