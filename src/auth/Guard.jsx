@@ -1,25 +1,27 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router';
+import React from 'react';
+import Login from '../pages/login/Login';
+import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { authSelector } from '../store/slices/Auth';
-import LocalStorage from '../classes/LocalStorage';
 
-const Guard = (component) => {
-    return false ? component : AuthError;
-};
+const Guard =
+    ({ Component }) =>
+    (props) => {
+        const auth = useSelector(authSelector);
+        const componentObj = { Component };
 
-const AuthError = () => {
-    const navigate = useNavigate();
-
-    const doIt = () => {
-        navigate('/login');
+        if (componentObj.Component.name == 'Login') {
+            return !auth?.isAuthenticated ? (
+                <Login />
+            ) : (
+                <Navigate to="/" replace />
+            );
+        }
+        return auth?.isAuthenticated ? (
+            <Component {...props} />
+        ) : (
+            <Navigate to="/login" replace />
+        );
     };
-
-    useEffect(() => {
-        doIt();
-    }, []);
-
-    return <></>;
-};
 
 export default Guard;

@@ -1,0 +1,166 @@
+$loader-size: 250px;
+
+.container {
+    aspect-ratio: 3/2;
+    height: $loader-size;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    //w-h
+    aspect-ratio: 4/3;
+    width: 30%;
+    margin: 20px auto;
+    position: relative;
+}
+
+.duo {
+    height: 20px;
+    width: 50px;
+    background: hsla(0, 0%, 0%, 0);
+    position: absolute;
+    top: 30px;
+}
+
+.duo1 {
+    left: 15px;
+}
+
+.duo2 {
+    left: 45px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #333;
+    position: absolute;
+}
+
+.dotA {
+    right: 0;
+}
+
+.dotB {
+    right: 30px;
+}
+.text {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 50%;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.duo1 {
+    animation-name: spin;
+}
+
+.duo2 {
+    animation-name: spin;
+    animation-direction: reverse;
+}
+
+.duo2 .dotB {
+    animation-name: onOff;
+}
+
+.duo1 .dotA {
+    opacity: 0;
+    animation-name: onOff;
+    animation-direction: reverse;
+}
+
+.duo,
+.dot {
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes onOff {
+    0% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.text:after {
+    content: 'Loading . . . . . . .';
+    animation-name: loading-text;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes loading-text {
+    0% {
+        content: 'Loading . . . . . . .';
+    }
+    12% {
+        content: '. Loading . . . . . .';
+    }
+    25% {
+        content: '. . Loading . . . . .';
+    }
+    38% {
+        content: '. . . Loading . . . .';
+    }
+    50% {
+        content: '. . . . Loading . . .';
+    }
+    63% {
+        content: '. . . . . Loading . .';
+    }
+    75% {
+        content: '. . . . . . Loading .';
+    }
+    88% {
+        content: '. . . . . . . Loading';
+    }
+    90% {
+        content: 'g. . . . . . . Loadin';
+    }
+    92% {
+        content: 'ng. . . . . . . Loadi';
+    }
+    94% {
+        content: 'ing. . . . . . . Load';
+    }
+    96% {
+        content: 'ding. . . . . . . Loa';
+    }
+    98% {
+        content: 'ading. . . . . . . Lo';
+    }
+    99% {
+        content: 'oading. . . . . . . L';
+    }
+    100% {
+        content: 'Loading . . . . . . .';
+    }
+}
