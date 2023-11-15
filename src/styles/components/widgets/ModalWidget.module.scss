@@ -1,0 +1,100 @@
+$modalRed : #E64242;
+$modalGreen: #6DC12C;
+
+.modalBackground {
+    height: 100vh;
+    width: 100vw;
+    
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.79);
+    font-size: 2vw;
+
+    z-index: 1000; // to be sure that it will be displayd at the top of everything else
+}
+
+.modalContainer {
+    min-height: 12rem;
+    min-width: min(40rem, 70%);
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: var(--lightgray-color);
+    border-radius: 15px;
+    box-shadow: var(--third-color) 0px 0px 5px;
+}
+
+.header {
+    text-align: center;
+    margin: 10px 30px;
+
+    font-size: 1.5rem;
+}
+
+.paragraph {
+    flex-grow: 1;
+    text-align: center;
+    margin: 5px 30px;
+
+    max-width: 100%;
+    
+    font-size: 1rem;
+}
+
+.footer {
+    // height: 25%;
+    width: 100%;
+    margin: 15px;
+    margin: 15px;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
+.modalButton {
+    min-height: 40px;
+    width: max(33%, 100px);
+    min-width: 100px;
+    margin: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    color: white;
+    font-size: 1.3rem;
+}
+
+.cancel {
+    background-color: $modalRed;
+}
+
+.confirm {
+    background-color: $modalGreen;
+}
+
+
+@media only screen and (max-width: 320px) {
+    .footer {
+        // width: 100%;
+        flex-flow: column-reverse wrap;
+    }
+
+    .modalButton {
+        width: 100%;
+    }
+}

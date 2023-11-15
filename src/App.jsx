@@ -12,6 +12,7 @@ import Layout from './layout/Layout';
 import Home from './pages/home';
 import Settings from './pages/settings';
 import Login from './pages/login';
+import Modal from './components/widgets/ModalWidget'
 
 import store from './store';
 
