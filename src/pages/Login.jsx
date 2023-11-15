@@ -54,7 +54,7 @@ const Login = () => {
             <div className={styles.loginContainer}>
                 <div className={styles.leftSide}>
                     <div className={styles.topWelcome}>
-                        <h1 className={styles.h1Welcome}>Welcome!</h1>
+                        <h1 className={styles.welcomeHeader}>Welcome!</h1>
                         <img src="/favicon.ico" alt="DoDo Logo" className={styles.dodoLogo}/>
                     </div>
                     <p className={styles.leftSideFirstSentence}>
