@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className={styles.container}>
             <div> Welcome </div>
-            <button onClick={handleLogout}> LOGOUT </button>
+            {/* <button onClick={handleLogout}> LOGOUT </button> */}
         </div>
     );
 };
