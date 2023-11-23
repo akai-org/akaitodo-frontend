@@ -1,4 +1,4 @@
-// MAIN AND UP STYLE
+// Up navigation
 .top {
     display: flex;
     width: 100%;
@@ -10,7 +10,7 @@
 
 .upperContainer {
     display: flex;
-    width: 250px;
+    min-width: 250px;
     height: 6vh;
     min-height: 60px;
     align-items: center;
@@ -45,6 +45,15 @@
     font-size: 25px;
 }
 
+.customModuleContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+
+// Left navigation
 .side {
     display: flex;
     width: 240px;
@@ -65,7 +74,8 @@
     }
 
     &.upperContainer {
-        width: 90px;
+        min-width: 0;
+        width: 100px;
         justify-content: center;
         gap: 0;
     }
@@ -111,8 +121,14 @@
     }
 
     &.upperContainer {
+        min-height: 0;
         width: 100%;
         border-radius: 0;
+    }
+
+    // Change in future
+    &.customModuleContainer {
+        display: none;
     }
 
     &.menuList {
@@ -171,12 +187,18 @@
     }
 
     &.upperContainer {
+        min-width: 0;
         width: 80px;
         height: 5vh;
         min-height: 50px;
         justify-content: center;
         gap: 0;
         border-radius: 7px 0 0 7px;
+    }
+
+    // Change in future
+    &.customModuleContainer {
+        display: none;
     }
 
     &.menuItemActive {
