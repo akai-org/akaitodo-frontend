@@ -8,7 +8,7 @@ import '#src/styles/App.scss';
 import styles from '#src/styles/layout/navbar/Navbar.module.scss';
 
 import { NavbarModuleContext } from '../../contexts/NavbarModuleContext';
-import { NavbarModuleComponent } from './NavbarModule';
+import { NavbarModuleParent } from './NavbarModule';
 import { NavbarItems } from './NavbarItems';
 
 
@@ -129,7 +129,7 @@ const Navbar = () => {
                         <i className={mode.icon}></i>
                     </div>
                 </div>
-                <NavbarModuleComponent ref={refTopContainer} modeClass={mode.class}/>
+                <NavbarModuleParent ref={refTopContainer} modeClass={mode.class}/>
             </div>
 
             <nav className={`${styles.side} ${mode.class}`}>

@@ -10,6 +10,7 @@ import './styles/App.scss';
 
 import Layout from './layout/Layout';
 import Home from './pages/home';
+import Calendar from './pages/calendar/Calendar';
 import Settings from './pages/settings';
 import Login from './pages/login';
 import Modal from './components/widgets/ModalWidget'
@@ -40,7 +41,7 @@ const App = () => {
                         <Route
                             path="/calendar"
                             element={Layout({
-                                Component: Home,
+                                Component: Calendar,
                                 props: {},
                             })}
                         />
