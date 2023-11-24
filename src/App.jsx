@@ -10,6 +10,7 @@ import './styles/App.scss';
 
 import Layout from './layout/Layout';
 import Home from './pages/home';
+import ToDoList from './pages/todolist/ToDoList';
 import Settings from './pages/settings';
 import Login from './pages/login';
 import Modal from './components/widgets/ModalWidget'
@@ -43,7 +44,7 @@ const App = () => {
                         <Route
                             path="/todolist"
                             element={Layout({
-                                Component: Home,
+                                Component: ToDoList,
                                 props: {},
                             })}
                         />
