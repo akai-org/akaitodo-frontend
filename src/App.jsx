@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import {
     BrowserRouter as Router,
@@ -11,16 +11,21 @@ import './styles/App.scss';
 import Layout from './layout/Layout';
 import Home from './pages/home';
 import ToDoList from './pages/todolist/ToDoList';
+import Calendar from './pages/calendar/Calendar';
 import Settings from './pages/settings';
 import Login from './pages/login';
 import Modal from './components/widgets/ModalWidget'
 
 import store from './store';
+import { NavbarModuleContext, initialNavbarModuleContext } from './contexts/NavbarModuleContext';
 
 const App = () => {
+    const [navbarModule, setNavbarModule] = useState(initialNavbarModuleContext);
+
     return (
         <main className="Main" themeStyle="default" themeMode="light">
             <Provider store={store}>
+                <NavbarModuleContext.Provider value={{ navbarModule, setNavbarModule }}>
                 <Router>
                     <Routes>
                         <Route
@@ -37,7 +42,7 @@ const App = () => {
                         <Route
                             path="/calendar"
                             element={Layout({
-                                Component: Home,
+                                Component: Calendar,
                                 props: {},
                             })}
                         />
@@ -73,6 +78,7 @@ const App = () => {
                         <Route path="/login" element={<Login />} />
                     </Routes>
                 </Router>
+                </NavbarModuleContext.Provider>
             </Provider>
         </main>
     );
