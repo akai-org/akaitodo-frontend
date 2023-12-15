@@ -87,16 +87,21 @@
     }
 
     &.menuItemActive,
-    &.menuLinkTag,
-    &.userContainer::before,
-    &.userTextContainer,
-    &.logoutBackground,
-    &.logoutBackgroundSnippet {
+    &.menuLinkTag{
         display: none;
     }
-
-    &.userContainer {
-        margin: 10px;
+    &.logoutBackgroundSnippet{
+        // display: none;
+        width: 0;
+    }
+    &.logoutBackground{
+        width: 0;
+    }
+    &.line{
+        width: 0;
+    }
+    &.userTextContainer{
+        display: none;
     }
 }
 
@@ -133,27 +138,15 @@
         display: none;
     }
 
-    &.userContainer::before {
+    &.userContainer{
         width: 100%;
-        left: 0;
-        bottom: 120px;
-    }
-
-    &.userContainer {
+        height: 100%;
+        justify-content: center;
         align-items: center;
     }
-
-    &.userInfoContainer {
-        margin-bottom: 20px;
-    }
-
-    &.userLogout {
-        padding-top: 0.2rem;
-    }
-
-    &.logoutBackground,
-    &.logoutBackgroundSnippet {
-        display: none;
+    &.logoutBackgroundSnippet{
+        margin-left: 0px;
+        margin-bottom: 0px;
     }
 }
 
@@ -317,24 +310,13 @@
 .userContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 15px;
-}
-
-.userContainer::before {
-    width: 190px;
-    position: relative;
-    bottom: 15px;
-    align-self: center;
-    border-top: solid 1px var(--basebg-color);
-    content: '';
 }
 
 .userInfoContainer {
     display: flex;
     flex-direction: row;
-    z-index: 3;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .userTextContainer {
@@ -345,44 +327,57 @@
 
 .userLogo {
     display: flex;
-    width: 60px;
-    height: 60px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: -22px;
+    margin-left: -20px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background-color: var(--darkgray-color);
     font-size: 30px;
-}
-
-.userName {
-    padding-left: 0.35rem;
-    font-size: 1.3rem;
+    border: solid 2px hsl(0, 0%, 26%);
     color: var(--basebg-color);
 }
 
+.userName {
+    font-size: 1.3rem;
+    color: var(--basebg-color);
+    margin-top: -25px;
+    margin-left: 40px;
+}
+
 .userLogout {
-    padding-left: 0.35rem;
-    padding-top: 0.5rem;
-    color: black;
+    align-self: flex-start;
+    padding-top: 0.3rem;
+    margin-left: 43px;
+    color: hsl(0, 0%, 45%);
+    font-weight: 500;
 }
 
 .logoutBackground {
     width: 170px;
     height: 25px;
     position: absolute;
-    bottom: 16px;
-    left: 32px;
     border-radius: 7px;
     background-color: var(--lightgray-color);
-    z-index: 2;
 }
+
+.line {
+    position: absolute;
+    width: 180px; 
+    height: 1px; 
+    left: 0px;
+    background-color: white; 
+    top: -40px; 
+  }
 
 .logoutBackgroundSnippet {
     width: 180px;
     height: 25px;
-    position: absolute;
-    bottom: 16px;
-    left: 32px;
+    margin-left: 30px;
+    margin-bottom: 30px;
     border-radius: 7px;
     background-color: var(--darkgray-color);
 }

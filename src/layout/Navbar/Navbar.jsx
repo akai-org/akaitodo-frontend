@@ -173,29 +173,20 @@ const Navbar = () => {
                 </div>
 
                 {/* TODO NAV NEXT PART */}
-                {/* <div className={`${styles.userContainer} ${mode.class}`}>
-                    <div className={`${styles.userInfoContainer} ${mode.class}`}>
-                        <div className={styles.userLogo}>AV</div>
-                        <div
-                            className={`${styles.userTextContainer} ${mode.class}`}
-                        >
-                            <div className={`${styles.userName} ${mode.class}`}>
-                                Username
-                            </div>
-                            <div
-                                className={`${styles.userLogout} ${mode.class}`}
-                            >
-                                Logout
+                <div className={`${styles.userContainer} ${mode.class}`}>
+                    <div className={`${styles.logoutBackgroundSnippet} ${mode.class}`}>
+                        <div className={`${styles.logoutBackground} ${mode.class}`}>
+                            <div className={`${styles.userInfoContainer} ${mode.class}`}>
+                                <div className={`${styles.userLogo} ${mode.class}`}>AV</div>
+                                <div className={`${styles.userTextContainer} ${mode.class}`} >
+                                    <div className={`${styles.line} ${mode.class}`}></div>
+                                    <div className={`${styles.userName} ${mode.class}`}> Username </div>
+                                    <div className={`${styles.userLogout} ${mode.class}`} > LOGOUT </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div
-                        className={`${styles.logoutBackground} ${mode.class}`}
-                    ></div>
-                    <div
-                        className={`${styles.logoutBackgroundSnippet} ${mode.class}`}
-                    ></div>
-                </div> */}
+                </div>
             </nav>
         </>
     );
