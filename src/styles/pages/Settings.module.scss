@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    font-family: "Asap", sans-serif;
+}
+
+.container {
+    margin: 2.5vw 10vw;
+}
+
+.themeText, .modeText {
+    font-size: 1.875vw;
+}
+
+.line {
+    width: 70vw;
+    margin: 1vw 0;
+}
+
+.themesAndColors, .theme, .mode {
+    display: flex;
+    flex-direction: row;
+}
+
+.themesAndColors {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.theme, .themeButton, .modeText, .modeButton {
+    margin: 0 1.875vw;
+}
+
+.themeButton {
+    background-color: #c84e4e;
+    border: #000 1px solid;
+    padding: 1.2vw 4vw;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+// To do:
+// - media queries,
+// - fix of the problem with navbar and vw,
+// - mode light/dark button.
