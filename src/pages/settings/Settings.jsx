@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
+import ColorChoice from "./ColorChoice";
+
 import '#src/styles/App.scss';
+import styles from '#src/styles/pages/settings/Settings.module.scss';
 
-import styles from '#src/styles/pages/Settings.module.scss';
 
+const Settings = () => {
+    const [sidebarOnOff, setSidebarOnOff] = useState(false)
 
-const Settings = (props) => {
-    const [sidebar, setSidebar] = useState(false)
-
-    const sidebarStyle = {
-        display: sidebar ? "block" : "none"
-    }
+    // const sidebarStyle = {
+    //     display: sidebarOnOff ? "block" : "none"
+    // }
 
     const handleClick = () => {
-        setSidebar(prevState => {
-            // console.log(prevState)
+        setSidebarOnOff(prevState => {
             return !prevState
         })
     }
@@ -33,9 +33,11 @@ const Settings = (props) => {
             </div>
         </div>
         <hr className={styles.line} />
-        <p className={styles.test} style={sidebarStyle}>Test</p> 
+        {sidebarOnOff ? <ColorChoice /> : ""}
+        {/* <p className={styles.test} style={sidebarStyle}>Test</p>  */}
         </div>
     );
 };
+
 
 export default Settings;

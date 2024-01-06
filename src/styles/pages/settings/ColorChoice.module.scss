@@ -1,0 +1,37 @@
+// ColorChoice Component
+.container {
+    position: absolute;
+    right: 0;
+    padding: 1vw;
+    background-color: #d9d9d9;
+}
+
+// COlorButton Component
+
+.firstLayer {
+    margin: 0.5vw;
+    width: 6.5vw;
+    background-color: #f5754c;
+}
+
+.secondLayer {
+    width: 5vw;
+    background-color: #e91e63;
+}
+
+.thirdLayer {
+    width: 3.5vw;
+    background-color: #be1951;
+}
+
+.fourthLayer {
+    width: 2vw;
+    background-color: #821c3f;
+}
+
+.firstLayer, .secondLayer, .thirdLayer, .fourthLayer {
+    display: flex;
+    justify-content: flex-end;
+    height: 3vw;
+    border-radius: 0.75vw;
+}
