@@ -52,7 +52,7 @@ export default [
         name: "lightblue",
         color1: "#39637b",
         color2: "#4a92ba",
-        color3: "#4a92ba",
+        color3: "#57acdc",
         color4: "#aaca2d"
     },
     {
@@ -68,7 +68,7 @@ export default [
         name: "green",
         color1: "#3d7052",
         color2: "#53a875",
-        color3: "#53a875",
+        color3: "#60c689",
         color4: "#b7ba18"
     }
 ]
