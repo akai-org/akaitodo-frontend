@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import '#src/styles/App.scss';
-import colorsList from "./colors";
+import colorsListBright from "./colorsBright";
+import colorsListDark from "./colorsDark";
 import styles from '#src/styles/pages/settings/ColorChoice.module.scss';
 
-const ColorChoice = () => {
-    const [colorsData, setColorsData] = useState(colorsList)
-
+const ColorChoice = (props) => {
+    const [colorsData, setColorsData] = useState(colorsListBright)
+    if (!props.darkMode && colorsData === colorsListDark) {
+        setColorsData(colorsListBright)
+    } else if (props.darkMode && colorsData === colorsListBright) {
+        setColorsData(colorsListDark)
+    } // maybe it is possible to implement this in better way
+    console.log(props.darkMode)
     const colors = colorsData.map(color => {
         return (
             <ColorButton 
@@ -25,7 +31,7 @@ const ColorButton = (props) => {
     // styleButton = {
     //     backgroundColor: props.color
     // }
-    console.log(props)
+    // console.log(props)
     return (
         <div className={styles.firstLayer} style={{backgroundColor: props.color1}}>
             <div className={styles.secondLayer} style={{backgroundColor: props.color2}}>
