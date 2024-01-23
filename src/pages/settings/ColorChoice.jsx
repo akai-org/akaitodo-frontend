@@ -5,13 +5,14 @@ import colorsListDark from "./colorsDark";
 import styles from '#src/styles/pages/settings/ColorChoice.module.scss';
 
 const ColorChoice = (props) => {
+    // Rendering 2 times? Check it later
     const [colorsData, setColorsData] = useState(colorsListBright)
     if (!props.darkMode && colorsData === colorsListDark) {
         setColorsData(colorsListBright)
     } else if (props.darkMode && colorsData === colorsListBright) {
         setColorsData(colorsListDark)
     } // maybe it is possible to implement this in better way
-    console.log(props.darkMode)
+
     const colors = colorsData.map(color => {
         return (
             <ColorButton 

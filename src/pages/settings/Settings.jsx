@@ -12,9 +12,26 @@ const Settings = () => {
     //     display: sidebarOnOff ? "block" : "none"
     // }
 
-    const handleCheckbox = () => {
-        setIsModeChecked(prevState => !prevState)
+    // New:
+    const [formData, setFormData] = useState(
+        {
+            isDarkModeChecked: false
+        }
+    )
+
+    const handleChange = (event) => {
+        const {name, type, value, checked} = event.target // value for the future inputs in settings
+        setFormData(prevState => {
+            return {
+                ...prevState,
+                [name]: type == "checkbox" ? checked : value
+            }
+        })
     }
+
+    // const handleCheckbox = () => {
+    //     setIsModeChecked(prevState => !prevState)
+    // }
 
     const handleClick = () => {
         setSidebarOnOff(prevState => !prevState)
@@ -24,23 +41,29 @@ const Settings = () => {
         <div className={styles.container}>
             <div className={styles.themesAndColors}>
                 <div className={styles.theme}>
-                    <h3 className={styles.themeText}>THEME</h3>
-                    <button className={styles.themeButton} onClick={handleClick}></button>
+                    <label htmlFor="themeButton" className={styles.themeText}>THEME</label>
+                    <button 
+                        id="themeButton"
+                        className={styles.themeButton} 
+                        onClick={handleClick}>
+                    </button>
                 </div>
             <div className={styles.mode}>
-                <h3 className={styles.modeText}>MODE</h3>
+                <label htmlFor="isDarkModeChecked" className={styles.modeText}>MODE</label>
                 <div className={styles.modeSlider}>
                     <input
-                        type="checkbox" 
+                        type="checkbox"
+                        id="isDarkModeChecked"
                         className={styles.setIsModeChecked} 
-                        checked={isModeChecked}
-                        onChange={handleCheckbox}
+                        checked={formData.isDarkModeChecked}
+                        onChange={handleChange}
+                        name="isDarkModeChecked"
                     />
                 </div>
             </div>
         </div>
         <hr className={styles.line} />
-        {sidebarOnOff && <ColorChoice darkMode={isModeChecked}/>}
+        {sidebarOnOff && <ColorChoice darkMode={formData.isDarkModeChecked}/>}
         {/* <p className={styles.test} style={sidebarStyle}>Test</p>  */}
         </div>
     );
