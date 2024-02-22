@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import styles from '../../styles/components/widgets/ModalWidget.module.scss';
 
 
-const ModalWidget = ({header, paragraph, modalOn, onConfirm,}) => {
-    const [openModal, setOpenModal] = useState(modalOn);
+const ModalWidget = ({header, paragraph, onConfirm,}) => {
+    const [openModal, setOpenModal] = useState(true);
     const switchModal = () => {
         setOpenModal(!openModal);
     }
