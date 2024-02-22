@@ -330,21 +330,24 @@
 
 // DOWN USER INFO
 .userContainer {
+    transition: 0.2s;
     display: flex;
     flex-direction: column;
 }
 
 .userInfoContainer {
+    transition: 0.2s;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 }
 
 .userTextContainer {
+    transition: 0.2s;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .userLogo {
@@ -364,6 +367,7 @@
 }
 
 .userName {
+    transition: 0.2s;
     font-size: 1.3rem;
     color: var(--basebg-color);
     margin-top: -25px;
@@ -373,12 +377,13 @@
 .userLogout {
     align-self: flex-start;
     padding-top: 0.3rem;
-    margin-left: 43px;
+    margin-left: 40px;
     color: hsl(0, 0%, 45%);
     font-weight: 500;
 }
 
 .logoutBackground {
+    transition: 0.2s;
     width: 170px;
     height: 25px;
     position: absolute;
@@ -387,6 +392,7 @@
 }
 
 .line {
+    transition: 0.2s;
     position: absolute;
     width: 180px; 
     height: 1px; 
@@ -396,6 +402,7 @@
   }
 
 .logoutBackgroundSnippet {
+    transition: 0.2s;
     width: 180px;
     height: 25px;
     margin-left: 30px;

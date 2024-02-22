@@ -185,7 +185,6 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                {/* TODO NAV NEXT PART */}
                 <div className={`${styles.userContainer} ${mode.class}`}>
                     <div className={`${styles.logoutBackgroundSnippet} ${mode.class}`}>
                         <div className={`${styles.logoutBackground} ${mode.class}`}>
@@ -193,8 +192,8 @@ const Navbar = () => {
                                 <div className={`${styles.userLogo} ${mode.class}`}>AV</div>
                                 <div className={`${styles.userTextContainer} ${mode.class}`} >
                                     <div className={`${styles.line} ${mode.class}`}></div>
-                                    <div className={`${styles.userName} ${mode.class}`}> Username </div>
-                                    <div className={`${styles.userLogout} ${mode.class}`} > LOGOUT </div>
+                                    <div className={`${styles.userName} ${mode.class}`}>Username</div>
+                                    <div className={`${styles.userLogout} ${mode.class}`} >PROFILE</div>
                                 </div>
                             </div>
                         </div>
