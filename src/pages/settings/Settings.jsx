@@ -3,14 +3,12 @@ import { useLocation } from 'react-router-dom';
 
 import styles from '#src/styles/pages/Settings.module.scss';
 import NavbarModule from '../../layout/Navbar/NavbarModule';
-
-const availableFolds = [
-    "themes",
-    "calendar",
-    "todolist",
-    "notes",
-    "profile"
-];
+import ThemesFold from './Themes';
+import CalendarFold from './Calendar';
+import TodoListFold from './ToDoList';
+import NotesFold from './Notes';
+import ProfileFold from './Profile';
+import ToDoListFold from './ToDoList';
 
 const navbarElementsArray = [
     "Themes",
@@ -18,6 +16,22 @@ const navbarElementsArray = [
     "ToDo List",
     "Notes",
     "Profile"
+];
+
+const arr = {
+    themes: <ThemesFold />,
+    calendar: <CalendarFold />,
+    todolist: <ToDoListFold />,
+    notes: <NotesFold />,
+    profile: <ProfileFold />
+}
+
+const availableFolds = [
+    "themes",
+    "calendar",
+    "todolist",
+    "notes",
+    "profile"
 ];
 
 const navbarElements = navbarElementsArray.map((element, index, array) => (
@@ -28,6 +42,8 @@ const navbarElements = navbarElementsArray.map((element, index, array) => (
 ));
 
 const Settings = (props) => {
+    const location = useLocation();
+
     return (
         <div>
             <NavbarModule>
@@ -35,6 +51,9 @@ const Settings = (props) => {
                     {navbarElements}
                 </div>
             </NavbarModule>
+            <div className={styles.container}>
+
+            </div>
         </div>
     );
 };
