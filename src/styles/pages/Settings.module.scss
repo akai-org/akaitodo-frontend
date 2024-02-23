@@ -1,0 +1,42 @@
+@use '../vars' as *;
+
+* {
+    margin: 0;
+}
+
+.navbar {
+    width: 82.5vw;
+    height: 100%;
+    // background-color: tomato;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.elementWithPipe {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.navbarElement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12vw;
+    height: 60%;
+    margin: auto;
+    color: $basebg-color;
+    background-color: #595959; // new colors nonexisting in vars yet
+    border: 1px solid #787878; // new color
+    border-radius: 0.5vw;
+}
+
+.navbarPipe {
+    width: 0.25vw;
+    height: 50%;
+    margin: auto 0;
+    background-color: $lightgray-color;
+    border-radius: 0.1vw;
+}
