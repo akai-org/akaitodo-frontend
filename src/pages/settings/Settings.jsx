@@ -1,14 +1,14 @@
 import '#src/styles/App.scss';
+// import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import styles from '#src/styles/pages/Settings.module.scss';
 import NavbarModule from '../../layout/Navbar/NavbarModule';
 import ThemesFold from './Themes';
 import CalendarFold from './Calendar';
-import TodoListFold from './ToDoList';
+import ToDoListFold from './ToDoList';
 import NotesFold from './Notes';
 import ProfileFold from './Profile';
-import ToDoListFold from './ToDoList';
 
 const navbarElementsArray = [
     "Themes",
@@ -24,7 +24,7 @@ const arr = {
     todolist: <ToDoListFold />,
     notes: <NotesFold />,
     profile: <ProfileFold />
-}
+};
 
 const availableFolds = [
     "themes",
