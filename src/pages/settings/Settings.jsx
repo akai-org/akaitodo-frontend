@@ -35,7 +35,7 @@ const availableFolds = [
 ];
 
 
-const Settings = (props) => {
+const Settings = () => {
     const location = useLocation();
     const navigate = useNavigate();
     
@@ -45,6 +45,7 @@ const Settings = (props) => {
         ? location.pathname.split('/').pop()
         : "themes"
         );
+    
         
     const handleFoldChange = (fold) => setCurrentFold(fold);
     
@@ -52,15 +53,16 @@ const Settings = (props) => {
         navigate(`/settings/${currentFold}`);
     }, [currentFold]);
     
-    const navbarElements = navbarElementsArray.map((element, index, array) => (
+    const navbarElements = navbarElementsArray.map((element, index, array) => {
+        return(
         <div className={styles.elementWithPipe}>
             <button 
-                className={styles.navbarElement}
+                className={`${styles.navbarElement} ${currentFold === availableFolds[index] ? styles.activeNavbarElement : ''}`}
                 onClick={() => handleFoldChange(availableFolds[index])}
             >{element}</button>
             {index !== array.length - 1 && <div className={styles.navbarPipe}></div>}
-        </div>
-    ));
+        </div>)
+    });
 
     return (
         <div>
