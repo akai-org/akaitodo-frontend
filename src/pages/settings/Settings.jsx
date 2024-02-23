@@ -4,11 +4,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import styles from '#src/styles/pages/Settings.module.scss';
 import NavbarModule from '../../layout/Navbar/NavbarModule';
-import ThemesFold from './Themes';
-import CalendarFold from './Calendar';
-import ToDoListFold from './ToDoList';
-import NotesFold from './Notes';
-import ProfileFold from './Profile';
+import ThemesFold from '../../components/settings/Themes';
+import CalendarFold from '../../components/settings/Calendar';
+import ToDoListFold from '../../components/settings/ToDoList';
+import NotesFold from '../../components/settings/Notes';
+import ProfileFold from '../../components/settings/Profile';
 
 const navbarElementsArray = [
     "Themes",
