@@ -3,62 +3,72 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import styles from '#src/styles/pages/Settings.module.scss';
+
 import NavbarModule from '../../layout/Navbar/NavbarModule';
-import ThemesFold from '../../components/settings/Themes';
-import CalendarFold from '../../components/settings/Calendar';
-import ToDoListFold from '../../components/settings/ToDoList';
-import NotesFold from '../../components/settings/Notes';
-import ProfileFold from '../../components/settings/Profile';
+import ThemesFold from '../../components/settings/ThemesFold';
+import CalendarFold from '../../components/settings/CalendarFold';
+import ToDoListFold from '../../components/settings/ToDoListFold';
+import NotesFold from '../../components/settings/NotesFold';
+import ProfileFold from '../../components/settings/ProfileFold';
 
-const navbarElementsArray = [
-    "Themes",
-    "Calendar",
-    "ToDo List",
-    "Notes",
-    "Profile"
-];
 
-const folds = {
-    themes: <ThemesFold />,
-    calendar: <CalendarFold />,
-    todolist: <ToDoListFold />,
-    notes: <NotesFold />,
-    profile: <ProfileFold />
-};
+const folds = [
+    {
+        title: "Themes",
+        url: "themes",
+        component: <ThemesFold />
+    },
+    {
+        title: "Calendar",
+        url: "calendar",
+        component: <CalendarFold />
+    },
+    {
+        title: "ToDo List",
+        url: "todolist",
+        component: <ToDoListFold />
+    },
+    {
+        title: "Notes",
+        url: "notes",
+        component: <NotesFold />
+    },
+    {
+        title: "Profile",
+        url: "profile",
+        component: <ProfileFold />
+    }
+]
 
-const availableFolds = [
-    "themes",
-    "calendar",
-    "todolist",
-    "notes",
-    "profile"
-];
+const foldTitles = folds.map(fold => fold.title);
+const foldUrls = folds.map(fold => fold.url);
+const foldComponents = folds.map(fold => fold.component);
 
 
 const Settings = () => {
     const location = useLocation();
     const navigate = useNavigate();
+
+    const handleFoldChange = (fold) => setCurrentFold(fold);
     
-    const isFoldCorrect = availableFolds.includes(location.pathname.split('/').pop());
+
+    const isFoldInPath = foldUrls.includes(location.pathname.split('/').pop());
     const [currentFold, setCurrentFold] = useState(
-        isFoldCorrect
+        isFoldInPath
         ? location.pathname.split('/').pop()
         : "themes"
         );
-    
         
-    const handleFoldChange = (fold) => setCurrentFold(fold);
-    
     useEffect(() => {
         navigate(`/settings/${currentFold}`);
     }, [currentFold]);
     
-    const navbarElements = navbarElementsArray.map((element, index, array) => {
+    const navbarElements = foldTitles.map((element, index, array) => {
         return(
         <div className={styles.elementWithPipe}>
             <button 
-                className={`${styles.navbarElement} ${currentFold === availableFolds[index] ? styles.activeNavbarElement : ''}`}
-                onClick={() => handleFoldChange(availableFolds[index])}
+                className={`${styles.navbarElement} ${currentFold === foldUrls[index] ? styles.activeNavbarElement : ''}`}
+                onClick={() => handleFoldChange(foldUrls[index])}
             >{element}</button>
             {index !== array.length - 1 && <div className={styles.navbarPipe}></div>}
         </div>)
@@ -72,7 +82,7 @@ const Settings = () => {
                 </div>
             </NavbarModule>
             <div className={styles.container}>
-                {folds[currentFold]}
+                {foldComponents[currentFold]}
             </div>
         </div>
     );

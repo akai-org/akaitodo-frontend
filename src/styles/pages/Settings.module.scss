@@ -1,9 +1,5 @@
 @use '../vars' as *;
 
-* {
-    margin: 0;
-}
-
 .navbar {
     width: 100%;
     height: 100%;
@@ -24,20 +20,21 @@
     height: 50%;
     margin: auto 0;
     background-color: $lightgray-color;
-    border-radius: 0.1vw;
+    border-radius: 2px;
 }
+
 .navbarElement {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 12vw;
+    flex-grow: 0.6;
     height: 60%;
     margin: auto;
     font-size: 1vw;
     color: $basebg-color;
-    background-color: #595959; // new colors nonexisting in vars yet
-    border: 1px solid #787878; // new color
-    border-radius: 0.5vw;
+    background-color: #595959; 
+    border: 1px solid #787878; // new colors nonexisting in vars yet
+    border-radius: 5px;
     transition: height 0.1s ease, background-color 0.2s, color 0.1s;
 }
 
@@ -46,7 +43,7 @@
     height: 80%;
     background-color: $basebg-color;
     color: $contrastbg-color;
-    border-radius: 0.5vw 0.5vw 0 0;
+    border-radius: 5px 5px 0 0;
     border: none;
     transition: height 0.2s ease, background-color 0.2s, color 0.1s;
 }
@@ -55,5 +52,14 @@
 @media screen and (max-width: 1023px) {
     .navbarElement {
         font-size: 1.5vw;
+    }
+
+    .navbarPipe {
+        width: 0.5vw;
+        border-radius: 2px;
+    }
+
+    .navbarElement {
+        flex-grow: 0.75;
     }
 }
