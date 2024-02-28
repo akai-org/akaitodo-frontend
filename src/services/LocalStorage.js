@@ -1,15 +1,22 @@
 class LocalStorage {
-    static getJWT() {
-        if (!(localStorage.getItem('JWT') == null)) {
-            const JWT = localStorage.getItem('JWT');
-            console.log(JWT);
-        } else {
-            console.log('JWT not found');
+    static getAccessToken() {
+        if (!(localStorage.getItem('access_token') == null)) {
+            const JWT = localStorage.getItem('access_token');
+            return JWT;
         }
+
+        return null;
     }
-    static setJWT(val) {
-        localStorage.setItem('JWT', val);
+
+    static setAccessToken(token) {
+        localStorage.setItem('access_token', token);
+    }
+
+    static removeAccessToken() {
+        try {
+            localStorage.removeItem('access_token');
+        } catch {}
     }
 }
 
-export default new LocalStorage();
+export default LocalStorage;

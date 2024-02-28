@@ -1,25 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as authThunks from './Auth.thunks';
 import buildExtraReducers from './Auth.extraReducers';
+// import authReducers from './Auth.reducers';
+import * as reducers from './Auth.reducers';
 
 const initialState = {
-    isAuthenticated: true,
+    isAuthenticated: false,
+    isLoading: false,
     user: null,
 };
 
-// reducers for methods
-// extraReducers for thunks
 const slice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {
-        login: (state) => {
-            state.isAuthenticated = true;
-        },
-        logout: (state) => {
-            state.isAuthenticated = false;
-        },
-    },
+    reducers,
     extraReducers: buildExtraReducers,
 });
 

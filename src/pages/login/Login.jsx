@@ -35,7 +35,6 @@ const Login = () => {
     };
 
     useEffect(() => {
-        console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             console.log(form);
         }
@@ -57,8 +56,13 @@ const Login = () => {
     };
 
     const handleLogin = () => {
-        dispatch({ type: 'auth/login' });
-        console.log(auth.isAuthenticated);
+        const userCredentials = {
+            username: "User",
+            email: form.login,
+            password: form.password
+        };
+
+        dispatch(authActions.getAuthenticate(userCredentials));
         navigate('/');
     };
 
@@ -90,7 +94,8 @@ const Login = () => {
                         </span>
                     </button>
                     <p className={styles.orText}>or</p>
-                    <form className={styles.loginForm} onSubmit={handleSubmit}>
+                    {/* <form className={styles.loginForm} onSubmit={handleLogin}> */}
+                    <div className={styles.loginForm}>
                         <input
                             type="text"
                             placeholder="Username"
@@ -104,13 +109,12 @@ const Login = () => {
                             onChange={handlePasswordChange}
                         />
                         <button
-                            type="submit"
                             className={styles.loginButton}
                             onClick={handleLogin}
                         >
                             Login
                         </button>
-                    </form>
+                    </div>
                 </div>
                 <div className={styles.topMobile}>
                         <p className={styles.dodoNameMobile}>DoDo</p>

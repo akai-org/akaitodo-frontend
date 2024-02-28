@@ -1,27 +1,28 @@
-import React from 'react';
-import Login from '../pages/login/Login';
-import { Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { authSelector } from '../store/slices/Auth';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { authActions, authSelector } from '../store/slices/Auth';
+import { Navigate, useNavigate } from 'react-router-dom';
 
-const Guard =
-    ({ Component }) =>
-    (props) => {
-        const auth = useSelector(authSelector);
-        const componentObj = { Component };
+const Guard = ({ Component }) => (props) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const auth = useSelector(authSelector);
 
-        if (componentObj.Component.name == 'Login') {
-            return !auth?.isAuthenticated ? (
-                <Login />
-            ) : (
-                <Navigate to="/" replace />
-            );
-        }
-        return auth?.isAuthenticated ? (
-            <Component {...props} />
-        ) : (
-            <Navigate to="/login" replace />
-        );
-    };
+    useEffect(() => {
+        if (!auth.isAuthenticated)
+            console.log('test');
+            dispatch(authActions.verifyToken(auth));
+    }, []);
+
+    useEffect(() => {
+        console.log(auth.isAuthenticated);
+    }, [auth.isAuthenticated]);
+
+    if (auth.isAuthenticated) {
+        return <Component {...props} />;
+    }
+
+    return <Navigate to='/login'/>
+};
 
 export default Guard;
