@@ -68,7 +68,7 @@ const App = () => {
                             })}
                         />
                         <Route
-                            path="/settings"
+                            path="/settings/*"
                             element={Layout({
                                 Component: Settings,
                                 props: {},

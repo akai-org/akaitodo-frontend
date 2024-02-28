@@ -12,7 +12,7 @@ const NavbarModule = ({ children }) => {
     }, [navbarModule]);
 
     return navbarModule.reference
-        ? createPortal((<div>{children}</div>), navbarModule.reference)
+        ? createPortal((<>{children}</>), navbarModule.reference)
         : (<></>);
 };
 
