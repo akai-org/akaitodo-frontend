@@ -63,16 +63,15 @@ const Settings = () => {
         navigate(`/settings/${currentFold}`);
     }, [currentFold]);
     
-    const navbarElements = foldTitles.map((element, index, array) => {
-        return(
-        <div className={styles.elementWithPipe}>
+    const navbarElements = foldTitles.map((element, index, array) => (
+        <div className={styles.elementWithPipe} key={index}>
             <button 
                 className={`${styles.navbarElement} ${currentFold === foldUrls[index] ? styles.activeNavbarElement : ''}`}
                 onClick={() => handleFoldChange(foldUrls[index])}
             >{element}</button>
             {index !== array.length - 1 && <div className={styles.navbarPipe}></div>}
         </div>)
-    });
+    );
 
     return (
         <div>
