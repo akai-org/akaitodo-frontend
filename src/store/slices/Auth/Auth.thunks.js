@@ -1,12 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import LocalStorage from '../../../services/LocalStorage';
 
-const API_AUTH_URL = 'http://localhost:5000/auth';
-const API_USER_URL = 'http://localhost:5000/users';
+import axios from '#src/configs/axios';
+import { API_PORT } from '#src/configs/axios';
+
+import LocalStorage from '#src/services/LocalStorage';
+
+const API_AUTH_URL = `http://localhost:${API_PORT}/auth`;
+const API_USER_URL = `http://localhost:${API_PORT}/users`;
 
 export const getAuthenticate = createAsyncThunk(
-    'auth/login', (authDto, { rejectWithValue }) =>
+    'auth/login', (authDto) =>
         axios.post(`${API_AUTH_URL}/login`, authDto)
             .then(res => {
                 const { accessToken } = res.data;
@@ -21,9 +24,6 @@ export const getAuthenticate = createAsyncThunk(
                 }
 
                 return res.data;
-            })
-            .catch(err => {
-                rejectWithValue(err.response.data);
             })
 );
 

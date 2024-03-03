@@ -3,6 +3,7 @@ import styles from '#src/styles/pages/Login.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { authActions, authSelector } from '../../store/slices/Auth/Auth.slice';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const initialFormState = {
     login: '',
@@ -57,13 +58,19 @@ const Login = () => {
 
     const handleLogin = () => {
         const userCredentials = {
-            username: "User",
             email: form.login,
             password: form.password
         };
 
-        dispatch(authActions.getAuthenticate(userCredentials));
-        navigate('/');
+        dispatch(authActions.getAuthenticate(userCredentials))
+            .unwrap()
+            .then(() => {
+                toast("Login success", { type: 'success' });
+                setTimeout(() => { navigate('/home'); }, 2000);
+            })
+            .catch(() => {
+                toast("Login failed", { type: 'error' });
+            })
     };
 
     return (
