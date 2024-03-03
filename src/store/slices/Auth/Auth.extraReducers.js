@@ -1,14 +1,33 @@
-import { dBlogin } from './Auth.thunks';
+import { getAuthenticate, getCurrentUser } from './Auth.thunks';
 
 const buildExtraReducers = (builder) => {
-    // thunks (pending, full-field, rejected)
-    builder.addCase(dBlogin.fulfilled, (state, { payload }) => {
-        state.isAuthenticated = true;
-        state.user.id = payload.id;
-        state.user.username = payload.username;
-        state.user.password = payload.password;
-        state.user.email = payload.email;
-    });
+    builder
+        // AUTH STATUS
+        .addCase(getAuthenticate.pending, (state) => {
+            state.isLoading = true;
+            state.isAuthenticated = false;
+        })
+        .addCase(getAuthenticate.fulfilled, (state) => {
+            state.isAuthenticated = true;
+            state.isLoading = false;
+        })
+        .addCase(getAuthenticate.rejected, (state) => {
+            state.isAuthenticated = false;
+            state.isLoading = false;
+        })
+
+        // USER DATA
+        .addCase(getCurrentUser.pending, (state) => {
+            state.isLoading = true;
+        })
+        .addCase(getCurrentUser.fulfilled, (state, action) => {
+            state.user = action.payload;
+            state.isLoading = false;
+        })
+        .addCase(getCurrentUser.rejected, (state) => {
+            state.isAuthenticated = false;
+            state.isLoading = false;
+        })
 };
 
 export default buildExtraReducers;

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import styles from '#src/styles/pages/Login.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { authActions, authSelector } from '../../store/slices/Auth/Auth.slice';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/slices/Auth/Auth.slice';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const initialFormState = {
-    login: '',
+    email: '',
     password: '',
 };
 
 const Login = () => {
-    const auth = useSelector(authSelector);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -18,9 +18,9 @@ const Login = () => {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
-    const handleLoginChange = (event) => {
-        const login = event.target.value;
-        setForm((prevState) => ({ ...prevState, login }));
+    const handleEmailChange = (event) => {
+        const email = event.target.value;
+        setForm((prevState) => ({ ...prevState, email }));
     };
 
     const handlePasswordChange = (event) => {
@@ -28,26 +28,13 @@ const Login = () => {
         setForm((prevState) => ({ ...prevState, password }));
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setFormErrors(validation(form));
-        setIsSubmit(true);
-    };
-
-    useEffect(() => {
-        console.log(formErrors);
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(form);
-        }
-    }, [formErrors]);
-
     const validation = (form) => {
         const errors = {};
         const emailRegex = /^[\w-\.]{1,30}@([\w-]+\.)+[\w-]{2,4}$/g;
-        if (!form.login) {
-            errors.login = 'Login is required';
-        } else if (!emailRegex.test(form.login)) {
-            errors.login = 'This login is not a valid e-mail format';
+        if (!form.email) {
+            errors.email = 'Email is required';
+        } else if (!emailRegex.test(form.email)) {
+            errors.login = 'Email is not in a valid format';
         }
         if (!form.password) {
             errors.password = 'Password is required';
@@ -57,10 +44,37 @@ const Login = () => {
     };
 
     const handleLogin = () => {
-        dispatch({ type: 'auth/login' });
-        console.log(auth.isAuthenticated);
-        navigate('/');
+        const userCredentials = {
+            email: form.email,
+            password: form.password
+        };
+
+        dispatch(authActions.getAuthenticate(userCredentials))
+            .unwrap()
+            .then(() => {
+                toast("Login success", { type: 'success' });
+                setTimeout(() => { navigate('/home'); }, 2000);
+            })
+            .catch(() => {
+                toast("Login failed", { type: 'error' });
+            })
     };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setFormErrors(validation(form));
+        setIsSubmit(true);
+
+        // TODO -> prevent login if form has errors
+
+        handleLogin();
+    };
+
+    useEffect(() => {
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+            console.log(form);
+        }
+    }, [formErrors]);    
 
     return (
         <div className={styles.container}>
@@ -82,7 +96,7 @@ const Login = () => {
                 <div className={styles.middleBar}></div>
 
                 <div className={styles.rightSide}>
-                    <button className={styles.googleButton}>
+                    <button className={styles.googleButton} disabled style={{ opacity: 0.1 }}> {/* Temporary opacity to make it 'off' */}
                         <img src="/images/Google__G__Logo.png" alt="" className={styles.googleLogo}/>
                         Continue with&nbsp;
                         <span className={styles.googleAccountBold}>
@@ -93,9 +107,9 @@ const Login = () => {
                     <form className={styles.loginForm} onSubmit={handleSubmit}>
                         <input
                             type="text"
-                            placeholder="Username"
-                            value={form.login}
-                            onChange={handleLoginChange}
+                            placeholder="Email"
+                            value={form.email}
+                            onChange={handleEmailChange}
                         />
                         <input
                             type="password"
@@ -104,9 +118,8 @@ const Login = () => {
                             onChange={handlePasswordChange}
                         />
                         <button
-                            type="submit"
                             className={styles.loginButton}
-                            onClick={handleLogin}
+                            type="submit"
                         >
                             Login
                         </button>

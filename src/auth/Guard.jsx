@@ -1,27 +1,36 @@
-import React from 'react';
-import Login from '../pages/login/Login';
-import { Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { authSelector } from '../store/slices/Auth';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, useLocation } from 'react-router';
+import { authActions, authSelector } from '../store/slices/Auth/Auth.slice';
+import LoadingScreen from '../components/widgets/LoadingScreen';
 
-const Guard =
-    ({ Component }) =>
-    (props) => {
-        const auth = useSelector(authSelector);
-        const componentObj = { Component };
+const Guard = ({ Component, isLogin = false }) => (props) => {
+    const dispatch = useDispatch();
+    const auth = useSelector(authSelector);
+    const location = useLocation();
+    
+    useEffect(() => {
+        if (!auth.isAuthenticated)
+            dispatch(authActions.verifyToken());
+    }, [auth.isAuthenticated]);
 
-        if (componentObj.Component.name == 'Login') {
-            return !auth?.isAuthenticated ? (
-                <Login />
-            ) : (
-                <Navigate to="/" replace />
-            );
-        }
-        return auth?.isAuthenticated ? (
-            <Component {...props} />
-        ) : (
-            <Navigate to="/login" replace />
-        );
-    };
+    useEffect(() => {}, [auth.isLoading]);
+
+    if (auth.isLoading) {
+        return <LoadingScreen />;
+    }
+
+    if (isLogin) {
+        if (auth.isAuthenticated)
+            return <Navigate to='/' state={{ from: location }} replace/>
+            
+        return <Component {...props} />;
+    } else {
+        if (auth.isAuthenticated)
+            return <Component {...props} />;
+    }
+
+    return <Navigate to='/login' state={{ from: location }} replace/>
+};
 
 export default Guard;

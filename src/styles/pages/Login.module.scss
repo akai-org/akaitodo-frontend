@@ -42,7 +42,7 @@
 }
 
 .dodoName {
-    color: #4DAEC3;
+    color: #828282;
 }
 
 .leftSideFirstSentence, .leftSideLastSentence, .leftSideDescription {
@@ -51,7 +51,7 @@
 }
 
 .leftSideFirstSentence {
-    margin-top: 2vw; // 2.5 -> 2
+    margin-top: 2vw;
 }
 
 .leftSideLastSentence {
@@ -64,12 +64,11 @@
     margin: 5% 0;
     padding: 5px;
     border-radius: 0.83vw;
-    // something is wrong with the width of this bar
 }
 
 .rightSide {
     width: 38%;
-    padding: 4.16vw 2.5vw;
+    padding: 3.33vw 2.5vw;
     display: flex;
     flex-direction: column;
 }
@@ -129,16 +128,17 @@
     width: 50%;
     margin-top: 0.475vw;
     padding: 0.42vw;
-    background-color: #4daec3;
-    color: #fff;
+    background-color: #828282;
+    color: white;
     font-size: 1.04vw;
     border: none;
     border-radius: 0.58vw;
     cursor: pointer;
+    transition: 0.25s;
 }
 
 .loginButton:hover {
-    background-color: #3d8b9c;
+    background-color: #a8a8a8;
     transition: 0.25s;
 }
 
@@ -186,7 +186,7 @@
     }
 
     .leftSideFirstSentence {
-        margin-top: 2.5vw; // 3 -> 2.5
+        margin-top: 2.5vw;
     }
     
     .leftSideLastSentence {
@@ -199,7 +199,7 @@
     
     .googleButton {
         font-size: 1.245vw;
-        height: 3.5vw; // 3.75 by the calculations
+        height: 3.5vw;
         padding: 0.315vw;
     }
 
@@ -245,10 +245,9 @@
     }
 
     .dodoNameMobile {
-        color: #4DAEC3;
-        font-size: 12vw; //5vh
+        color: #828282;
+        font-size: 12vw;
         font-weight: 600;
-        // margin: 5vh 0 1vh 0;
     }
 
     .hrLineMobile {
@@ -277,13 +276,11 @@
 
     .orText {
         font-size: 2.75vw;
-        // margin: 2.8vw 1.42vw;
         margin: 2vh 0.8vh;
     }
 
     .loginForm input {
         padding: 2.8vw;
-        // margin: 1.42vw 0;
         margin: 0.8vh 0;
         font-size: 3vw;
         border-radius: 2vw;
@@ -292,7 +289,6 @@
     }
 
     .loginButton {
-        // margin-top: 4vw;
         margin-top: 2.2vh;
         padding: 1.25vw 5vw;
         font-size: 3.5vw;
@@ -313,14 +309,13 @@
 
     .leftSideFirstSentence, .leftSideLastSentence, .leftSideDescription {
         font-size: 3.8vw;
-        // font-size: 2.75vh;
         font-weight: 300;
         text-align: center;
         margin: auto -5vw;
     }
     
     .leftSideFirstSentence {
-        margin-top: 2vw; // 2.5 -> 2
+        margin-top: 2vw;
     }
     
     .leftSideLastSentence {
