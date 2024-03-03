@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import axios from '#src/configs/axios';
-import { API_PORT } from '#src/configs/axios';
+import { API_ADDRESS } from '#src/configs/axios';
 
 import LocalStorage from '#src/services/LocalStorage';
 
-const API_AUTH_URL = `http://localhost:${API_PORT}/auth`;
-const API_USER_URL = `http://localhost:${API_PORT}/users`;
+const API_AUTH_URL = `${API_ADDRESS}/auth`;
+const API_USER_URL = `${API_ADDRESS}/users`;
 
 export const getAuthenticate = createAsyncThunk(
     'auth/login', (authDto) =>
