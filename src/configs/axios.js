@@ -4,7 +4,7 @@ import LocalStorage from '#src/services/LocalStorage';
 const axios = Axios.create();
 
 axios.interceptors.response.use((res) => res, (err) => {
-    if (err.request.status === 401) {
+    if (err.request.status === 401 && !err.request.responseURL.includes('login')) {
         LocalStorage.removeAccessToken();
         delete axios.defaults.headers.common.Authorization;
         window.location.reload();
