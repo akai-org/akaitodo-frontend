@@ -4,10 +4,12 @@ import axios from 'axios';
 import LocalStorage from '#src/services/LocalStorage';
 
 export const verifyToken = (state) => {
+    state.isLoading = true;
     const token = LocalStorage.getAccessToken();
 
     if (token === '' || token === null) {
         state.isAuthenticated = false;
+        state.isLoading = false;
         return;
     }
 
@@ -21,6 +23,7 @@ export const verifyToken = (state) => {
         LocalStorage.removeAccessToken();
         delete axios.defaults.headers.common.Authorization;
     }
+    state.isLoading = false;
 }
 
 export const logout = (state) => {

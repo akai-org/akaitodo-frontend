@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
 import { authActions, authSelector } from '../store/slices/Auth/Auth.slice';
+import LoadingScreen from '../components/widgets/LoadingScreen';
 
 const Guard = ({ Component, isLogin = false }) => (props) => {
     const dispatch = useDispatch();
@@ -12,6 +13,12 @@ const Guard = ({ Component, isLogin = false }) => (props) => {
         if (!auth.isAuthenticated)
             dispatch(authActions.verifyToken());
     }, [auth.isAuthenticated]);
+
+    useEffect(() => {}, [auth.isLoading]);
+
+    if (auth.isLoading) {
+        return <LoadingScreen />;
+    }
 
     if (isLogin) {
         if (auth.isAuthenticated)
