@@ -1,0 +1,7 @@
+@use '../../vars';
+
+.toDoLists {
+    flex: 1;
+    background-color: vars.$lightgray-color;
+    border-radius: 10px;
+}

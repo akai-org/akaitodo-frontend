@@ -1,3 +1,20 @@
 .container {
-    display: flex;
+   display: flex;
+   gap: 10px;
+   height: calc(90vh - 20px);  // do zmiany
+   margin: 10px;
+}
+
+.middleContainer {
+   flex: 5;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.rightContainer {
+   display: flex;
+   flex-direction: column;
+   flex: 3;
+   gap: 10px;
 }
