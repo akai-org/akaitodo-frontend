@@ -1,0 +1,30 @@
+@use '../../vars';
+
+.toDoTasks {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: vars.$lightgray-color;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.title {
+    background-color: vars.$third-color;
+    color: #ffffff;
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tasksContainer {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: vars.$third-color vars.$lightgray-color;
+}

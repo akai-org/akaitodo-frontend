@@ -1,0 +1,56 @@
+@use '../../vars';
+
+.task {
+    display: flex;
+    align-items: center;
+    background-color: #888888;
+    color: #ffffff;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+label {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checkboxContainer {
+    display: flex;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkIcon {
+    display: inline-block;
+    width: 20px; 
+    height: 20px; 
+    border: 2.3px solid #fff; 
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+
+    i {
+        display: none; // Hide the checkmark icon by default
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s ease;
+    }
+}
+
+input[type="checkbox"]:checked + .checkIcon, .checkIcon:hover {
+    background-color: vars.$secondary-color;
+    
+}
+
+input[type="checkbox"]:checked + .checkIcon i {
+    display: block; // Display the checkmark icon when the checkbox is checked 
+}

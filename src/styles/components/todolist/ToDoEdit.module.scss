@@ -1,0 +1,7 @@
+@use '../../vars';
+
+.toDoEdit {
+    flex: 3;
+    background-color: vars.$lightgray-color;
+    border-radius: 10px;
+}

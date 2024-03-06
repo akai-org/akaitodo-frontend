@@ -1,3 +1,21 @@
 .container {
-    display: flex;
+   display: flex;
+   flex: 1;
+   gap: 10px;
+   height: 100vh;
+   margin: 10px;
+}
+
+.middleContainer {
+   flex: 5;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.rightContainer {
+   display: flex;
+   flex-direction: column;
+   flex: 3;
+   gap: 10px;
 }
