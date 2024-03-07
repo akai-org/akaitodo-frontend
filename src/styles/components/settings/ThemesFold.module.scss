@@ -1,0 +1,62 @@
+.modeContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.modeText {
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+
+.line {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.themesContainer {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    flex-wrap: wrap; // to do
+    margin: 1% auto;
+    // background-color: gold;
+}
+
+.paletteElement {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    flex-basis: 48%;
+    margin: 1%;
+    // background-color: tomato;
+}
+
+.paletteName {
+    margin: auto 1vw;
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+
+.firstLayer {
+    margin: auto 0;
+    width: 24%;
+}
+
+.secondLayer {
+    width: 76%;
+}
+
+.thirdLayer {
+    width: 66%;
+}
+
+.fourthLayer {
+    width: 52%;
+}
+
+.firstLayer, .secondLayer, .thirdLayer, .fourthLayer {
+    display: flex;
+    justify-content: flex-end;
+    height: 3vw;
+    border-radius: 0.5vw;
+}
