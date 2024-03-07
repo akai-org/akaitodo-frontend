@@ -81,7 +81,7 @@ const Settings = () => {
                 </div>
             </NavbarModule>
             <div className={styles.container}>
-                {foldComponents[currentFold]}
+                {folds.find(fold => fold.url === currentFold).component}
             </div>
         </div>
     );
