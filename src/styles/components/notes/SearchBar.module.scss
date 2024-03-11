@@ -1,0 +1,39 @@
+@use '../../vars' as *;
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    width: 500px;
+    gap: 25px;
+}
+
+.searchBar {
+    height: 25%;
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #cccccc70;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #6a6a6a;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255,255,255,1)'%3E%3Cpath d='M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.8675 18 18 14.8675 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18ZM19.4853 18.0711L22.3137 20.8995L20.8995 22.3137L18.0711 19.4853L19.4853 18.0711Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    outline: none;
+}
+
+.horLine {
+    height: 60%;
+    width: 2px;
+    background-color: #ccc;
+    border-radius: 8px;
+}
+
+.box {
+    aspect-ratio: 1/1;
+    height: 55%;
+    background-color: var(--primary-color);
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
