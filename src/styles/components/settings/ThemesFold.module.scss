@@ -1,10 +1,13 @@
 .modeContainer {
+    height: 12.5vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    // background-color: burlywood;
 }
 
 .modeText {
-    font-size: 1.4vw;
+    font-size: 1.8vw;
     font-weight: bold;
 }
 
@@ -16,29 +19,32 @@
 .themesContainer {
     display: flex;
     width: 80%;
+    height: 75vh;
     flex-direction: column;
-    flex-wrap: wrap; // to do
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     margin: 1% auto;
     // background-color: gold;
 }
 
 .paletteElement {
     display: flex;
+    flex-basis: 17.5%; 
     justify-content: space-between;
-    width: 40%;
-    flex-basis: 48%;
-    margin: 1%;
+    align-items: center;
+    width: 35%;
+    margin: 0.5%;
     // background-color: tomato;
 }
 
 .paletteName {
-    margin: auto 1vw;
-    font-size: 1.4vw;
+    margin: 0 1vw;
+    font-size: 1.6vw;
     font-weight: bold;
 }
 
 .firstLayer {
-    margin: auto 0;
     width: 24%;
 }
 
@@ -58,5 +64,39 @@
     display: flex;
     justify-content: flex-end;
     height: 3vw;
-    border-radius: 0.5vw;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 1440px) {
+    .paletteName {
+        font-size: 2vw;
+    }
+
+    .firstLayer {
+        margin: auto 0;
+        width: 30%;
+    }
+
+    .firstLayer, .secondLayer, .thirdLayer, .fourthLayer {
+        height: 3.75vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .paletteElement {
+        width: 40%;
+    }
+
+    .paletteName {
+        font-size: 2.4vw;
+    }
+
+    .firstLayer {
+        margin: auto 0;
+        width: 37.5%;
+    }
+
+    .firstLayer, .secondLayer, .thirdLayer, .fourthLayer {
+        height: 4.8vw;
+    }
 }
