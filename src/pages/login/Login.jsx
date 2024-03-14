@@ -65,7 +65,7 @@ const Login = () => {
         flow: 'auth-code',
         onSuccess: (response) => {
             dispatch(authActions.getAuthenticateByGoogle({
-                    gtoken: response.access_token
+                    gCode: response.code
                 })).unwrap()
                 .then(() => {
                     toast("Login success", { type: 'success' });
