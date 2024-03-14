@@ -1,4 +1,4 @@
-import { getAuthenticate, getCurrentUser } from './Auth.thunks';
+import { getAuthenticate, getAuthenticateByGoogle, getCurrentUser } from './Auth.thunks';
 
 const buildExtraReducers = (builder) => {
     builder
@@ -12,6 +12,20 @@ const buildExtraReducers = (builder) => {
             state.isLoading = false;
         })
         .addCase(getAuthenticate.rejected, (state) => {
+            state.isAuthenticated = false;
+            state.isLoading = false;
+        })
+
+        // AUTH BY GOOGLE
+        .addCase(getAuthenticateByGoogle.pending, (state) => {
+            state.isLoading = true;
+            state.isAuthenticated = false;
+        })
+        .addCase(getAuthenticateByGoogle.fulfilled, (state) => {
+            state.isAuthenticated = true;
+            state.isLoading = false;
+        })
+        .addCase(getAuthenticateByGoogle.rejected, (state) => {
             state.isAuthenticated = false;
             state.isLoading = false;
         })

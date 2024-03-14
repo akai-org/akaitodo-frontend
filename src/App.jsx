@@ -23,13 +23,20 @@ import Login from './pages/login';
 import Modal from './components/widgets/ModalWidget'
 
 import { NavbarModuleContext, initialNavbarModuleContext } from './contexts/NavbarModuleContext';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
+const IS_GOOGLE_AVAILABLE = 
+    import.meta.env.VITE_GOOGLE_CLIENT_ID !== "" &&
+    import.meta.env.VITE_GOOGLE_CLIENT_ID !== undefined;
+    // pack it to different component
 
 const App = () => {
     const [navbarModule, setNavbarModule] = useState(initialNavbarModuleContext);
-
+    
     return (
         <main className='Main' themestyle='default' thememode='light'>
             <ToastContainer {...toastConfig} theme='light' />
+            <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID ?? 'xx'}>
             <Provider store={store}>
                 <NavbarModuleContext.Provider value={{ navbarModule, setNavbarModule }}>
                 <Router>
@@ -86,6 +93,7 @@ const App = () => {
                 </Router>
                 </NavbarModuleContext.Provider>
             </Provider>
+            </GoogleOAuthProvider>
         </main>
     );
 };
