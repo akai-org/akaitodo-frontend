@@ -62,6 +62,7 @@ const Login = () => {
     };
 
     const handleGoogleLogin = useGoogleLogin({
+        flow: 'auth-code',
         onSuccess: (response) => {
             dispatch(authActions.getAuthenticateByGoogle({
                     gtoken: response.access_token
