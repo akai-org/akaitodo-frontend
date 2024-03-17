@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { authActions } from '../../store/slices/Auth/Auth.slice';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useGoogleLogin } from '@react-oauth/google';
+import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
 
 const initialFormState = {
     email: '',
@@ -61,7 +61,10 @@ const Login = () => {
             });
     };
 
-    const handleGoogleLogin = useGoogleLogin({
+    // to remove
+    const temporary = useGoogleLogin({
+        scope: ['email', 'profile'],
+        select_account: true,
         flow: 'auth-code',
         onSuccess: (response) => {
             dispatch(authActions.getAuthenticateByGoogle({
@@ -79,6 +82,23 @@ const Login = () => {
             toast("Google login failed", { type: 'error' });
         }
     });
+
+    const handleGoogleLoginSuccess = ({ credential }) => {
+        dispatch(authActions.getAuthenticateByGoogle({
+            gToken: credential
+        })).unwrap()
+        .then(() => {
+            toast("Login success", { type: 'success' });
+            setTimeout(() => { navigate('/home'); }, 2000);
+        })
+        .catch(() => {
+            toast("Login failed", { type: 'error' });
+        });
+    };
+
+    const handleGoogleLoginFailed = () => {
+        toast("Google login failed", { type: 'error' });
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -116,13 +136,17 @@ const Login = () => {
                 <div className={styles.middleBar}></div>
 
                 <div className={styles.rightSide}>
-                    <button className={styles.googleButton} onClick={handleGoogleLogin}>
+                    {/* <button className={styles.googleButton} onClick={handleGoogleLogin}>
                         <img src="/images/Google__G__Logo.png" alt="" className={styles.googleLogo}/>
                         Continue with&nbsp;
                         <span className={styles.googleAccountBold}>
                             Google Account
                         </span>
-                    </button>
+                    </button> */}
+                    <GoogleLogin
+                        onSuccess={handleGoogleLoginSuccess}
+                        onError={handleGoogleLoginFailed}
+                    />
                     <p className={styles.orText}>or</p>
                     <form className={styles.loginForm} onSubmit={handleSubmit}>
                         <input
