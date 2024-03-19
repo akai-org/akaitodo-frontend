@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../../styles/App.scss';
-import styles from '../../styles/components/todolist/Task.module.scss';
+import '#src/styles/App.scss';
+import styles from '#src/styles/components/todolist/Task.module.scss';
 
 const Task = ({ taskName, isChecked, onToggle }) => {
     const toggleCheckbox = () => {
