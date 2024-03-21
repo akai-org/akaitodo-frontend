@@ -1,7 +1,7 @@
 @use '../../vars';
 
 .toDoTasks {
-    flex: 3;
+    flex: 2.5;
     display: flex;
     flex-direction: column;
     background-color: vars.$lightgray-color;
@@ -10,7 +10,7 @@
 }
 
 .title {
-    background-color: vars.$third-color;
+    background-color: #272727;
     color: #ffffff;
     font-size: 1.7rem;
     font-weight: bold;
@@ -26,5 +26,5 @@
     flex-direction: column;
     padding: 10px;
     scrollbar-width: thin;
-    scrollbar-color: vars.$third-color vars.$lightgray-color;
+    scrollbar-color: vars.$primary-color vars.$lightgray-color;
 }
