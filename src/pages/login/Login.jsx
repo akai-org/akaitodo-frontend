@@ -61,28 +61,6 @@ const Login = () => {
             });
     };
 
-    // to remove
-    const temporary = useGoogleLogin({
-        scope: ['email', 'profile'],
-        select_account: true,
-        flow: 'auth-code',
-        onSuccess: (response) => {
-            dispatch(authActions.getAuthenticateByGoogle({
-                    gCode: response.code
-                })).unwrap()
-                .then(() => {
-                    toast("Login success", { type: 'success' });
-                    setTimeout(() => { navigate('/home'); }, 2000);
-                })
-                .catch(() => {
-                    toast("Login failed", { type: 'error' });
-                });
-        },
-        onError: () => {
-            toast("Google login failed", { type: 'error' });
-        }
-    });
-
     const handleGoogleLoginSuccess = ({ credential }) => {
         dispatch(authActions.getAuthenticateByGoogle({
             gToken: credential
@@ -142,7 +120,7 @@ const Login = () => {
                         <span className={styles.googleAccountBold}>
                             Google Account
                         </span>
-                    </button> */}
+                    </button> */} {/* To change or customise  */}
                     <GoogleLogin
                         onSuccess={handleGoogleLoginSuccess}
                         onError={handleGoogleLoginFailed}
