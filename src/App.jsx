@@ -32,7 +32,7 @@ const IS_GOOGLE_AVAILABLE =
 
 const App = () => {
     const [navbarModule, setNavbarModule] = useState(initialNavbarModuleContext);
-    
+
     return (
         <main className='Main' themestyle='default' thememode='light'>
             <ToastContainer {...toastConfig} theme='light' />
