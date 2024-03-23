@@ -8,24 +8,32 @@ import LocalStorage from '#src/services/LocalStorage';
 const API_AUTH_URL = `${API_ADDRESS}/auth`;
 const API_USER_URL = `${API_ADDRESS}/users`;
 
+const authFunction = (res) => {
+    const { accessToken } = res.data;
+
+    if (accessToken) {
+        LocalStorage.setAccessToken(accessToken);
+        axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+    } else {
+        LocalStorage.removeAccessToken();
+        delete axios.defaults.headers.common.Authorization;
+        throw Error("No token");
+    }
+
+    return res.data;
+}
+
 export const getAuthenticate = createAsyncThunk(
     'auth/login', (authDto) =>
         axios.post(`${API_AUTH_URL}/login`, authDto)
-            .then(res => {
-                const { accessToken } = res.data;
-
-                if (accessToken) {
-                    LocalStorage.setAccessToken(accessToken);
-                    axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
-                } else {
-                    LocalStorage.removeAccessToken();
-                    delete axios.defaults.headers.common.Authorization;
-                    throw Error("No token");
-                }
-
-                return res.data;
-            })
+            .then(res => authFunction(res))
 );
+
+export const getAuthenticateByGoogle = createAsyncThunk(
+    'auth/google/login', (gtokenDto) =>
+        axios.post(`${API_AUTH_URL}/google/login`, gtokenDto)
+            .then(res => authFunction(res))
+)
 
 export const getCurrentUser = createAsyncThunk(
     'auth/currentUser', (_, { rejectWithValue }) =>
