@@ -1,8 +1,12 @@
 import styles from '#src/styles/components/notes/AddNote.module.scss';
 
 const AddNote = () => {
+    const addNoteHandler = () => {
+        console.log('Add Note');
+    };
+
     return (
-        <div role="button" className={styles.main}>
+        <div role="button" className={styles.main} onClick={addNoteHandler}>
             <div className={styles.wrapper}>
                 <div className={`${styles.lt} ${styles.corner}`}></div>
                 <div className={`${styles.rt} ${styles.corner}`}></div>

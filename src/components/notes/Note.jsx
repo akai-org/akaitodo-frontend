@@ -5,7 +5,9 @@ const Note = () => {
         <div className={styles.block}>
             <div className={styles.header}>
                 <div className={styles.wrapper}>
-                    <h3 className={styles.title}>Note name</h3>
+                    <h3 className={styles.title} contentEditable="true">
+                        Note name
+                    </h3>
                     <div className={styles.icon}></div>
                 </div>
                 <div className={styles.line}>
@@ -14,7 +16,7 @@ const Note = () => {
                 </div>
             </div>
             <div className={styles.content}>
-                <p>
+                <p contentEditable="true">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nulla accumsan, metus ultrices eleifend gravida, nulla nunc
                     varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate

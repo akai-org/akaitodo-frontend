@@ -26,6 +26,7 @@ import {
     initialNavbarModuleContext,
 } from './contexts/NavbarModuleContext';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import Notes from './pages/notes/Notes';
 
 const IS_GOOGLE_AVAILABLE =
     import.meta.env.VITE_GOOGLE_CLIENT_ID !== '' &&
@@ -88,7 +89,7 @@ const App = () => {
                                 <Route
                                     path="/notes"
                                     element={Layout({
-                                        Component: Home,
+                                        Component: Notes,
                                         props: {},
                                     })}
                                 />

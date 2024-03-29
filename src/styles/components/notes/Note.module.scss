@@ -6,6 +6,11 @@
     background-color: #f15a59;
     border-radius: 12px;
     font-weight: 300;
+    box-shadow: 0px 0px 13px -10px rgba(66, 68, 90, 1);
+}
+
+.block:hover {
+    box-shadow: 0px 0px 30px -10px rgba(66, 68, 90, 1);
 }
 
 .header {
@@ -30,6 +35,13 @@
     border-radius: 50%;
     top: -41px;
     left: -167px;
+}
+
+.title {
+    &[contenteditable='true']:focus {
+        outline: none;
+        border: none;
+    }
 }
 
 .wrapper {
@@ -78,13 +90,22 @@
 
 .content {
     height: 120px;
-    width: 100%;
-
+    width: 95%;
+    margin: 0px auto;
     p {
         color: #fff;
         box-sizing: border-box;
         margin: 5px 17px;
         font-size: small;
+        border-radius: 12px;
+        &[contenteditable='true']:focus {
+            outline: none;
+            border: none;
+        }
+    }
+
+    :focus-within {
+        box-shadow: inset 0px 0px 23px -17px rgb(255, 255, 255, 0.5);
     }
 }
 
