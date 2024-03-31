@@ -2,15 +2,19 @@
     display: flex;
     flex-direction: column;
     width: 350px;
+    min-width: 350px;
     height: 200px;
+    min-height: 200px;
     background-color: #f15a59;
     border-radius: 12px;
     font-weight: 300;
     box-shadow: 0px 0px 13px -10px rgba(66, 68, 90, 1);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .block:hover {
     box-shadow: 0px 0px 30px -10px rgba(66, 68, 90, 1);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .header {

@@ -1,10 +1,22 @@
 import styles from '#src/styles/components/notes/AddNote.module.scss';
+import { notesActions } from '#src/store/slices/Notes/Notes.slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { notesSelector } from '../../store/slices/Notes';
 
 const AddNote = () => {
-    const addNoteHandler = () => {
-        console.log('Add Note');
+    const dispatch = useDispatch();
+    const notes = useSelector(notesSelector);
+
+    const initNote = {
+        title: 'Name your note!',
+        body: 'Write down your thoughts',
+        createdAt: new Date().toISOString(),
     };
 
+    const addNoteHandler = () => {
+        dispatch(notesActions.addNote(initNote));
+        console.log(notes.notes);
+    };
     return (
         <div role="button" className={styles.main} onClick={addNoteHandler}>
             <div className={styles.wrapper}>

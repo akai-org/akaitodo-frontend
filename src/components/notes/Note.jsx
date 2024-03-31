@@ -1,12 +1,12 @@
 import styles from '#src/styles/components/notes/Note.module.scss';
 
-const Note = () => {
+const Note = (props) => {
     return (
         <div className={styles.block}>
             <div className={styles.header}>
                 <div className={styles.wrapper}>
                     <h3 className={styles.title} contentEditable="true">
-                        Note name
+                        {props.title}
                     </h3>
                     <div className={styles.icon}></div>
                 </div>
@@ -16,16 +16,11 @@ const Note = () => {
                 </div>
             </div>
             <div className={styles.content}>
-                <p contentEditable="true">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla accumsan, metus ultrices eleifend gravida, nulla nunc
-                    varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate
-                    semper dui.
-                </p>
+                <p contentEditable="true">{props.content}</p>
             </div>
             <div className={styles.footer}>
-                <div className={styles.time}>1:23 PM</div>
-                <div className={styles.date}>1/1/2020</div>
+                <div className={styles.time}>{props.time}</div>
+                <div className={styles.date}>{props.date}</div>
             </div>
         </div>
     );
