@@ -4,7 +4,7 @@ import styles from '#src/styles/components/todolist/ToDoTasks.module.scss';
 import Task from './Task.jsx';
 
 const ToDoTasks = () => {
-    const [tasks, setTasks] = useState(["test1", "test2", "test3"]);
+    const [tasks, setTasks] = useState(["test1", "test2", "test3", "test4", "test5", "test6", "test7", "test8", "test9"]);
     const [checkedTasks, setCheckedTasks] = useState([]);
 
     const toggleTask = (taskName) => {

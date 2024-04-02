@@ -1,0 +1,19 @@
+@use '../../vars';
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: vars.$primary-color;
+    height: 45px;
+    padding: 0 10px 0 10px;
+
+    .num {
+        font-size: 1.8rem;
+    }
+}

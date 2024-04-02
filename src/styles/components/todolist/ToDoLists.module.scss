@@ -2,6 +2,64 @@
 
 .toDoLists {
     flex: 1;
-    background-color: vars.$lightgray-color;
+    display: flex;
+    flex-direction: column;
+    background-color: #272727;
     border-radius: 10px;
+    overflow: hidden;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 5px 10px;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.addListButton {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: #fff;
+    border: 1px solid vars.$primary-color;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1px 8px;
+    cursor: pointer;
+
+    i {
+        font-size: 1.5rem;
+        font-weight: normal;
+        padding: 0;
+    }
+}
+
+hr {
+    color: vars.$primary-color;
+    margin: 0 5px;
+}
+
+.listsContainer {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: vars.$primary-color vars.$third-color;
 }
