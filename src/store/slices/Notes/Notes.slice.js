@@ -6,6 +6,7 @@ const initialState = {
     notes: [],
     colorsUsed: [],
     isLoading: false,
+    hasChanged: false,
     lastId: 0,
 };
 

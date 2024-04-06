@@ -6,7 +6,7 @@ import SearchBar from '../../components/notes/SearchBar';
 import { notesActions } from '../../store/slices/Notes/Notes.slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { notesSelector } from '../../store/slices/Notes/Notes.slice';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const Notes = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const Notes = () => {
 
     useEffect(() => {
         dispatch(notesActions.getNotes());
-    }, [notes.notes.length]);
+    }, [notes.notes.length, notes.hasChanged]);
 
     return (
         <>
