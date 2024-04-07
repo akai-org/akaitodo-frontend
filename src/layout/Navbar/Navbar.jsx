@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import '#src/styles/App.scss';
-import styles from '#src/styles/layout/navbar/Navbar.module.scss';
+import styles from '#src/styles/layout/Navbar/Navbar.module.scss';
 import { authActions } from '#src/store/slices/Auth';
 import useAuth from '#src/hooks/useAuth';
 

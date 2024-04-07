@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Navbar from './Navbar';
-import ScrollableContainer from './Scrollablecontainer';
+import ScrollableContainer from './ScrollableContainer';
 
 const Layout = ({ Component, props }) => (
     <>
