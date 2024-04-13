@@ -6,11 +6,20 @@ import SearchBar from '../../components/notes/SearchBar';
 import { notesActions } from '../../store/slices/Notes/Notes.slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { notesSelector } from '../../store/slices/Notes/Notes.slice';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+import ContentEditable from '#src/components/widgets/ContentEditable';
 
 const Notes = () => {
     const dispatch = useDispatch();
     const notes = useSelector(notesSelector);
+
+    const [test, setTest] = useState('<b>testing</b>');
+
+    const testChangehandler = (e) => {
+        setTest(e);
+        console.log(test);
+    };
 
     useEffect(() => {
         dispatch(notesActions.getNotes());
@@ -23,17 +32,20 @@ const Notes = () => {
             </NavbarModule>
             <div className={styles.container}>
                 {notes.notes.map((note) => {
+                    const localDate = new Date(note.createdAt);
+                    const timezoneOffset = localDate.getTimezoneOffset();
+                    const correctedDate = new Date(
+                        localDate.getTime() - timezoneOffset * 60000,
+                    ).toISOString();
+
                     const time =
-                        note.createdAt
+                        correctedDate
                             .split('T')[1]
                             .split('.')[0]
                             .split(':')[0] +
                         ':' +
-                        note.createdAt
-                            .split('T')[1]
-                            .split('.')[0]
-                            .split(':')[1];
-                    const date = note.createdAt.split('T')[0];
+                        correctedDate.split('T')[1].split('.')[0].split(':')[1];
+                    const date = correctedDate.split('T')[0];
                     return (
                         <Note
                             key={note.id}
@@ -47,6 +59,9 @@ const Notes = () => {
                 })}
                 <AddNote />
             </div>
+            <ContentEditable onChange={testChangehandler}>
+                <p>Test</p>
+            </ContentEditable>
         </>
     );
 };

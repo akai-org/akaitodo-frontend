@@ -19,16 +19,16 @@ const Note = (props) => {
 
     const editTitle = (e) => {
         e.preventDefault();
-        console.log('Event', e.target.innerText);
-        if (e.target.innerText !== title) {
-            setTitle(e.target.innerText);
+        console.log('Event', e.target.value);
+        if (e.target.value !== title) {
+            setTitle(e.target.value);
             console.log('Title changed', props.id);
-            dispatch(
-                notesActions.updateNoteTitle({
-                    title: e.target.innerText,
-                    noteId: props.id,
-                }),
-            );
+            // dispatch(
+            //     notesActions.updateNoteTitle({
+            //         title: e.target.innerText,
+            //         noteId: props.id,
+            //     }),
+            // );
         }
     };
 
@@ -55,15 +55,13 @@ const Note = (props) => {
         <div className={styles.block}>
             <div className={styles.header}>
                 <div className={styles.wrapper}>
-                    <h3
+                    <input
                         className={styles.title}
-                        onBlur={editTitle}
+                        type="text"
+                        value={title}
+                        onChange={editTitle}
                         onKeyDown={stopEditing}
-                        contentEditable="true"
-                        suppressContentEditableWarning="true"
-                    >
-                        {title}
-                    </h3>
+                    />
                     <div
                         className={styles.icon}
                         onClick={deleteNoteHandler}
