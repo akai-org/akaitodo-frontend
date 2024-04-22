@@ -14,11 +14,11 @@ const Notes = () => {
     const dispatch = useDispatch();
     const notes = useSelector(notesSelector);
 
-    const [test, setTest] = useState('<b>testing</b>');
+    const [test, setTest] = useState('Test');
 
     const testChangehandler = (e) => {
         setTest(e);
-        console.log(test);
+        console.log(e);
     };
 
     useEffect(() => {
@@ -59,9 +59,6 @@ const Notes = () => {
                 })}
                 <AddNote />
             </div>
-            <ContentEditable onChange={testChangehandler}>
-                <p>Test</p>
-            </ContentEditable>
         </>
     );
 };
