@@ -1,37 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { taskActions } from '#src/store/slices/Task';
 import '../../styles/App.scss';
 import styles from '../../styles/components/todolist/ToDoTasks.module.scss';
 import Task from './Task.jsx';
 
 const ToDoTasks = () => {
-    const [tasks, setTasks] = useState(["test1", "test2", "test3"]);
-    const [checkedTasks, setCheckedTasks] = useState([]);
+    const dispatch = useDispatch();
+    const tasks = useSelector(state => state.task.tasks);
 
-    const toggleTask = (taskName) => {
-        if (checkedTasks.includes(taskName)) {
-            setCheckedTasks(checkedTasks.filter(task => task !== taskName));
-        } else {
-            setCheckedTasks([...checkedTasks, taskName]);
-        }
-        removeTask(taskName);
+    useEffect(() => {
+        dispatch(taskActions.fetchAllTasks());
+    }, [dispatch]);
+
+    useEffect(() => {
+        console.log("Tasks from Redux state:", tasks);
+    }, [tasks]);
+
+
+
+    const toggleTask = (taskId) => {
+        // to do
     };
 
-    const removeTask = (taskName) => {
-        setTimeout(() => {
-            setTasks(tasks.filter(task => task !== taskName));
-        }, 300);
+    const removeTask = async (taskId) => {
+        // to do
     };
 
     return (
         <div className={styles.toDoTasks}>
             <div className={styles.title}>Tasks</div>
             <div className={styles.tasksContainer}>
-                {tasks.map((task, index) => (
+                {tasks.map((task) => (
                     <Task 
-                        key={index} 
-                        taskName={task} 
-                        isChecked={checkedTasks.includes(task)} 
-                        onToggle={toggleTask} 
+                        key={task.id} 
+                        taskId={task.id}
+                        taskName={task.name} 
+                        taskDescription={task.description}
+                        isDone={task.isDone}
                     />
                 ))}
             </div>
