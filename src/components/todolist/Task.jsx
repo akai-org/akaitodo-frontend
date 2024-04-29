@@ -16,7 +16,7 @@ const Task = ({ taskName }) => {
                         id={taskName}
                     />
                     <div className={styles.checkIcon}>
-                        //{isChecked && <i className="ri-check-line"></i>}
+                        {/* {isChecked && <i className="ri-check-line"></i>} */}
                     </div>
                 </div>
                 {taskName}

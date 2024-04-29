@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as taskThunks from './Task.thunks';
-import buildReducers from './Task.reducers';
+import buildExtraReducers from './Task.extraReducers';
+import {} from './Task.reducers';
 
 const initialState = {
     tasks: [],
@@ -10,7 +11,7 @@ const slice = createSlice({
     name: 'task',
     initialState,
     reducers: {},
-    reducers: buildReducers,
+    extraReducers: buildExtraReducers,
 });
 
 export const taskReducer = slice.reducer;
