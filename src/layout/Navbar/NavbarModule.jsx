@@ -1,7 +1,7 @@
 import React, { useContext, forwardRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import styles from '#src/styles/layout/navbar/Navbar.module.scss';
+import styles from '#src/styles/layout/Navbar/Navbar.module.scss';
 
 import { NavbarModuleContext } from '../../contexts/NavbarModuleContext';
 

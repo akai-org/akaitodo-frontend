@@ -3,6 +3,11 @@ import LocalStorage from '#src/services/LocalStorage';
 
 const axios = Axios.create();
 
+axios.interceptors.request.use((config) => {
+    config.headers.Authorization =  `Bearer ${LocalStorage.getAccessToken() ?? ''}`;
+    return config;
+});
+
 axios.interceptors.response.use((res) => res, (err) => {
     if (err.request.status === 401 && !err.request.responseURL.includes('login')) {
         LocalStorage.removeAccessToken();

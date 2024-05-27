@@ -3,14 +3,16 @@ import React, {
     useContext, useRef
 } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import '#src/styles/App.scss';
-import styles from '#src/styles/layout/navbar/Navbar.module.scss';
+import styles from '#src/styles/layout/Navbar/Navbar.module.scss';
+import { authActions } from '#src/store/slices/Auth';
+import useAuth from '#src/hooks/useAuth';
 
 import { NavbarModuleContext } from '../../contexts/NavbarModuleContext';
 import { NavbarModuleParent } from './NavbarModule';
 import { NavbarItems } from './NavbarItems';
-
 
 // CONSTANTS
 const FULL_MENU_BREAKPOINT = 1024;
@@ -43,7 +45,10 @@ const initializeMenu = () => {
 };
 
 const Navbar = () => {
+    const dispatch = useDispatch();
     const location = useLocation();
+
+    const { user } = useAuth();
 
     const refTopContainer = useRef();
     const { setNavbarModule } = useContext(NavbarModuleContext);
@@ -86,6 +91,8 @@ const Navbar = () => {
     }, [windowWidth]);
 
     useEffect(() => {
+        dispatch(authActions.getCurrentUser());
+
         const handleResize = () => {
             if (window.innerWidth !== windowWidth)
                 setWindowWidth(window.innerWidth);
@@ -192,7 +199,9 @@ const Navbar = () => {
                                 <div className={`${styles.userLogo} ${mode.class}`}>AV</div>
                                 <div className={`${styles.userTextContainer} ${mode.class}`} >
                                     <div className={`${styles.line} ${mode.class}`}></div>
-                                    <div className={`${styles.userName} ${mode.class}`}>Username</div>
+                                    <div className={`${styles.userName} ${mode.class}`}>
+                                        {user?.username ?? ''}
+                                    </div>
                                     <div className={`${styles.userLogout} ${mode.class}`} >PROFILE</div>
                                 </div>
                             </div>

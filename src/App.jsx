@@ -22,11 +22,14 @@ import Settings from './pages/settings';
 import Login from './pages/login';
 import Modal from './components/widgets/ModalWidget';
 
-import {
-    NavbarModuleContext,
-    initialNavbarModuleContext,
-} from './contexts/NavbarModuleContext';
+import { NavbarModuleContext, initialNavbarModuleContext } from './contexts/NavbarModuleContext';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { ThemeContext, initialThemeContext } from './contexts/ThemeContext';
+
+const IS_GOOGLE_AVAILABLE = 
+    import.meta.env.VITE_GOOGLE_CLIENT_ID !== "" &&
+    import.meta.env.VITE_GOOGLE_CLIENT_ID !== undefined;
+    // TODO: pack it to different component
 
 const App = () => {
     const [navbarModule, setNavbarModule] = useState(
@@ -35,7 +38,8 @@ const App = () => {
     const [theme, setTheme] = useState(initialThemeContext);
 
     return (
-        <main className="Main" themestyle={theme.style} thememode={theme.mode}>
+        <main className="main" themestyle={theme.style} thememode={theme.mode}>
+            <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID ?? 'defaultnotvalid'}>
             <ToastContainer {...toastConfig} theme="light" />
             <Provider store={store}>
                 <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -102,6 +106,7 @@ const App = () => {
                     </NavbarModuleContext.Provider>
                 </ThemeContext.Provider>
             </Provider>
+            </GoogleOAuthProvider>
         </main>
     );
 };

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { authActions } from '../../store/slices/Auth/Auth.slice';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
 
 const initialFormState = {
     email: '',
@@ -57,8 +58,25 @@ const Login = () => {
             })
             .catch(() => {
                 toast("Login failed", { type: 'error' });
-            })
+            });
     };
+
+    const handleGoogleLoginSuccess = ({ credential }) => {
+        dispatch(authActions.getAuthenticateByGoogle({
+            gToken: credential
+        })).unwrap()
+        .then(() => {
+            toast("Login success", { type: 'success' });
+            setTimeout(() => { navigate('/home'); }, 2000);
+        })
+        .catch(() => {
+            toast("Login failed", { type: 'error' });
+        });
+    };
+
+    const handleGoogleLoginFailed = () => {
+        toast("Google login failed", { type: 'error' });
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -96,13 +114,17 @@ const Login = () => {
                 <div className={styles.middleBar}></div>
 
                 <div className={styles.rightSide}>
-                    <button className={styles.googleButton} disabled style={{ opacity: 0.1 }}> {/* Temporary opacity to make it 'off' */}
+                    {/* <button className={styles.googleButton} onClick={handleGoogleLogin}>
                         <img src="/images/Google__G__Logo.png" alt="" className={styles.googleLogo}/>
                         Continue with&nbsp;
                         <span className={styles.googleAccountBold}>
                             Google Account
                         </span>
-                    </button>
+                    </button> */} {/* To change or customise  */}
+                    <GoogleLogin
+                        onSuccess={handleGoogleLoginSuccess}
+                        onError={handleGoogleLoginFailed}
+                    />
                     <p className={styles.orText}>or</p>
                     <form className={styles.loginForm} onSubmit={handleSubmit}>
                         <input
