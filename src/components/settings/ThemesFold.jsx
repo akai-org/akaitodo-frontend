@@ -84,7 +84,7 @@ const ThemesFold = () => {
     const {theme, setTheme} = useContext(ThemeContext);
 
     const colorPalettes = colors.map(palette => (
-        <div className={styles.paletteElement}>
+        <div key={palette.name} className={styles.paletteElement}>
             <p className={styles.paletteName}>{palette.name}</p>
             <div style={{backgroundColor: palette.additionalColor}} className={styles.firstLayer}>
                 <div style={{backgroundColor: palette.thirdColor}} className={styles.secondLayer}>

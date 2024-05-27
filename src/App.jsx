@@ -24,10 +24,6 @@ import Modal from './components/widgets/ModalWidget';
 
 import { NavbarModuleContext, initialNavbarModuleContext } from './contexts/NavbarModuleContext';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import {
-    NavbarModuleContext,
-    initialNavbarModuleContext,
-} from './contexts/NavbarModuleContext';
 import { ThemeContext, initialThemeContext } from './contexts/ThemeContext';
 
 const IS_GOOGLE_AVAILABLE = 
@@ -43,7 +39,6 @@ const App = () => {
 
     return (
         <main className="main" themestyle={theme.style} thememode={theme.mode}>
-            <ToastContainer {...toastConfig} theme='light' />
             <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID ?? 'defaultnotvalid'}>
             <ToastContainer {...toastConfig} theme="light" />
             <Provider store={store}>
