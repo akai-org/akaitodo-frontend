@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../../styles/App.scss';
 
 import styles from '../../styles/components/settings/ThemesFold.module.scss';
+
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 
 const colors = [
@@ -79,6 +81,7 @@ const colors = [
 
 
 const ThemesFold = () => {
+    const {theme, setTheme} = useContext(ThemeContext);
 
     const colorPalettes = colors.map(palette => (
         <div className={styles.paletteElement}>
@@ -98,7 +101,8 @@ const ThemesFold = () => {
         <div className={styles.container}>
             <div className={styles.modeContainer}>
                 <p className={styles.modeText}>MODE</p>
-                <input type="checkbox" name="mode" id="mode" className={styles.modeCheckbox} /> {/* What's happening? */} 
+                <input type="checkbox" style={{backgroundColor: 'tomato'}}/> {/* What's happening? */} 
+                
             </div>
             <hr className={styles.line} />
             <div className={styles.themesContainer}>

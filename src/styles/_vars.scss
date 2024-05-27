@@ -26,6 +26,32 @@
             --contrastbg-color: hsl(0, 0%, 100%);
         }
     }
+    [themeStyle='red'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        // -= LIGHT VERSION =-
+        &[themeMode='light'] {
+            --primary-color: hsl(0, 100%, 61%);
+            --secondary-color: hsl(0, 0%, 26%);
+            --third-color: hsl(0, 0%, 15%);
+            --additional-color: hsl(230, 13%, 36%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(0, 0%, 100%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        // -= DARK VERSION =-
+        &[themeMode='dark'] {
+            --primary-color: hsl(0, 100%, 50%);
+            --secondary-color: hsl(0, 0%, 26%);
+            --third-color: hsl(0, 0%, 26%);
+            --additional-color: hsl(229, 19%, 22%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(0, 0%, 13%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
 
     // -= FONT SIZES =-
     // todo
