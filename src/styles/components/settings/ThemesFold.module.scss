@@ -8,7 +8,7 @@
 }
 
 .modeText {
-    font-size: 1.8vw;
+    font-size: 1.8em;
     font-weight: bold;
     margin: 0.8em;
 }
@@ -76,8 +76,6 @@
 
 .switch {
     display: block;
-    --size-of-icon: 1.4em;
-    --slider-offset: ;
     position: relative;
     width: 3.5em;
     height: 2em;
@@ -143,6 +141,12 @@ input:checked + .slider:before {
 }
 
 @media screen and (max-width: 1024px) {
+    .modeText {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin: 0.8em;
+    }
+
     .paletteElement {
         width: 40%;
     }
@@ -161,5 +165,35 @@ input:checked + .slider:before {
     .thirdLayer,
     .fourthLayer {
         height: 4.8vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .themesContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .paletteElement {
+        width: 65%;
+    }
+
+    .paletteName {
+        font-size: 1em;
+    }
+
+    .firstLayer {
+        margin: auto 0;
+        width: 45%;
+    }
+
+    .firstLayer,
+    .secondLayer,
+    .thirdLayer,
+    .fourthLayer {
+        height: 3em;
+        border-radius: 0.6em;
     }
 }
