@@ -1,14 +1,16 @@
+@use '../../vars' as *;
+
 .modeContainer {
     height: 12.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: burlywood;
 }
 
 .modeText {
     font-size: 1.8vw;
     font-weight: bold;
+    margin: 0.8em;
 }
 
 .line {
@@ -25,14 +27,13 @@
     justify-items: center;
 }
 
-
 .paletteElement {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 50%;
     padding: 8pt 15pt 8pt 15pt;
-    background-color: var(--lightgray-color);
+    background-color: $lightgray-color;
     border-radius: 8pt;
     transition: 0.2s;
     &:hover {
@@ -63,11 +64,64 @@
     width: 52%;
 }
 
-.firstLayer, .secondLayer, .thirdLayer, .fourthLayer {
+.firstLayer,
+.secondLayer,
+.thirdLayer,
+.fourthLayer {
     display: flex;
     justify-content: flex-end;
     height: 3vw;
     border-radius: 8px;
+}
+
+.switch {
+    display: block;
+    --size-of-icon: 1.4em;
+    --slider-offset: ;
+    position: relative;
+    width: 3.5em;
+    height: 2em;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $additionalbg-color;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 1.25em;
+    left: 0.3em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(
+        35deg,
+        $additional-color,
+        $additional-color-o 50%
+    );
+    transition: 0.25s;
+}
+
+input:checked + .slider:before {
+    left: calc(100% - (1.4em + 0.3em));
+    background: $additionalbg-color;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
 
 @media screen and (max-width: 1440px) {
@@ -80,7 +134,10 @@
         width: 30%;
     }
 
-    .firstLayer, .secondLayer, .thirdLayer, .fourthLayer {
+    .firstLayer,
+    .secondLayer,
+    .thirdLayer,
+    .fourthLayer {
         height: 3.75vw;
     }
 }
@@ -99,7 +156,10 @@
         width: 37.5%;
     }
 
-    .firstLayer, .secondLayer, .thirdLayer, .fourthLayer {
+    .firstLayer,
+    .secondLayer,
+    .thirdLayer,
+    .fourthLayer {
         height: 4.8vw;
     }
 }
