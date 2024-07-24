@@ -8,21 +8,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { notesSelector } from '../../store/slices/Notes/Notes.slice';
 import { useEffect, useState } from 'react';
 
-import ContentEditable from '#src/components/widgets/ContentEditable';
-
 const Notes = () => {
     const dispatch = useDispatch();
     const notes = useSelector(notesSelector);
 
-    const [test, setTest] = useState('Test');
-
-    const testChangehandler = (e) => {
-        setTest(e);
-        console.log(e);
-    };
-
     useEffect(() => {
         dispatch(notesActions.getNotes());
+        console.log(notes.notes.length, notes.hasChanged);
     }, [notes.notes.length, notes.hasChanged]);
 
     return (

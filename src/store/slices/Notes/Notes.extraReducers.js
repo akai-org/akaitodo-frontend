@@ -14,7 +14,9 @@ const buildExtraReducers = (builder) => {
     builder.addCase(getNotes.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         // Don't want store user data in notes
-        delete payload[0].user;
+        if (payload.length > 0 && payload[0].user) {
+            delete payload[0].user;
+        }
         state.notes = payload;
         state.hasChanged = false;
     });
@@ -34,6 +36,7 @@ const buildExtraReducers = (builder) => {
         state.isLoading = false;
     });
 
+    // Update Note Title
     builder.addCase(updateNoteTitle.pending, (state) => {
         state.isLoading = true;
     });
@@ -45,6 +48,7 @@ const buildExtraReducers = (builder) => {
         state.isLoading = false;
     });
 
+    // Update Note Content
     builder.addCase(updateNoteContent.pending, (state) => {
         state.isLoading = true;
     });
@@ -56,10 +60,11 @@ const buildExtraReducers = (builder) => {
         state.isLoading = false;
     });
 
+    // Delete Note By Id
     builder.addCase(deleteNoteById.pending, (state) => {
         state.isLoading = true;
     });
-    builder.addCase(deleteNoteById.fulfilled, (state, { payload }) => {
+    builder.addCase(deleteNoteById.fulfilled, (state) => {
         state.isLoading = false;
         state.hasChanged = true;
     });

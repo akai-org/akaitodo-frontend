@@ -6,6 +6,8 @@ const ContentEditable = (props) => {
     // Tracking cloned element
     const element = useRef();
 
+    let value = element.current?.value || element.current?.innerHTML;
+
     let elements = React.Children.toArray(props.children);
     if (elements.length > 1) {
         throw Error("Can't have more than one child");
@@ -13,14 +15,14 @@ const ContentEditable = (props) => {
 
     // every time the user types, we update the value
     const onMouseUp = () => {
-        const value = element.current?.value || element.current?.innerText;
+        value = element.current?.value || element.current?.innerHTML;
         if (onChange) {
             onChange(value);
         }
     };
     // Do on the first pass
     useEffect(() => {
-        const value = element.current?.value || element.current?.innerText;
+        value = element.current?.value || element.current?.innerHTML;
         if (onChange) {
             onChange(value);
         }

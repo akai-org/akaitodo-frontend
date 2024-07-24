@@ -12,6 +12,11 @@ const Note = (props) => {
     const [content, setContent] = useState(props.content);
     const [contentChanged, setContentChanged] = useState(false);
 
+    const defaultNote = {
+        title: 'Name your note!',
+        content: 'Write down your thoughts',
+    };
+
     // Input Counter (accessible for both useEffect and onBlurEvent)
     let timeoutId = null;
 
