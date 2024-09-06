@@ -37,8 +37,8 @@
     margin: auto;
     font-size: 1vw;
     color: $basebg-color;
-    background-color: #595959;
-    border: 1px solid #787878; // new colors nonexisting in vars yet
+    background-color: $third-color;
+    border: 1px solid $secondary-color;
     border-radius: 5px;
     transition: height 0.1s ease, background-color 0.2s, color 0.1s;
 }

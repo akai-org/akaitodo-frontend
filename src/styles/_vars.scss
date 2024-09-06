@@ -33,23 +33,23 @@
         --lightgray-color: hsl(0, 0%, 85%);
 
         &[themeMode='light'] {
-            --primary-color: hsl(352, 71%, 52%);
+            --primary-color: hsl(352, 71%, 48%);
             --secondary-color: hsl(351, 78%, 44%);
             --third-color: hsl(345, 100%, 57%);
             --additional-color: hsl(18, 92%, 65%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(0, 25%, 47%);
+            --basebg-color: hsl(0, 25%, 75%);
             --additionalbg-color: hsl(0, 25%, 60%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
         &[themeMode='dark'] {
             --primary-color: hsl(352, 71%, 44%);
-            --secondary-color: hsl(351, 78%, 33%);
-            --third-color: hsl(345, 100%, 43%);
+            --secondary-color: hsl(351, 78%, 31%);
+            --third-color: hsl(345, 100%, 32%);
             --additional-color: hsl(18, 92%, 50%);
             --additional-color-o: hsl(19, 69%, 45%);
-            --basebg-color: hsl(0, 32%, 31%);
+            --basebg-color: hsl(0, 32%, 25%);
             --additionalbg-color: hsl(0, 32%, 40%);
             --contrastbg-color: hsl(0, 0%, 100%);
         }

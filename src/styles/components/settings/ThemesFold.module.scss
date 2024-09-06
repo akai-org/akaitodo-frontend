@@ -34,11 +34,13 @@
     width: 50%;
     padding: 8pt 15pt 8pt 15pt;
     background-color: $lightgray-color;
+    color: #1f1f1f;
     border-radius: 8pt;
     transition: 0.2s;
     &:hover {
         cursor: pointer;
-        background-color: #eee;
+        background-color: $darkgray-color;
+        color: #000;
         transition: 0.2s;
     }
 }
