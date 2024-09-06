@@ -4,7 +4,6 @@
         --darkgray-color: hsl(0, 0%, 64%);
         --lightgray-color: hsl(0, 0%, 85%);
 
-        // -= LIGHT VERSION =-
         &[themeMode='light'] {
             --primary-color: hsl(0, 0%, 26%);
             --secondary-color: hsl(0, 0%, 26%);
@@ -16,7 +15,6 @@
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
-        // -= DARK VERSION =-
         &[themeMode='dark'] {
             --primary-color: hsl(0, 0%, 15%);
             --secondary-color: hsl(0, 0%, 26%);
@@ -28,28 +26,28 @@
             --contrastbg-color: hsl(0, 0%, 100%);
         }
     }
+
+    // -= RED COLOR =-
     [themeStyle='red'] {
         --darkgray-color: hsl(0, 0%, 64%);
         --lightgray-color: hsl(0, 0%, 85%);
 
-        // -= LIGHT VERSION =-
         &[themeMode='light'] {
-            --primary-color: hsl(0, 100%, 61%);
-            --secondary-color: hsl(0, 0%, 26%);
-            --third-color: hsl(0, 0%, 15%);
-            --additional-color: hsl(230, 13%, 36%);
+            --primary-color: hsl(352, 71%, 52%);
+            --secondary-color: hsl(351, 78%, 44%);
+            --third-color: hsl(345, 100%, 57%);
+            --additional-color: hsl(18, 92%, 65%);
             --additional-color-o: hsl(19, 69%, 63%);
             --basebg-color: hsl(0, 25%, 47%);
             --additionalbg-color: hsl(0, 25%, 60%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
-        // -= DARK VERSION =-
         &[themeMode='dark'] {
-            --primary-color: hsl(0, 100%, 50%);
-            --secondary-color: hsl(0, 0%, 26%);
-            --third-color: hsl(0, 0%, 26%);
-            --additional-color: hsl(229, 19%, 22%);
+            --primary-color: hsl(352, 71%, 44%);
+            --secondary-color: hsl(351, 78%, 33%);
+            --third-color: hsl(345, 100%, 43%);
+            --additional-color: hsl(18, 92%, 50%);
             --additional-color-o: hsl(19, 69%, 45%);
             --basebg-color: hsl(0, 32%, 31%);
             --additionalbg-color: hsl(0, 32%, 40%);
@@ -57,8 +55,229 @@
         }
     }
 
-    // -= FONT SIZES =-
-    // todo
+    // -= PINK COLOR =-
+    [themeStyle='pink'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        &[themeMode='light'] {
+            --primary-color: hsl(337, 71%, 45%);
+            --secondary-color: hsl(334, 77%, 45%);
+            --third-color: hsl(334, 81%, 53%);
+            --additional-color: hsl(10, 49%, 60%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(334, 60%, 45%);
+            --additionalbg-color: hsl(334, 77%, 60%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        &[themeMode='dark'] {
+            --primary-color: hsl(337, 71%, 39%);
+            --secondary-color: hsl(334, 77%, 35%);
+            --third-color: hsl(334, 81%, 46%);
+            --additional-color: hsl(10, 49%, 50%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(334, 60%, 30%);
+            --additionalbg-color: hsl(334, 77%, 40%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
+
+    // -= PURPLE COLOR =-
+    [themeStyle='purple'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        &[themeMode='light'] {
+            --primary-color: hsl(280, 52%, 32%);
+            --secondary-color: hsl(291, 65%, 47%);
+            --third-color: hsl(295, 49%, 64%);
+            --additional-color: hsl(257, 52%, 52%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(280, 52%, 32%);
+            --additionalbg-color: hsl(291, 65%, 47%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        &[themeMode='dark'] {
+            --primary-color: hsl(280, 52%, 27%);
+            --secondary-color: hsl(291, 65%, 37%);
+            --third-color: hsl(295, 49%, 56%);
+            --additional-color: hsl(257, 52%, 42%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(280, 52%, 25%);
+            --additionalbg-color: hsl(291, 65%, 40%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
+
+    // -= TEAL COLOR =-
+    [themeStyle='teal'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        &[themeMode='light'] {
+            --primary-color: hsl(190, 52%, 29%);
+            --secondary-color: hsl(185, 65%, 38%);
+            --third-color: hsl(181, 63%, 45%);
+            --additional-color: hsl(164, 71%, 58%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(190, 52%, 29%);
+            --additionalbg-color: hsl(185, 65%, 38%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        &[themeMode='dark'] {
+            --primary-color: hsl(190, 52%, 25%);
+            --secondary-color: hsl(185, 65%, 33%);
+            --third-color: hsl(181, 63%, 38%);
+            --additional-color: hsl(164, 71%, 50%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(190, 52%, 25%);
+            --additionalbg-color: hsl(185, 65%, 33%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
+
+    // -= NAVY COLOR =-
+    [themeStyle='navy'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        &[themeMode='light'] {
+            --primary-color: hsl(217, 56%, 25%);
+            --secondary-color: hsl(220, 56%, 30%);
+            --third-color: hsl(224, 67%, 41%);
+            --additional-color: hsl(212, 66%, 48%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(217, 56%, 25%);
+            --additionalbg-color: hsl(220, 56%, 30%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        &[themeMode='dark'] {
+            --primary-color: hsl(217, 56%, 21%);
+            --secondary-color: hsl(220, 56%, 25%);
+            --third-color: hsl(224, 67%, 34%);
+            --additional-color: hsl(212, 66%, 42%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(217, 56%, 21%);
+            --additionalbg-color: hsl(220, 56%, 25%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
+
+    // -= AQUA COLOR =-
+    [themeStyle='aqua'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        &[themeMode='light'] {
+            --primary-color: hsl(197, 52%, 30%);
+            --secondary-color: hsl(194, 62%, 38%);
+            --third-color: hsl(193, 68%, 47%);
+            --additional-color: hsl(184, 78%, 65%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(197, 52%, 30%);
+            --additionalbg-color: hsl(194, 62%, 38%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        &[themeMode='dark'] {
+            --primary-color: hsl(197, 52%, 26%);
+            --secondary-color: hsl(194, 62%, 33%);
+            --third-color: hsl(193, 68%, 41%);
+            --additional-color: hsl(184, 78%, 55%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(197, 52%, 26%);
+            --additionalbg-color: hsl(194, 62%, 33%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
+
+    // -= LIGHTBLUE COLOR =-
+    [themeStyle='lightblue'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        &[themeMode='light'] {
+            --primary-color: hsl(204, 45%, 39%);
+            --secondary-color: hsl(204, 62%, 54%);
+            --third-color: hsl(200, 82%, 63%);
+            --additional-color: hsl(78, 66%, 66%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(204, 45%, 39%);
+            --additionalbg-color: hsl(204, 62%, 54%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        &[themeMode='dark'] {
+            --primary-color: hsl(204, 45%, 34%);
+            --secondary-color: hsl(204, 62%, 45%);
+            --third-color: hsl(200, 82%, 55%);
+            --additional-color: hsl(78, 66%, 55%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(204, 45%, 34%);
+            --additionalbg-color: hsl(204, 62%, 45%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
+
+    // -= LIMEGREEN COLOR =-
+    [themeStyle='limegreen'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        &[themeMode='light'] {
+            --primary-color: hsl(128, 32%, 45%);
+            --secondary-color: hsl(141, 58%, 55%);
+            --third-color: hsl(135, 65%, 68%);
+            --additional-color: hsl(81, 83%, 71%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(128, 32%, 45%);
+            --additionalbg-color: hsl(141, 58%, 55%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        &[themeMode='dark'] {
+            --primary-color: hsl(128, 32%, 39%);
+            --secondary-color: hsl(141, 58%, 45%);
+            --third-color: hsl(135, 65%, 55%);
+            --additional-color: hsl(81, 83%, 60%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(128, 32%, 39%);
+            --additionalbg-color: hsl(141, 58%, 45%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
+
+    // -= GREEN COLOR =-
+    [themeStyle='green'] {
+        --darkgray-color: hsl(0, 0%, 64%);
+        --lightgray-color: hsl(0, 0%, 85%);
+
+        &[themeMode='light'] {
+            --primary-color: hsl(147, 40%, 43%);
+            --secondary-color: hsl(148, 46%, 50%);
+            --third-color: hsl(145, 51%, 58%);
+            --additional-color: hsl(74, 79%, 55%);
+            --additional-color-o: hsl(19, 69%, 63%);
+            --basebg-color: hsl(147, 40%, 43%);
+            --additionalbg-color: hsl(148, 46%, 50%);
+            --contrastbg-color: hsl(0, 0%, 13%);
+        }
+
+        &[themeMode='dark'] {
+            --primary-color: hsl(147, 40%, 36%);
+            --secondary-color: hsl(148, 46%, 41%);
+            --third-color: hsl(145, 51%, 48%);
+            --additional-color: hsl(74, 79%, 45%);
+            --additional-color-o: hsl(19, 69%, 45%);
+            --basebg-color: hsl(147, 40%, 36%);
+            --additionalbg-color: hsl(148, 46%, 41%);
+            --contrastbg-color: hsl(0, 0%, 100%);
+        }
+    }
 }
 
 // SCSS variables mapping -> works only with 'use'
