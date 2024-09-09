@@ -38,8 +38,8 @@
             --third-color: hsl(345, 100%, 57%);
             --additional-color: hsl(18, 92%, 65%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(0, 25%, 75%);
-            --additionalbg-color: hsl(0, 25%, 60%);
+            --basebg-color: hsl(0, 25%, 80%);
+            --additionalbg-color: hsl(0, 25%, 73%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
@@ -66,7 +66,7 @@
             --third-color: hsl(334, 81%, 53%);
             --additional-color: hsl(10, 49%, 60%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(334, 60%, 45%);
+            --basebg-color: hsl(334, 60%, 51%);
             --additionalbg-color: hsl(334, 77%, 60%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
@@ -90,12 +90,12 @@
 
         &[themeMode='light'] {
             --primary-color: hsl(280, 52%, 32%);
-            --secondary-color: hsl(291, 65%, 47%);
+            --secondary-color: hsl(291, 65%, 42%);
             --third-color: hsl(295, 49%, 64%);
             --additional-color: hsl(257, 52%, 52%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(280, 52%, 32%);
-            --additionalbg-color: hsl(291, 65%, 47%);
+            --basebg-color: hsl(280, 52%, 35%);
+            --additionalbg-color: hsl(291, 65%, 60%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
@@ -106,7 +106,7 @@
             --additional-color: hsl(257, 52%, 42%);
             --additional-color-o: hsl(19, 69%, 45%);
             --basebg-color: hsl(280, 52%, 25%);
-            --additionalbg-color: hsl(291, 65%, 40%);
+            --additionalbg-color: hsl(291, 65%, 42%);
             --contrastbg-color: hsl(0, 0%, 100%);
         }
     }
@@ -122,7 +122,7 @@
             --third-color: hsl(181, 63%, 45%);
             --additional-color: hsl(164, 71%, 58%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(190, 52%, 29%);
+            --basebg-color: hsl(190, 52%, 40%);
             --additionalbg-color: hsl(185, 65%, 38%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
@@ -133,7 +133,7 @@
             --third-color: hsl(181, 63%, 38%);
             --additional-color: hsl(164, 71%, 50%);
             --additional-color-o: hsl(19, 69%, 45%);
-            --basebg-color: hsl(190, 52%, 25%);
+            --basebg-color: hsl(190, 52%, 20%);
             --additionalbg-color: hsl(185, 65%, 33%);
             --contrastbg-color: hsl(0, 0%, 100%);
         }
@@ -150,19 +150,19 @@
             --third-color: hsl(224, 67%, 41%);
             --additional-color: hsl(212, 66%, 48%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(217, 56%, 25%);
-            --additionalbg-color: hsl(220, 56%, 30%);
+            --basebg-color: hsl(217, 56%, 35%);
+            --additionalbg-color: hsl(220, 56%, 50%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
         &[themeMode='dark'] {
-            --primary-color: hsl(217, 56%, 21%);
+            --primary-color: hsl(217, 56%, 20%);
             --secondary-color: hsl(220, 56%, 25%);
             --third-color: hsl(224, 67%, 34%);
             --additional-color: hsl(212, 66%, 42%);
             --additional-color-o: hsl(19, 69%, 45%);
-            --basebg-color: hsl(217, 56%, 21%);
-            --additionalbg-color: hsl(220, 56%, 25%);
+            --basebg-color: hsl(217, 56%, 25%);
+            --additionalbg-color: hsl(220, 56%, 30%);
             --contrastbg-color: hsl(0, 0%, 100%);
         }
     }
@@ -178,19 +178,19 @@
             --third-color: hsl(193, 68%, 47%);
             --additional-color: hsl(184, 78%, 65%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(197, 52%, 30%);
+            --basebg-color: hsl(197, 52%, 45%);
             --additionalbg-color: hsl(194, 62%, 38%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
         &[themeMode='dark'] {
-            --primary-color: hsl(197, 52%, 26%);
-            --secondary-color: hsl(194, 62%, 33%);
+            --primary-color: hsl(197, 52%, 23%);
+            --secondary-color: hsl(194, 62%, 28%);
             --third-color: hsl(193, 68%, 41%);
             --additional-color: hsl(184, 78%, 55%);
             --additional-color-o: hsl(19, 69%, 45%);
-            --basebg-color: hsl(197, 52%, 26%);
-            --additionalbg-color: hsl(194, 62%, 33%);
+            --basebg-color: hsl(197, 52%, 30%);
+            --additionalbg-color: hsl(194, 62%, 35%);
             --contrastbg-color: hsl(0, 0%, 100%);
         }
     }
@@ -201,24 +201,24 @@
         --lightgray-color: hsl(0, 0%, 85%);
 
         &[themeMode='light'] {
-            --primary-color: hsl(204, 45%, 39%);
-            --secondary-color: hsl(204, 62%, 54%);
+            --primary-color: hsl(204, 45%, 38%);
+            --secondary-color: hsl(204, 62%, 52%);
             --third-color: hsl(200, 82%, 63%);
             --additional-color: hsl(78, 66%, 66%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(204, 45%, 39%);
-            --additionalbg-color: hsl(204, 62%, 54%);
+            --basebg-color: hsl(204, 45%, 50%);
+            --additionalbg-color: hsl(204, 62%, 58%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
         &[themeMode='dark'] {
-            --primary-color: hsl(204, 45%, 34%);
+            --primary-color: hsl(204, 45%, 35%);
             --secondary-color: hsl(204, 62%, 45%);
             --third-color: hsl(200, 82%, 55%);
             --additional-color: hsl(78, 66%, 55%);
             --additional-color-o: hsl(19, 69%, 45%);
-            --basebg-color: hsl(204, 45%, 34%);
-            --additionalbg-color: hsl(204, 62%, 45%);
+            --basebg-color: hsl(204, 45%, 30%);
+            --additionalbg-color: hsl(204, 62%, 35%);
             --contrastbg-color: hsl(0, 0%, 100%);
         }
     }
@@ -229,13 +229,13 @@
         --lightgray-color: hsl(0, 0%, 85%);
 
         &[themeMode='light'] {
-            --primary-color: hsl(128, 32%, 45%);
+            --primary-color: hsl(128, 32%, 43%);
             --secondary-color: hsl(141, 58%, 55%);
             --third-color: hsl(135, 65%, 68%);
             --additional-color: hsl(81, 83%, 71%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(128, 32%, 45%);
-            --additionalbg-color: hsl(141, 58%, 55%);
+            --basebg-color: hsl(128, 32%, 55%);
+            --additionalbg-color: hsl(141, 58%, 60%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
@@ -245,8 +245,8 @@
             --third-color: hsl(135, 65%, 55%);
             --additional-color: hsl(81, 83%, 60%);
             --additional-color-o: hsl(19, 69%, 45%);
-            --basebg-color: hsl(128, 32%, 39%);
-            --additionalbg-color: hsl(141, 58%, 45%);
+            --basebg-color: hsl(128, 32%, 36%);
+            --additionalbg-color: hsl(141, 58%, 40%);
             --contrastbg-color: hsl(0, 0%, 100%);
         }
     }
@@ -257,13 +257,13 @@
         --lightgray-color: hsl(0, 0%, 85%);
 
         &[themeMode='light'] {
-            --primary-color: hsl(147, 40%, 43%);
-            --secondary-color: hsl(148, 46%, 50%);
+            --primary-color: hsl(147, 40%, 40%);
+            --secondary-color: hsl(148, 46%, 47%);
             --third-color: hsl(145, 51%, 58%);
             --additional-color: hsl(74, 79%, 55%);
             --additional-color-o: hsl(19, 69%, 63%);
-            --basebg-color: hsl(147, 40%, 43%);
-            --additionalbg-color: hsl(148, 46%, 50%);
+            --basebg-color: hsl(147, 40%, 50%);
+            --additionalbg-color: hsl(148, 46%, 55%);
             --contrastbg-color: hsl(0, 0%, 13%);
         }
 
@@ -273,8 +273,8 @@
             --third-color: hsl(145, 51%, 48%);
             --additional-color: hsl(74, 79%, 45%);
             --additional-color-o: hsl(19, 69%, 45%);
-            --basebg-color: hsl(147, 40%, 36%);
-            --additionalbg-color: hsl(148, 46%, 41%);
+            --basebg-color: hsl(147, 40%, 32%);
+            --additionalbg-color: hsl(148, 46%, 37%);
             --contrastbg-color: hsl(0, 0%, 100%);
         }
     }
