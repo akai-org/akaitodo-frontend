@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import '../../styles/App.scss';
 
 import styles from '../../styles/components/settings/ThemesFold.module.scss';
@@ -84,50 +84,61 @@ const capitalizedFirstLetter = (name) =>
 const ThemesFold = () => {
     const { theme, setTheme } = useContext(ThemeContext);
 
-    const handleModeChange = () => {
+    const handleModeChange = useCallback(() => {
         setTheme((prevState) => ({
             ...prevState,
             mode: prevState.mode === 'light' ? 'dark' : 'light',
         }));
-    };
+    }, [setTheme]);
 
-    const handleStyleChange = (name) => {
-        setTheme((prevState) => ({
-            ...prevState,
-            style: name,
-        }));
-    };
+    const handleStyleChange = useCallback(
+        (name) => {
+            setTheme((prevState) => ({
+                ...prevState,
+                style: name,
+            }));
+        },
+        [setTheme],
+    );
 
-    const colorPalettes = colors.map((palette) => (
-        <div
-            key={palette.name}
-            className={styles.paletteElement}
-            onClick={() => handleStyleChange(palette.name)}
-        >
-            <p className={styles.paletteName}>
-                {capitalizedFirstLetter(palette.name)}
-            </p>
+    const colorPalettes = colors.map(
+        ({
+            name,
+            primaryColor,
+            secondaryColor,
+            thirdColor,
+            additionalColor,
+        }) => (
             <div
-                style={{ backgroundColor: palette.additionalColor }}
-                className={styles.firstLayer}
+                key={name}
+                className={styles.paletteElement}
+                onClick={() => handleStyleChange(name)}
             >
+                <p className={styles.paletteName}>
+                    {capitalizedFirstLetter(name)}
+                </p>
                 <div
-                    style={{ backgroundColor: palette.thirdColor }}
-                    className={styles.secondLayer}
+                    style={{ backgroundColor: additionalColor }}
+                    className={styles.firstLayer}
                 >
                     <div
-                        style={{ backgroundColor: palette.secondaryColor }}
-                        className={styles.thirdLayer}
+                        style={{ backgroundColor: thirdColor }}
+                        className={styles.secondLayer}
                     >
                         <div
-                            style={{ backgroundColor: palette.primaryColor }}
-                            className={styles.fourthLayer}
-                        ></div>
+                            style={{ backgroundColor: secondaryColor }}
+                            className={styles.thirdLayer}
+                        >
+                            <div
+                                style={{ backgroundColor: primaryColor }}
+                                className={styles.fourthLayer}
+                            ></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    ));
+        ),
+    );
 
     return (
         <div className={styles.container}>
