@@ -60,7 +60,7 @@ const colors = [
         primaryColor: '#44799c',
         secondaryColor: '#58a6d1',
         thirdColor: '#67c2ff',
-        additionalColor: '#c7e876',
+        additionalColor: '#7ad3ff',
     },
     {
         name: 'limegreen',

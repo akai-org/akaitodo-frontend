@@ -145,7 +145,7 @@ input:checked + .slider:before {
 
 @media screen and (max-width: 1024px) {
     .modeText {
-        font-size: 1.4em;
+        font-size: 1.8em;
         font-weight: bold;
         margin: 0.8em;
     }
@@ -155,7 +155,7 @@ input:checked + .slider:before {
     }
 
     .paletteName {
-        font-size: 2.4vw;
+        font-size: 2vw;
     }
 
     .firstLayer {
@@ -168,6 +168,7 @@ input:checked + .slider:before {
     .thirdLayer,
     .fourthLayer {
         height: 4.8vw;
+        border-radius: 0.6em;
     }
 }
 
@@ -184,7 +185,7 @@ input:checked + .slider:before {
     }
 
     .paletteName {
-        font-size: 1em;
+        font-size: 1.4em;
     }
 
     .firstLayer {
