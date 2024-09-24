@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styles from '#src/styles/pages/Settings.module.scss';
 
 import NavbarModule from '../../layout/Navbar/NavbarModule';
-import ThemesFold from '../../components/settings/ThemesFold';
+import ThemesFold from '../../components/settings/ThemesFold/ThemesFold';
 import CalendarFold from '../../components/settings/CalendarFold';
 import ToDoListFold from '../../components/settings/ToDoListFold';
 import NotesFold from '../../components/settings/NotesFold';

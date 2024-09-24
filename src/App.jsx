@@ -29,20 +29,18 @@ import {
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { ThemeContext, initialThemeContext } from './contexts/ThemeContext';
 
+import getStoredTheme from './components/utils/getStoredTheme';
+
 const IS_GOOGLE_AVAILABLE =
     import.meta.env.VITE_GOOGLE_CLIENT_ID !== '' &&
     import.meta.env.VITE_GOOGLE_CLIENT_ID !== undefined;
 // TODO: pack it to different component
 
-const getStoredTheme = () => {
-    const storedTheme = localStorage.getItem('theme');
-    return storedTheme ? JSON.parse(storedTheme) : initialThemeContext;
-};
-
 const App = () => {
     const [navbarModule, setNavbarModule] = useState(
         initialNavbarModuleContext,
     );
+
     const [theme, setTheme] = useState(getStoredTheme);
 
     useEffect(() => {
