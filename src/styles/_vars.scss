@@ -1,8 +1,8 @@
 :root {
+    --darkgray-color: hsl(0, 0%, 64%);
+    --lightgray-color: hsl(0, 0%, 85%);
     // -= DEFAULT COLOR =-
     [themeStyle='default'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
 
         &[themeMode='light'] {
             --primary-color: hsl(0, 0%, 26%);
@@ -29,9 +29,6 @@
 
     // -= RED COLOR =-
     [themeStyle='red'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(352, 71%, 48%);
             --secondary-color: hsl(351, 78%, 44%);
@@ -57,9 +54,6 @@
 
     // -= PINK COLOR =-
     [themeStyle='pink'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(337, 71%, 45%);
             --secondary-color: hsl(334, 77%, 45%);
@@ -85,9 +79,6 @@
 
     // -= PURPLE COLOR =-
     [themeStyle='purple'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(280, 52%, 32%);
             --secondary-color: hsl(290, 60%, 38%);
@@ -113,9 +104,6 @@
 
     // -= TEAL COLOR =-
     [themeStyle='teal'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(190, 52%, 29%);
             --secondary-color: hsl(185, 65%, 38%);
@@ -141,9 +129,6 @@
 
     // -= NAVY COLOR =-
     [themeStyle='navy'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(217, 56%, 25%);
             --secondary-color: hsl(220, 56%, 30%);
@@ -169,9 +154,6 @@
 
     // -= AQUA COLOR =-
     [themeStyle='aqua'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(197, 52%, 30%);
             --secondary-color: hsl(194, 62%, 38%);
@@ -197,9 +179,6 @@
 
     // -= LIGHTBLUE COLOR =-
     [themeStyle='lightblue'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(204, 45%, 38%);
             --secondary-color: hsl(204, 62%, 52%);
@@ -225,9 +204,6 @@
 
     // -= LIMEGREEN COLOR =-
     [themeStyle='limegreen'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(128, 32%, 43%);
             --secondary-color: hsl(141, 58%, 55%);
@@ -253,9 +229,6 @@
 
     // -= GREEN COLOR =-
     [themeStyle='green'] {
-        --darkgray-color: hsl(0, 0%, 64%);
-        --lightgray-color: hsl(0, 0%, 85%);
-
         &[themeMode='light'] {
             --primary-color: hsl(147, 40%, 40%);
             --secondary-color: hsl(148, 46%, 47%);

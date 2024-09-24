@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.6em;
+    padding: 3.2em 0 1.6em;
 }
 
 .modeText {
@@ -16,14 +16,14 @@
 
 .line {
     width: 85%;
-    margin: 0 auto;
+    margin: 1.4em auto;
 }
 
 .themesContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, 1fr);
-    row-gap: 1.8em;
+    row-gap: 2.4em;
     padding: 3em 0;
     justify-items: center;
 }
@@ -33,10 +33,10 @@
     justify-content: space-between;
     align-items: center;
     width: 50%;
-    padding: 8pt 15pt 8pt 15pt;
+    padding: 1em 1.4em;
     background-color: $lightgray-color;
     color: #1f1f1f;
-    border-radius: 8pt;
+    border-radius: 10px;
     transition: 0.2s;
     &:hover {
         cursor: pointer;
@@ -78,7 +78,6 @@
 }
 
 .switch {
-    display: block;
     position: relative;
     width: 3.5em;
     height: 2em;
