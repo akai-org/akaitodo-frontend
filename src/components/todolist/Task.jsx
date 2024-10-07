@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import '../../styles/App.scss';
 import styles from '../../styles/components/todolist/Task.module.scss';
 
-const Task = ({ taskName }) => {
-    //const toggleCheckbox = () => {
-    //    onToggle(taskName);
-    //};
+const Task = ({ taskId, taskName, onToggle }) => {
+    const toggleCheckbox = () => {
+        onToggle(taskId);
+    };
 
     return (
         <div className={styles.task}>
-            <label htmlFor={taskName}>
+            <label htmlFor={taskId}>
                 <div className={styles.checkboxContainer}>
                     <input 
                         type="checkbox" 
-                        id={taskName}
+                        id={taskId}
+                        onChange={toggleCheckbox}
                     />
                     <div className={styles.checkIcon}>
-                        {/* {isChecked && <i className="ri-check-line"></i>} */}
+                       <i className="ri-check-line"></i>
                     </div>
                 </div>
                 {taskName}

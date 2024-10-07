@@ -46,11 +46,11 @@ input[type="checkbox"] {
     }
 }
 
-input[type="checkbox"]:checked + .checkIcon, .checkIcon:hover {
+input[type="checkbox"]:checked ~ .checkIcon, .checkIcon:hover {
     background-color: vars.$secondary-color;
     
 }
 
-input[type="checkbox"]:checked + .checkIcon i {
+input[type="checkbox"]:checked ~ .checkIcon i {
     display: block; // Display the checkmark icon when the checkbox is checked 
 }

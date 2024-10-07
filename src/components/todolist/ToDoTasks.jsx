@@ -13,18 +13,11 @@ const ToDoTasks = () => {
         dispatch(taskActions.fetchAllTasks());
     }, [dispatch]);
 
-    useEffect(() => {
-        console.log("Tasks from Redux state:", tasks);
-    }, [tasks]);
-
-
-
-    const toggleTask = (taskId) => {
-        // to do
-    };
-
     const removeTask = async (taskId) => {
-        // to do
+        await dispatch(taskActions.deleteTask(taskId));
+        setTimeout(() => {
+            dispatch(taskActions.fetchAllTasks());
+        }, 300);
     };
 
     return (
@@ -38,6 +31,7 @@ const ToDoTasks = () => {
                         taskName={task.name} 
                         taskDescription={task.description}
                         isDone={task.isDone}
+                        onToggle={removeTask}
                     />
                 ))}
             </div>

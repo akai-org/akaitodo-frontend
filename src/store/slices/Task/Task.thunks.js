@@ -12,3 +12,12 @@ export const fetchAllTasks = createAsyncThunk(
             .then((res) => res.data)
             .catch((err) => rejectWithValue(err)),
 );
+
+export const deleteTask = createAsyncThunk(
+    'tasks/deleteTask',
+    (taskId, { rejectWithValue }) =>
+        axios
+            .delete(`${API_TASKS_URL}/${taskId}`)
+            .then((res) => res.data)
+            .catch((err) => rejectWithValue(err)),
+);
