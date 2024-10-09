@@ -68,12 +68,13 @@ const ThemesFold = () => {
             <div className={styles.modeContainer}>
                 <p className={styles.modeText}>MODE</p>
                 <label className={styles.switch}>
-                    <input
-                        type="checkbox"
-                        onChange={handleModeChange}
-                        checked={theme.mode === 'dark'}
-                    />
-                    <div className={styles.slider}></div>
+                    <div
+                        className={styles.modeToggle}
+                        onClick={handleModeChange}
+                        role="button"
+                    >
+                        {theme.mode === 'light' ? 'LIGHT' : 'DARK'}
+                    </div>
                 </label>
             </div>
             <hr className={styles.line} />

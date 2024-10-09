@@ -36,7 +36,7 @@
     padding: 1em 1.4em;
     background-color: $lightgray-color;
     color: #1f1f1f;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: 0.2s;
     &:hover {
         cursor: pointer;
@@ -77,51 +77,17 @@
     border-radius: 8px;
 }
 
-.switch {
-    position: relative;
-    width: 3.5em;
-    height: 2em;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
+.modeToggle {
+    min-width: 3em;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 0.4em 1em;
+    background-color: $contrastbg-color;
+    color: $basebg-color;
+    text-align: center;
+    border-radius: 8px;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $additionalbg-color;
-    transition: 0.4s;
-    border-radius: 30px;
-}
-
-.slider:before {
-    position: absolute;
-    content: '';
-    height: 1.4em;
-    width: 1.4em;
-    border-radius: 1.25em;
-    left: 0.3em;
-    top: 50%;
-    transform: translateY(-50%);
-    background: linear-gradient(
-        35deg,
-        $additional-color,
-        $additional-color-o 50%
-    );
-    transition: 0.25s;
-}
-
-input:checked + .slider:before {
-    left: calc(100% - (1.4em + 0.3em));
-    background: $additionalbg-color;
-    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+    transition: 0.2s ease;
 }
 
 @media screen and (max-width: 1440px) {
@@ -167,7 +133,7 @@ input:checked + .slider:before {
     .thirdLayer,
     .fourthLayer {
         height: 4.8vw;
-        border-radius: 0.6em;
+        border-radius: 8px;
     }
 }
 
@@ -197,6 +163,5 @@ input:checked + .slider:before {
     .thirdLayer,
     .fourthLayer {
         height: 3em;
-        border-radius: 0.6em;
     }
 }

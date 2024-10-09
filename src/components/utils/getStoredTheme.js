@@ -1,6 +1,14 @@
+import {
+    initialThemeContext,
+} from '../../contexts/ThemeContext';
+
 const getStoredTheme = () => {
     const storedTheme = localStorage.getItem('theme');
-    return storedTheme ? JSON.parse(storedTheme) : initialThemeContext;
+    try {
+        return storedTheme ? JSON.parse(storedTheme) : initialThemeContext; 
+    } catch (error) {
+        return initialThemeContext;
+    }
 };
 
 export default getStoredTheme;
