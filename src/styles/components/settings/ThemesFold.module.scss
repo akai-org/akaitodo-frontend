@@ -1,0 +1,167 @@
+@use '../../vars' as *;
+
+.modeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.2em 0 1.6em;
+}
+
+.modeText {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0.8em;
+    color: $contrastbg-color;
+}
+
+.line {
+    width: 85%;
+    margin: 1.4em auto;
+}
+
+.themesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 2.4em;
+    padding: 3em 0;
+    justify-items: center;
+}
+
+.paletteElement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    padding: 1em 1.4em;
+    background-color: $lightgray-color;
+    color: #1f1f1f;
+    border-radius: 8px;
+    transition: 0.2s;
+    &:hover {
+        cursor: pointer;
+        background-color: $darkgray-color;
+        color: #000;
+        transition: 0.2s;
+    }
+}
+
+.paletteName {
+    font-size: 1.6vw;
+    font-weight: bold;
+}
+
+.firstLayer {
+    width: 24%;
+}
+
+.secondLayer {
+    width: 76%;
+}
+
+.thirdLayer {
+    width: 66%;
+}
+
+.fourthLayer {
+    width: 52%;
+}
+
+.firstLayer,
+.secondLayer,
+.thirdLayer,
+.fourthLayer {
+    display: flex;
+    justify-content: flex-end;
+    height: 3vw;
+    border-radius: 8px;
+}
+
+.modeToggle {
+    min-width: 3em;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 0.4em 1em;
+    background-color: $contrastbg-color;
+    color: $basebg-color;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+@media screen and (max-width: 1440px) {
+    .paletteName {
+        font-size: 2vw;
+    }
+
+    .firstLayer {
+        margin: auto 0;
+        width: 30%;
+    }
+
+    .firstLayer,
+    .secondLayer,
+    .thirdLayer,
+    .fourthLayer {
+        height: 3.75vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .modeText {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin: 0.8em;
+    }
+
+    .paletteElement {
+        width: 40%;
+    }
+
+    .paletteName {
+        font-size: 2vw;
+    }
+
+    .firstLayer {
+        margin: auto 0;
+        width: 37.5%;
+    }
+
+    .firstLayer,
+    .secondLayer,
+    .thirdLayer,
+    .fourthLayer {
+        height: 4.8vw;
+        border-radius: 8px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .themesContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .paletteElement {
+        width: 65%;
+    }
+
+    .paletteName {
+        font-size: 1.4em;
+    }
+
+    .firstLayer {
+        margin: auto 0;
+        width: 45%;
+    }
+
+    .firstLayer,
+    .secondLayer,
+    .thirdLayer,
+    .fourthLayer {
+        height: 3em;
+    }
+}
